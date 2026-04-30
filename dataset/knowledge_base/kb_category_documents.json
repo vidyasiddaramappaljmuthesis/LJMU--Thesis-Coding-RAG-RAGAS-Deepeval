@@ -1,0 +1,890 @@
+[
+  {
+    "id": "category_agro_industry_and_commerce",
+    "text": "Document Type: Product Category Summary\nProduct Category: agro_industry_and_commerce\n\nTotal Orders: 182\nTotal Items Sold: 212\nTotal Product Revenue: 72530.47\nTotal Freight Value: 5843.60\nAverage Product Price: 342.12\nAverage Freight Value: 27.56\nAverage Payment Value: 430.65\n\nAverage Review Score: 4.02\nPositive Review Count: 142\nNegative Review Count: 27\n\nLate Delivery Count: 7\nEarly or On-Time Delivery Count: 170\nLate Delivery Rate: 3.95%\nAverage Delivery Days: 11.43\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the agro_industry_and_commerce product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "agro_industry_and_commerce",
+      "total_orders": 182,
+      "avg_review": 4.02,
+      "late_rate_pct": 3.95,
+      "total_revenue": 72530.47
+    }
+  },
+  {
+    "id": "category_air_conditioning",
+    "text": "Document Type: Product Category Summary\nProduct Category: air_conditioning\n\nTotal Orders: 253\nTotal Items Sold: 297\nTotal Product Revenue: 55024.96\nTotal Freight Value: 6749.23\nAverage Product Price: 185.27\nAverage Freight Value: 22.72\nAverage Payment Value: 245.24\n\nAverage Review Score: 4.03\nPositive Review Count: 189\nNegative Review Count: 41\n\nLate Delivery Count: 10\nEarly or On-Time Delivery Count: 236\nLate Delivery Rate: 4.07%\nAverage Delivery Days: 11.88\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the air_conditioning product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "air_conditioning",
+      "total_orders": 253,
+      "avg_review": 4.03,
+      "late_rate_pct": 4.07,
+      "total_revenue": 55024.96
+    }
+  },
+  {
+    "id": "category_art",
+    "text": "Document Type: Product Category Summary\nProduct Category: art\n\nTotal Orders: 202\nTotal Items Sold: 209\nTotal Product Revenue: 24202.64\nTotal Freight Value: 4045.17\nAverage Product Price: 115.80\nAverage Freight Value: 19.35\nAverage Payment Value: 142.65\n\nAverage Review Score: 4.03\nPositive Review Count: 150\nNegative Review Count: 32\n\nLate Delivery Count: 12\nEarly or On-Time Delivery Count: 183\nLate Delivery Rate: 6.15%\nAverage Delivery Days: 11.26\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the art product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "art",
+      "total_orders": 202,
+      "avg_review": 4.03,
+      "late_rate_pct": 6.15,
+      "total_revenue": 24202.64
+    }
+  },
+  {
+    "id": "category_arts_and_craftmanship",
+    "text": "Document Type: Product Category Summary\nProduct Category: arts_and_craftmanship\n\nTotal Orders: 23\nTotal Items Sold: 24\nTotal Product Revenue: 1814.01\nTotal Freight Value: 370.13\nAverage Product Price: 75.58\nAverage Freight Value: 15.42\nAverage Payment Value: 97.46\n\nAverage Review Score: 4.17\nPositive Review Count: 18\nNegative Review Count: 3\n\nLate Delivery Count: 1\nEarly or On-Time Delivery Count: 22\nLate Delivery Rate: 4.35%\nAverage Delivery Days: 5.80\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the arts_and_craftmanship product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "arts_and_craftmanship",
+      "total_orders": 23,
+      "avg_review": 4.17,
+      "late_rate_pct": 4.35,
+      "total_revenue": 1814.01
+    }
+  },
+  {
+    "id": "category_audio",
+    "text": "Document Type: Product Category Summary\nProduct Category: audio\n\nTotal Orders: 350\nTotal Items Sold: 364\nTotal Product Revenue: 50688.50\nTotal Freight Value: 5710.44\nAverage Product Price: 139.25\nAverage Freight Value: 15.69\nAverage Payment Value: 165.97\n\nAverage Review Score: 3.84\nPositive Review Count: 238\nNegative Review Count: 76\n\nLate Delivery Count: 41\nEarly or On-Time Delivery Count: 307\nLate Delivery Rate: 11.78%\nAverage Delivery Days: 13.47\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the audio product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "audio",
+      "total_orders": 350,
+      "avg_review": 3.84,
+      "late_rate_pct": 11.78,
+      "total_revenue": 50688.5
+    }
+  },
+  {
+    "id": "category_auto",
+    "text": "Document Type: Product Category Summary\nProduct Category: auto\n\nTotal Orders: 3,897\nTotal Items Sold: 4,235\nTotal Product Revenue: 592720.11\nTotal Freight Value: 92664.21\nAverage Product Price: 139.96\nAverage Freight Value: 21.88\nAverage Payment Value: 176.71\n\nAverage Review Score: 4.09\nPositive Review Count: 3,013\nNegative Review Count: 562\n\nLate Delivery Count: 278\nEarly or On-Time Delivery Count: 3,531\nLate Delivery Rate: 7.30%\nAverage Delivery Days: 12.33\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the auto product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "auto",
+      "total_orders": 3897,
+      "avg_review": 4.09,
+      "late_rate_pct": 7.3,
+      "total_revenue": 592720.11
+    }
+  },
+  {
+    "id": "category_baby",
+    "text": "Document Type: Product Category Summary\nProduct Category: baby\n\nTotal Orders: 2,885\nTotal Items Sold: 3,065\nTotal Product Revenue: 411764.89\nTotal Freight Value: 68353.11\nAverage Product Price: 134.34\nAverage Freight Value: 22.30\nAverage Payment Value: 170.26\n\nAverage Review Score: 4.04\nPositive Review Count: 2,156\nNegative Review Count: 458\n\nLate Delivery Count: 226\nEarly or On-Time Delivery Count: 2,583\nLate Delivery Rate: 8.05%\nAverage Delivery Days: 12.68\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the baby product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "baby",
+      "total_orders": 2885,
+      "avg_review": 4.04,
+      "late_rate_pct": 8.05,
+      "total_revenue": 411764.89
+    }
+  },
+  {
+    "id": "category_bed_bath_table",
+    "text": "Document Type: Product Category Summary\nProduct Category: bed_bath_table\n\nTotal Orders: 9,417\nTotal Items Sold: 11,115\nTotal Product Revenue: 1036988.68\nTotal Freight Value: 204693.04\nAverage Product Price: 93.30\nAverage Freight Value: 18.42\nAverage Payment Value: 134.43\n\nAverage Review Score: 3.97\nPositive Review Count: 6,815\nNegative Review Count: 1,561\n\nLate Delivery Count: 689\nEarly or On-Time Delivery Count: 8,583\nLate Delivery Rate: 7.43%\nAverage Delivery Days: 12.99\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the bed_bath_table product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "bed_bath_table",
+      "total_orders": 9417,
+      "avg_review": 3.97,
+      "late_rate_pct": 7.43,
+      "total_revenue": 1036988.68
+    }
+  },
+  {
+    "id": "category_books_general_interest",
+    "text": "Document Type: Product Category Summary\nProduct Category: books_general_interest\n\nTotal Orders: 512\nTotal Items Sold: 553\nTotal Product Revenue: 46856.88\nTotal Freight Value: 9195.52\nAverage Product Price: 84.73\nAverage Freight Value: 16.63\nAverage Payment Value: 110.09\n\nAverage Review Score: 4.46\nPositive Review Count: 449\nNegative Review Count: 42\n\nLate Delivery Count: 32\nEarly or On-Time Delivery Count: 463\nLate Delivery Rate: 6.46%\nAverage Delivery Days: 11.53\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the books_general_interest product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "books_general_interest",
+      "total_orders": 512,
+      "avg_review": 4.46,
+      "late_rate_pct": 6.46,
+      "total_revenue": 46856.88
+    }
+  },
+  {
+    "id": "category_books_imported",
+    "text": "Document Type: Product Category Summary\nProduct Category: books_imported\n\nTotal Orders: 53\nTotal Items Sold: 60\nTotal Product Revenue: 4639.85\nTotal Freight Value: 769.85\nAverage Product Price: 77.33\nAverage Freight Value: 12.83\nAverage Payment Value: 102.67\n\nAverage Review Score: 4.32\nPositive Review Count: 44\nNegative Review Count: 7\n\nLate Delivery Count: 2\nEarly or On-Time Delivery Count: 48\nLate Delivery Rate: 4.00%\nAverage Delivery Days: 8.18\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the books_imported product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "books_imported",
+      "total_orders": 53,
+      "avg_review": 4.32,
+      "late_rate_pct": 4.0,
+      "total_revenue": 4639.85
+    }
+  },
+  {
+    "id": "category_books_technical",
+    "text": "Document Type: Product Category Summary\nProduct Category: books_technical\n\nTotal Orders: 260\nTotal Items Sold: 267\nTotal Product Revenue: 19096.06\nTotal Freight Value: 4283.06\nAverage Product Price: 71.52\nAverage Freight Value: 16.04\nAverage Payment Value: 90.88\n\nAverage Review Score: 4.40\nPositive Review Count: 222\nNegative Review Count: 26\n\nLate Delivery Count: 21\nEarly or On-Time Delivery Count: 235\nLate Delivery Rate: 8.20%\nAverage Delivery Days: 10.63\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the books_technical product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "books_technical",
+      "total_orders": 260,
+      "avg_review": 4.4,
+      "late_rate_pct": 8.2,
+      "total_revenue": 19096.06
+    }
+  },
+  {
+    "id": "category_cds_dvds_musicals",
+    "text": "Document Type: Product Category Summary\nProduct Category: cds_dvds_musicals\n\nTotal Orders: 12\nTotal Items Sold: 14\nTotal Product Revenue: 730.00\nTotal Freight Value: 224.99\nAverage Product Price: 52.14\nAverage Freight Value: 16.07\nAverage Payment Value: 79.58\n\nAverage Review Score: 4.67\nPositive Review Count: 11\nNegative Review Count: 0\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 12\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 10.92\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the cds_dvds_musicals product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "cds_dvds_musicals",
+      "total_orders": 12,
+      "avg_review": 4.67,
+      "late_rate_pct": 0.0,
+      "total_revenue": 730.0
+    }
+  },
+  {
+    "id": "category_christmas_supplies",
+    "text": "Document Type: Product Category Summary\nProduct Category: christmas_supplies\n\nTotal Orders: 128\nTotal Items Sold: 153\nTotal Product Revenue: 8800.82\nTotal Freight Value: 3229.30\nAverage Product Price: 57.52\nAverage Freight Value: 21.11\nAverage Payment Value: 94.15\n\nAverage Review Score: 4.06\nPositive Review Count: 98\nNegative Review Count: 16\n\nLate Delivery Count: 10\nEarly or On-Time Delivery Count: 115\nLate Delivery Rate: 8.00%\nAverage Delivery Days: 15.38\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the christmas_supplies product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "christmas_supplies",
+      "total_orders": 128,
+      "avg_review": 4.06,
+      "late_rate_pct": 8.0,
+      "total_revenue": 8800.82
+    }
+  },
+  {
+    "id": "category_cine_photo",
+    "text": "Document Type: Product Category Summary\nProduct Category: cine_photo\n\nTotal Orders: 65\nTotal Items Sold: 72\nTotal Product Revenue: 6933.46\nTotal Freight Value: 1256.20\nAverage Product Price: 96.30\nAverage Freight Value: 17.45\nAverage Payment Value: 129.58\n\nAverage Review Score: 4.23\nPositive Review Count: 51\nNegative Review Count: 9\n\nLate Delivery Count: 4\nEarly or On-Time Delivery Count: 59\nLate Delivery Rate: 6.35%\nAverage Delivery Days: 10.47\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the cine_photo product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "cine_photo",
+      "total_orders": 65,
+      "avg_review": 4.23,
+      "late_rate_pct": 6.35,
+      "total_revenue": 6933.46
+    }
+  },
+  {
+    "id": "category_computers",
+    "text": "Document Type: Product Category Summary\nProduct Category: computers\n\nTotal Orders: 181\nTotal Items Sold: 203\nTotal Product Revenue: 222963.13\nTotal Freight Value: 9836.30\nAverage Product Price: 1098.34\nAverage Freight Value: 48.45\nAverage Payment Value: 1286.95\n\nAverage Review Score: 4.17\nPositive Review Count: 145\nNegative Review Count: 23\n\nLate Delivery Count: 10\nEarly or On-Time Delivery Count: 167\nLate Delivery Rate: 5.65%\nAverage Delivery Days: 13.91\n\nTop Customer State: SP\nTop Seller State: BA\n\nThis document summarises sales, delivery, freight, and review performance for the computers product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "computers",
+      "total_orders": 181,
+      "avg_review": 4.17,
+      "late_rate_pct": 5.65,
+      "total_revenue": 222963.13
+    }
+  },
+  {
+    "id": "category_computers_accessories",
+    "text": "Document Type: Product Category Summary\nProduct Category: computers_accessories\n\nTotal Orders: 6,689\nTotal Items Sold: 7,827\nTotal Product Revenue: 911954.32\nTotal Freight Value: 147318.08\nAverage Product Price: 116.51\nAverage Freight Value: 18.82\nAverage Payment Value: 159.41\n\nAverage Review Score: 4.03\nPositive Review Count: 5,038\nNegative Review Count: 1,070\n\nLate Delivery Count: 417\nEarly or On-Time Delivery Count: 6,112\nLate Delivery Rate: 6.39%\nAverage Delivery Days: 13.17\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the computers_accessories product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "computers_accessories",
+      "total_orders": 6689,
+      "avg_review": 4.03,
+      "late_rate_pct": 6.39,
+      "total_revenue": 911954.32
+    }
+  },
+  {
+    "id": "category_consoles_games",
+    "text": "Document Type: Product Category Summary\nProduct Category: consoles_games\n\nTotal Orders: 1,062\nTotal Items Sold: 1,137\nTotal Product Revenue: 157465.22\nTotal Freight Value: 19828.02\nAverage Product Price: 138.49\nAverage Freight Value: 17.44\nAverage Payment Value: 167.64\n\nAverage Review Score: 4.07\nPositive Review Count: 795\nNegative Review Count: 150\n\nLate Delivery Count: 62\nEarly or On-Time Delivery Count: 956\nLate Delivery Rate: 6.09%\nAverage Delivery Days: 13.77\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the consoles_games product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "consoles_games",
+      "total_orders": 1062,
+      "avg_review": 4.07,
+      "late_rate_pct": 6.09,
+      "total_revenue": 157465.22
+    }
+  },
+  {
+    "id": "category_construction_tools_construction",
+    "text": "Document Type: Product Category Summary\nProduct Category: construction_tools_construction\n\nTotal Orders: 748\nTotal Items Sold: 929\nTotal Product Revenue: 144677.59\nTotal Freight Value: 20650.41\nAverage Product Price: 155.73\nAverage Freight Value: 22.23\nAverage Payment Value: 224.46\n\nAverage Review Score: 4.08\nPositive Review Count: 571\nNegative Review Count: 108\n\nLate Delivery Count: 54\nEarly or On-Time Delivery Count: 682\nLate Delivery Rate: 7.34%\nAverage Delivery Days: 10.86\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the construction_tools_construction product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "construction_tools_construction",
+      "total_orders": 748,
+      "avg_review": 4.08,
+      "late_rate_pct": 7.34,
+      "total_revenue": 144677.59
+    }
+  },
+  {
+    "id": "category_construction_tools_lights",
+    "text": "Document Type: Product Category Summary\nProduct Category: construction_tools_lights\n\nTotal Orders: 244\nTotal Items Sold: 304\nTotal Product Revenue: 41080.00\nTotal Freight Value: 7583.80\nAverage Product Price: 135.13\nAverage Freight Value: 24.95\nAverage Payment Value: 228.39\n\nAverage Review Score: 4.12\nPositive Review Count: 186\nNegative Review Count: 27\n\nLate Delivery Count: 16\nEarly or On-Time Delivery Count: 226\nLate Delivery Rate: 6.61%\nAverage Delivery Days: 9.83\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the construction_tools_lights product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "construction_tools_lights",
+      "total_orders": 244,
+      "avg_review": 4.12,
+      "late_rate_pct": 6.61,
+      "total_revenue": 41080.0
+    }
+  },
+  {
+    "id": "category_construction_tools_safety",
+    "text": "Document Type: Product Category Summary\nProduct Category: construction_tools_safety\n\nTotal Orders: 167\nTotal Items Sold: 194\nTotal Product Revenue: 40544.52\nTotal Freight Value: 3919.10\nAverage Product Price: 208.99\nAverage Freight Value: 20.20\nAverage Payment Value: 277.90\n\nAverage Review Score: 3.85\nPositive Review Count: 119\nNegative Review Count: 34\n\nLate Delivery Count: 4\nEarly or On-Time Delivery Count: 155\nLate Delivery Rate: 2.52%\nAverage Delivery Days: 11.80\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the construction_tools_safety product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "construction_tools_safety",
+      "total_orders": 167,
+      "avg_review": 3.85,
+      "late_rate_pct": 2.52,
+      "total_revenue": 40544.52
+    }
+  },
+  {
+    "id": "category_cool_stuff",
+    "text": "Document Type: Product Category Summary\nProduct Category: cool_stuff\n\nTotal Orders: 3,632\nTotal Items Sold: 3,796\nTotal Product Revenue: 635290.85\nTotal Freight Value: 84039.10\nAverage Product Price: 167.36\nAverage Freight Value: 22.14\nAverage Payment Value: 200.94\n\nAverage Review Score: 4.17\nPositive Review Count: 2,860\nNegative Review Count: 450\n\nLate Delivery Count: 210\nEarly or On-Time Delivery Count: 3,349\nLate Delivery Rate: 5.90%\nAverage Delivery Days: 12.38\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the cool_stuff product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "cool_stuff",
+      "total_orders": 3632,
+      "avg_review": 4.17,
+      "late_rate_pct": 5.9,
+      "total_revenue": 635290.85
+    }
+  },
+  {
+    "id": "category_costruction_tools_garden",
+    "text": "Document Type: Product Category Summary\nProduct Category: costruction_tools_garden\n\nTotal Orders: 194\nTotal Items Sold: 238\nTotal Product Revenue: 25715.89\nTotal Freight Value: 5311.40\nAverage Product Price: 108.05\nAverage Freight Value: 22.32\nAverage Payment Value: 166.10\n\nAverage Review Score: 4.19\nPositive Review Count: 157\nNegative Review Count: 27\n\nLate Delivery Count: 10\nEarly or On-Time Delivery Count: 180\nLate Delivery Rate: 5.26%\nAverage Delivery Days: 11.87\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the costruction_tools_garden product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "costruction_tools_garden",
+      "total_orders": 194,
+      "avg_review": 4.19,
+      "late_rate_pct": 5.26,
+      "total_revenue": 25715.89
+    }
+  },
+  {
+    "id": "category_costruction_tools_tools",
+    "text": "Document Type: Product Category Summary\nProduct Category: costruction_tools_tools\n\nTotal Orders: 97\nTotal Items Sold: 103\nTotal Product Revenue: 15903.95\nTotal Freight Value: 2030.22\nAverage Product Price: 154.41\nAverage Freight Value: 19.71\nAverage Payment Value: 184.89\n\nAverage Review Score: 4.43\nPositive Review Count: 85\nNegative Review Count: 8\n\nLate Delivery Count: 6\nEarly or On-Time Delivery Count: 91\nLate Delivery Rate: 6.19%\nAverage Delivery Days: 12.21\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the costruction_tools_tools product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "costruction_tools_tools",
+      "total_orders": 97,
+      "avg_review": 4.43,
+      "late_rate_pct": 6.19,
+      "total_revenue": 15903.95
+    }
+  },
+  {
+    "id": "category_diapers_and_hygiene",
+    "text": "Document Type: Product Category Summary\nProduct Category: diapers_and_hygiene\n\nTotal Orders: 27\nTotal Items Sold: 39\nTotal Product Revenue: 1567.59\nTotal Freight Value: 573.68\nAverage Product Price: 40.19\nAverage Freight Value: 14.71\nAverage Payment Value: 79.31\n\nAverage Review Score: 3.74\nPositive Review Count: 18\nNegative Review Count: 5\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 25\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 10.49\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the diapers_and_hygiene product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "diapers_and_hygiene",
+      "total_orders": 27,
+      "avg_review": 3.74,
+      "late_rate_pct": 0.0,
+      "total_revenue": 1567.59
+    }
+  },
+  {
+    "id": "category_drinks",
+    "text": "Document Type: Product Category Summary\nProduct Category: drinks\n\nTotal Orders: 297\nTotal Items Sold: 379\nTotal Product Revenue: 22428.70\nTotal Freight Value: 5741.25\nAverage Product Price: 59.18\nAverage Freight Value: 15.15\nAverage Payment Value: 98.04\n\nAverage Review Score: 4.16\nPositive Review Count: 238\nNegative Review Count: 36\n\nLate Delivery Count: 15\nEarly or On-Time Delivery Count: 272\nLate Delivery Rate: 5.23%\nAverage Delivery Days: 10.38\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the drinks product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "drinks",
+      "total_orders": 297,
+      "avg_review": 4.16,
+      "late_rate_pct": 5.23,
+      "total_revenue": 22428.7
+    }
+  },
+  {
+    "id": "category_dvds_blu_ray",
+    "text": "Document Type: Product Category Summary\nProduct Category: dvds_blu_ray\n\nTotal Orders: 59\nTotal Items Sold: 64\nTotal Product Revenue: 5999.39\nTotal Freight Value: 1288.74\nAverage Product Price: 93.74\nAverage Freight Value: 20.14\nAverage Payment Value: 125.62\n\nAverage Review Score: 4.09\nPositive Review Count: 47\nNegative Review Count: 10\n\nLate Delivery Count: 4\nEarly or On-Time Delivery Count: 52\nLate Delivery Rate: 7.14%\nAverage Delivery Days: 12.98\n\nTop Customer State: SP\nTop Seller State: GO\n\nThis document summarises sales, delivery, freight, and review performance for the dvds_blu_ray product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "dvds_blu_ray",
+      "total_orders": 59,
+      "avg_review": 4.09,
+      "late_rate_pct": 7.14,
+      "total_revenue": 5999.39
+    }
+  },
+  {
+    "id": "category_electronics",
+    "text": "Document Type: Product Category Summary\nProduct Category: electronics\n\nTotal Orders: 2,550\nTotal Items Sold: 2,767\nTotal Product Revenue: 160246.74\nTotal Freight Value: 46578.32\nAverage Product Price: 57.91\nAverage Freight Value: 16.83\nAverage Payment Value: 82.77\n\nAverage Review Score: 4.10\nPositive Review Count: 1,976\nNegative Review Count: 356\n\nLate Delivery Count: 192\nEarly or On-Time Delivery Count: 2,325\nLate Delivery Rate: 7.63%\nAverage Delivery Days: 12.92\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the electronics product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "electronics",
+      "total_orders": 2550,
+      "avg_review": 4.1,
+      "late_rate_pct": 7.63,
+      "total_revenue": 160246.74
+    }
+  },
+  {
+    "id": "category_fashio_female_clothing",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashio_female_clothing\n\nTotal Orders: 39\nTotal Items Sold: 48\nTotal Product Revenue: 2803.64\nTotal Freight Value: 621.75\nAverage Product Price: 58.41\nAverage Freight Value: 12.95\nAverage Payment Value: 89.98\n\nAverage Review Score: 3.69\nPositive Review Count: 24\nNegative Review Count: 9\n\nLate Delivery Count: 2\nEarly or On-Time Delivery Count: 34\nLate Delivery Rate: 5.56%\nAverage Delivery Days: 13.00\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashio_female_clothing product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashio_female_clothing",
+      "total_orders": 39,
+      "avg_review": 3.69,
+      "late_rate_pct": 5.56,
+      "total_revenue": 2803.64
+    }
+  },
+  {
+    "id": "category_fashion_bags_accessories",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashion_bags_accessories\n\nTotal Orders: 1,864\nTotal Items Sold: 2,031\nTotal Product Revenue: 152823.54\nTotal Freight Value: 31450.00\nAverage Product Price: 75.25\nAverage Freight Value: 15.48\nAverage Payment Value: 99.44\n\nAverage Review Score: 4.19\nPositive Review Count: 1,484\nNegative Review Count: 215\n\nLate Delivery Count: 102\nEarly or On-Time Delivery Count: 1,719\nLate Delivery Rate: 5.60%\nAverage Delivery Days: 11.24\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashion_bags_accessories product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashion_bags_accessories",
+      "total_orders": 1864,
+      "avg_review": 4.19,
+      "late_rate_pct": 5.6,
+      "total_revenue": 152823.54
+    }
+  },
+  {
+    "id": "category_fashion_childrens_clothes",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashion_childrens_clothes\n\nTotal Orders: 8\nTotal Items Sold: 8\nTotal Product Revenue: 569.85\nTotal Freight Value: 95.51\nAverage Product Price: 71.23\nAverage Freight Value: 11.94\nAverage Payment Value: 98.21\n\nAverage Review Score: 4.50\nPositive Review Count: 7\nNegative Review Count: 1\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 7\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 8.82\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashion_childrens_clothes product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashion_childrens_clothes",
+      "total_orders": 8,
+      "avg_review": 4.5,
+      "late_rate_pct": 0.0,
+      "total_revenue": 569.85
+    }
+  },
+  {
+    "id": "category_fashion_male_clothing",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashion_male_clothing\n\nTotal Orders: 112\nTotal Items Sold: 132\nTotal Product Revenue: 10797.82\nTotal Freight Value: 2152.41\nAverage Product Price: 81.80\nAverage Freight Value: 16.31\nAverage Payment Value: 116.21\n\nAverage Review Score: 3.70\nPositive Review Count: 75\nNegative Review Count: 29\n\nLate Delivery Count: 5\nEarly or On-Time Delivery Count: 101\nLate Delivery Rate: 4.72%\nAverage Delivery Days: 12.86\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashion_male_clothing product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashion_male_clothing",
+      "total_orders": 112,
+      "avg_review": 3.7,
+      "late_rate_pct": 4.72,
+      "total_revenue": 10797.82
+    }
+  },
+  {
+    "id": "category_fashion_shoes",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashion_shoes\n\nTotal Orders: 240\nTotal Items Sold: 262\nTotal Product Revenue: 23562.77\nTotal Freight Value: 4918.87\nAverage Product Price: 89.93\nAverage Freight Value: 18.77\nAverage Payment Value: 119.09\n\nAverage Review Score: 4.21\nPositive Review Count: 188\nNegative Review Count: 30\n\nLate Delivery Count: 11\nEarly or On-Time Delivery Count: 224\nLate Delivery Rate: 4.68%\nAverage Delivery Days: 15.73\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashion_shoes product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashion_shoes",
+      "total_orders": 240,
+      "avg_review": 4.21,
+      "late_rate_pct": 4.68,
+      "total_revenue": 23562.77
+    }
+  },
+  {
+    "id": "category_fashion_sport",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashion_sport\n\nTotal Orders: 27\nTotal Items Sold: 30\nTotal Product Revenue: 2119.51\nTotal Freight Value: 578.13\nAverage Product Price: 70.65\nAverage Freight Value: 19.27\nAverage Payment Value: 105.91\n\nAverage Review Score: 4.26\nPositive Review Count: 22\nNegative Review Count: 3\n\nLate Delivery Count: 1\nEarly or On-Time Delivery Count: 25\nLate Delivery Rate: 3.85%\nAverage Delivery Days: 10.65\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashion_sport product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashion_sport",
+      "total_orders": 27,
+      "avg_review": 4.26,
+      "late_rate_pct": 3.85,
+      "total_revenue": 2119.51
+    }
+  },
+  {
+    "id": "category_fashion_underwear_beach",
+    "text": "Document Type: Product Category Summary\nProduct Category: fashion_underwear_beach\n\nTotal Orders: 121\nTotal Items Sold: 131\nTotal Product Revenue: 9541.55\nTotal Freight Value: 1916.19\nAverage Product Price: 72.84\nAverage Freight Value: 14.63\nAverage Payment Value: 94.69\n\nAverage Review Score: 3.93\nPositive Review Count: 89\nNegative Review Count: 22\n\nLate Delivery Count: 11\nEarly or On-Time Delivery Count: 106\nLate Delivery Rate: 9.40%\nAverage Delivery Days: 14.00\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fashion_underwear_beach product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fashion_underwear_beach",
+      "total_orders": 121,
+      "avg_review": 3.93,
+      "late_rate_pct": 9.4,
+      "total_revenue": 9541.55
+    }
+  },
+  {
+    "id": "category_fixed_telephony",
+    "text": "Document Type: Product Category Summary\nProduct Category: fixed_telephony\n\nTotal Orders: 217\nTotal Items Sold: 264\nTotal Product Revenue: 59583.00\nTotal Freight Value: 4637.81\nAverage Product Price: 225.69\nAverage Freight Value: 17.57\nAverage Payment Value: 296.45\n\nAverage Review Score: 3.90\nPositive Review Count: 156\nNegative Review Count: 40\n\nLate Delivery Count: 10\nEarly or On-Time Delivery Count: 202\nLate Delivery Rate: 4.72%\nAverage Delivery Days: 12.53\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the fixed_telephony product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "fixed_telephony",
+      "total_orders": 217,
+      "avg_review": 3.9,
+      "late_rate_pct": 4.72,
+      "total_revenue": 59583.0
+    }
+  },
+  {
+    "id": "category_flowers",
+    "text": "Document Type: Product Category Summary\nProduct Category: flowers\n\nTotal Orders: 29\nTotal Items Sold: 33\nTotal Product Revenue: 1110.04\nTotal Freight Value: 488.87\nAverage Product Price: 33.64\nAverage Freight Value: 14.81\nAverage Payment Value: 61.89\n\nAverage Review Score: 4.39\nPositive Review Count: 24\nNegative Review Count: 2\n\nLate Delivery Count: 1\nEarly or On-Time Delivery Count: 28\nLate Delivery Rate: 3.45%\nAverage Delivery Days: 11.49\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the flowers product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "flowers",
+      "total_orders": 29,
+      "avg_review": 4.39,
+      "late_rate_pct": 3.45,
+      "total_revenue": 1110.04
+    }
+  },
+  {
+    "id": "category_food",
+    "text": "Document Type: Product Category Summary\nProduct Category: food\n\nTotal Orders: 450\nTotal Items Sold: 510\nTotal Product Revenue: 29393.41\nTotal Freight Value: 7271.03\nAverage Product Price: 57.63\nAverage Freight Value: 14.26\nAverage Payment Value: 83.71\n\nAverage Review Score: 4.28\nPositive Review Count: 372\nNegative Review Count: 51\n\nLate Delivery Count: 31\nEarly or On-Time Delivery Count: 410\nLate Delivery Rate: 7.03%\nAverage Delivery Days: 9.79\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the food product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "food",
+      "total_orders": 450,
+      "avg_review": 4.28,
+      "late_rate_pct": 7.03,
+      "total_revenue": 29393.41
+    }
+  },
+  {
+    "id": "category_food_drink",
+    "text": "Document Type: Product Category Summary\nProduct Category: food_drink\n\nTotal Orders: 227\nTotal Items Sold: 278\nTotal Product Revenue: 15179.48\nTotal Freight Value: 4507.99\nAverage Product Price: 54.60\nAverage Freight Value: 16.22\nAverage Payment Value: 88.25\n\nAverage Review Score: 4.38\nPositive Review Count: 189\nNegative Review Count: 13\n\nLate Delivery Count: 8\nEarly or On-Time Delivery Count: 213\nLate Delivery Rate: 3.62%\nAverage Delivery Days: 10.82\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the food_drink product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "food_drink",
+      "total_orders": 227,
+      "avg_review": 4.38,
+      "late_rate_pct": 3.62,
+      "total_revenue": 15179.48
+    }
+  },
+  {
+    "id": "category_furniture_bedroom",
+    "text": "Document Type: Product Category Summary\nProduct Category: furniture_bedroom\n\nTotal Orders: 95\nTotal Items Sold: 109\nTotal Product Revenue: 20028.78\nTotal Freight Value: 4632.23\nAverage Product Price: 183.75\nAverage Freight Value: 42.50\nAverage Payment Value: 261.54\n\nAverage Review Score: 4.14\nPositive Review Count: 76\nNegative Review Count: 15\n\nLate Delivery Count: 6\nEarly or On-Time Delivery Count: 84\nLate Delivery Rate: 6.67%\nAverage Delivery Days: 13.66\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the furniture_bedroom product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "furniture_bedroom",
+      "total_orders": 95,
+      "avg_review": 4.14,
+      "late_rate_pct": 6.67,
+      "total_revenue": 20028.78
+    }
+  },
+  {
+    "id": "category_furniture_decor",
+    "text": "Document Type: Product Category Summary\nProduct Category: furniture_decor\n\nTotal Orders: 6,449\nTotal Items Sold: 8,334\nTotal Product Revenue: 729762.49\nTotal Freight Value: 172749.30\nAverage Product Price: 87.56\nAverage Freight Value: 20.73\nAverage Payment Value: 144.57\n\nAverage Review Score: 4.01\nPositive Review Count: 4,767\nNegative Review Count: 1,067\n\nLate Delivery Count: 449\nEarly or On-Time Delivery Count: 5,858\nLate Delivery Rate: 7.12%\nAverage Delivery Days: 13.07\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the furniture_decor product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "furniture_decor",
+      "total_orders": 6449,
+      "avg_review": 4.01,
+      "late_rate_pct": 7.12,
+      "total_revenue": 729762.49
+    }
+  },
+  {
+    "id": "category_furniture_living_room",
+    "text": "Document Type: Product Category Summary\nProduct Category: furniture_living_room\n\nTotal Orders: 422\nTotal Items Sold: 503\nTotal Product Revenue: 68916.56\nTotal Freight Value: 17968.17\nAverage Product Price: 137.01\nAverage Freight Value: 35.72\nAverage Payment Value: 211.90\n\nAverage Review Score: 4.03\nPositive Review Count: 311\nNegative Review Count: 64\n\nLate Delivery Count: 31\nEarly or On-Time Delivery Count: 383\nLate Delivery Rate: 7.49%\nAverage Delivery Days: 13.86\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the furniture_living_room product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "furniture_living_room",
+      "total_orders": 422,
+      "avg_review": 4.03,
+      "late_rate_pct": 7.49,
+      "total_revenue": 68916.56
+    }
+  },
+  {
+    "id": "category_furniture_mattress_and_upholstery",
+    "text": "Document Type: Product Category Summary\nProduct Category: furniture_mattress_and_upholstery\n\nTotal Orders: 38\nTotal Items Sold: 38\nTotal Product Revenue: 4368.08\nTotal Freight Value: 1630.46\nAverage Product Price: 114.95\nAverage Freight Value: 42.91\nAverage Payment Value: 157.86\n\nAverage Review Score: 3.82\nPositive Review Count: 27\nNegative Review Count: 8\n\nLate Delivery Count: 5\nEarly or On-Time Delivery Count: 32\nLate Delivery Rate: 13.51%\nAverage Delivery Days: 14.43\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the furniture_mattress_and_upholstery product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "furniture_mattress_and_upholstery",
+      "total_orders": 38,
+      "avg_review": 3.82,
+      "late_rate_pct": 13.51,
+      "total_revenue": 4368.08
+    }
+  },
+  {
+    "id": "category_garden_tools",
+    "text": "Document Type: Product Category Summary\nProduct Category: garden_tools\n\nTotal Orders: 3,518\nTotal Items Sold: 4,347\nTotal Product Revenue: 485256.46\nTotal Freight Value: 98962.75\nAverage Product Price: 111.63\nAverage Freight Value: 22.77\nAverage Payment Value: 169.63\n\nAverage Review Score: 4.14\nPositive Review Count: 2,747\nNegative Review Count: 470\n\nLate Delivery Count: 225\nEarly or On-Time Delivery Count: 3,223\nLate Delivery Rate: 6.53%\nAverage Delivery Days: 13.63\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the garden_tools product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "garden_tools",
+      "total_orders": 3518,
+      "avg_review": 4.14,
+      "late_rate_pct": 6.53,
+      "total_revenue": 485256.46
+    }
+  },
+  {
+    "id": "category_health_beauty",
+    "text": "Document Type: Product Category Summary\nProduct Category: health_beauty\n\nTotal Orders: 8,836\nTotal Items Sold: 9,670\nTotal Product Revenue: 1258681.34\nTotal Freight Value: 182566.73\nAverage Product Price: 130.16\nAverage Freight Value: 18.88\nAverage Payment Value: 163.98\n\nAverage Review Score: 4.18\nPositive Review Count: 6,974\nNegative Review Count: 1,114\n\nLate Delivery Count: 650\nEarly or On-Time Delivery Count: 7,999\nLate Delivery Rate: 7.52%\nAverage Delivery Days: 12.08\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the health_beauty product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "health_beauty",
+      "total_orders": 8836,
+      "avg_review": 4.18,
+      "late_rate_pct": 7.52,
+      "total_revenue": 1258681.34
+    }
+  },
+  {
+    "id": "category_home_appliances",
+    "text": "Document Type: Product Category Summary\nProduct Category: home_appliances\n\nTotal Orders: 764\nTotal Items Sold: 771\nTotal Product Revenue: 80171.53\nTotal Freight Value: 14818.90\nAverage Product Price: 103.98\nAverage Freight Value: 19.22\nAverage Payment Value: 124.35\n\nAverage Review Score: 4.16\nPositive Review Count: 604\nNegative Review Count: 95\n\nLate Delivery Count: 33\nEarly or On-Time Delivery Count: 714\nLate Delivery Rate: 4.42%\nAverage Delivery Days: 11.31\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the home_appliances product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "home_appliances",
+      "total_orders": 764,
+      "avg_review": 4.16,
+      "late_rate_pct": 4.42,
+      "total_revenue": 80171.53
+    }
+  },
+  {
+    "id": "category_home_appliances_2",
+    "text": "Document Type: Product Category Summary\nProduct Category: home_appliances_2\n\nTotal Orders: 234\nTotal Items Sold: 238\nTotal Product Revenue: 113317.74\nTotal Freight Value: 10600.18\nAverage Product Price: 476.12\nAverage Freight Value: 44.54\nAverage Payment Value: 529.75\n\nAverage Review Score: 4.13\nPositive Review Count: 185\nNegative Review Count: 30\n\nLate Delivery Count: 14\nEarly or On-Time Delivery Count: 213\nLate Delivery Rate: 6.17%\nAverage Delivery Days: 13.89\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the home_appliances_2 product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "home_appliances_2",
+      "total_orders": 234,
+      "avg_review": 4.13,
+      "late_rate_pct": 6.17,
+      "total_revenue": 113317.74
+    }
+  },
+  {
+    "id": "category_home_comfort_2",
+    "text": "Document Type: Product Category Summary\nProduct Category: home_comfort_2\n\nTotal Orders: 24\nTotal Items Sold: 30\nTotal Product Revenue: 760.27\nTotal Freight Value: 410.31\nAverage Product Price: 25.34\nAverage Freight Value: 13.68\nAverage Payment Value: 55.52\n\nAverage Review Score: 3.83\nPositive Review Count: 16\nNegative Review Count: 5\n\nLate Delivery Count: 3\nEarly or On-Time Delivery Count: 21\nLate Delivery Rate: 12.50%\nAverage Delivery Days: 14.50\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the home_comfort_2 product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "home_comfort_2",
+      "total_orders": 24,
+      "avg_review": 3.83,
+      "late_rate_pct": 12.5,
+      "total_revenue": 760.27
+    }
+  },
+  {
+    "id": "category_home_confort",
+    "text": "Document Type: Product Category Summary\nProduct Category: home_confort\n\nTotal Orders: 397\nTotal Items Sold: 434\nTotal Product Revenue: 58572.04\nTotal Freight Value: 8501.23\nAverage Product Price: 134.96\nAverage Freight Value: 19.59\nAverage Payment Value: 185.27\n\nAverage Review Score: 3.86\nPositive Review Count: 267\nNegative Review Count: 76\n\nLate Delivery Count: 37\nEarly or On-Time Delivery Count: 355\nLate Delivery Rate: 9.44%\nAverage Delivery Days: 13.71\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the home_confort product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "home_confort",
+      "total_orders": 397,
+      "avg_review": 3.86,
+      "late_rate_pct": 9.44,
+      "total_revenue": 58572.04
+    }
+  },
+  {
+    "id": "category_home_construction",
+    "text": "Document Type: Product Category Summary\nProduct Category: home_construction\n\nTotal Orders: 490\nTotal Items Sold: 604\nTotal Product Revenue: 83088.12\nTotal Freight Value: 13832.24\nAverage Product Price: 137.56\nAverage Freight Value: 22.90\nAverage Payment Value: 208.12\n\nAverage Review Score: 3.97\nPositive Review Count: 362\nNegative Review Count: 86\n\nLate Delivery Count: 29\nEarly or On-Time Delivery Count: 454\nLate Delivery Rate: 6.00%\nAverage Delivery Days: 13.44\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the home_construction product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "home_construction",
+      "total_orders": 490,
+      "avg_review": 3.97,
+      "late_rate_pct": 6.0,
+      "total_revenue": 83088.12
+    }
+  },
+  {
+    "id": "category_housewares",
+    "text": "Document Type: Product Category Summary\nProduct Category: housewares\n\nTotal Orders: 5,884\nTotal Items Sold: 6,964\nTotal Product Revenue: 632248.66\nTotal Freight Value: 146149.11\nAverage Product Price: 90.79\nAverage Freight Value: 20.99\nAverage Payment Value: 134.81\n\nAverage Review Score: 4.14\nPositive Review Count: 4,572\nNegative Review Count: 772\n\nLate Delivery Count: 308\nEarly or On-Time Delivery Count: 5,435\nLate Delivery Rate: 5.36%\nAverage Delivery Days: 11.09\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the housewares product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "housewares",
+      "total_orders": 5884,
+      "avg_review": 4.14,
+      "late_rate_pct": 5.36,
+      "total_revenue": 632248.66
+    }
+  },
+  {
+    "id": "category_industry_commerce_and_business",
+    "text": "Document Type: Product Category Summary\nProduct Category: industry_commerce_and_business\n\nTotal Orders: 235\nTotal Items Sold: 268\nTotal Product Revenue: 39669.61\nTotal Freight Value: 7884.68\nAverage Product Price: 148.02\nAverage Freight Value: 29.42\nAverage Payment Value: 205.74\n\nAverage Review Score: 4.19\nPositive Review Count: 186\nNegative Review Count: 26\n\nLate Delivery Count: 16\nEarly or On-Time Delivery Count: 215\nLate Delivery Rate: 6.93%\nAverage Delivery Days: 10.89\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the industry_commerce_and_business product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "industry_commerce_and_business",
+      "total_orders": 235,
+      "avg_review": 4.19,
+      "late_rate_pct": 6.93,
+      "total_revenue": 39669.61
+    }
+  },
+  {
+    "id": "category_kitchen_dining_laundry_garden_furniture",
+    "text": "Document Type: Product Category Summary\nProduct Category: kitchen_dining_laundry_garden_furniture\n\nTotal Orders: 248\nTotal Items Sold: 281\nTotal Product Revenue: 46328.37\nTotal Freight Value: 11999.43\nAverage Product Price: 164.87\nAverage Freight Value: 42.70\nAverage Payment Value: 237.89\n\nAverage Review Score: 4.04\nPositive Review Count: 186\nNegative Review Count: 34\n\nLate Delivery Count: 11\nEarly or On-Time Delivery Count: 230\nLate Delivery Rate: 4.56%\nAverage Delivery Days: 11.83\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the kitchen_dining_laundry_garden_furniture product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "kitchen_dining_laundry_garden_furniture",
+      "total_orders": 248,
+      "avg_review": 4.04,
+      "late_rate_pct": 4.56,
+      "total_revenue": 46328.37
+    }
+  },
+  {
+    "id": "category_la_cuisine",
+    "text": "Document Type: Product Category Summary\nProduct Category: la_cuisine\n\nTotal Orders: 13\nTotal Items Sold: 14\nTotal Product Revenue: 2054.99\nTotal Freight Value: 333.55\nAverage Product Price: 146.78\nAverage Freight Value: 23.82\nAverage Payment Value: 198.42\n\nAverage Review Score: 4.25\nPositive Review Count: 10\nNegative Review Count: 2\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 13\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 7.74\n\nTop Customer State: SP\nTop Seller State: SC\n\nThis document summarises sales, delivery, freight, and review performance for the la_cuisine product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "la_cuisine",
+      "total_orders": 13,
+      "avg_review": 4.25,
+      "late_rate_pct": 0.0,
+      "total_revenue": 2054.99
+    }
+  },
+  {
+    "id": "category_luggage_accessories",
+    "text": "Document Type: Product Category Summary\nProduct Category: luggage_accessories\n\nTotal Orders: 1,034\nTotal Items Sold: 1,092\nTotal Product Revenue: 140429.98\nTotal Freight Value: 30445.23\nAverage Product Price: 128.60\nAverage Freight Value: 27.88\nAverage Payment Value: 166.80\n\nAverage Review Score: 4.33\nPositive Review Count: 865\nNegative Review Count: 95\n\nLate Delivery Count: 44\nEarly or On-Time Delivery Count: 975\nLate Delivery Rate: 4.32%\nAverage Delivery Days: 10.87\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the luggage_accessories product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "luggage_accessories",
+      "total_orders": 1034,
+      "avg_review": 4.33,
+      "late_rate_pct": 4.32,
+      "total_revenue": 140429.98
+    }
+  },
+  {
+    "id": "category_market_place",
+    "text": "Document Type: Product Category Summary\nProduct Category: market_place\n\nTotal Orders: 280\nTotal Items Sold: 311\nTotal Product Revenue: 28378.47\nTotal Freight Value: 5456.06\nAverage Product Price: 91.25\nAverage Freight Value: 17.54\nAverage Payment Value: 127.72\n\nAverage Review Score: 4.03\nPositive Review Count: 209\nNegative Review Count: 38\n\nLate Delivery Count: 11\nEarly or On-Time Delivery Count: 263\nLate Delivery Rate: 4.01%\nAverage Delivery Days: 12.24\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the market_place product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "market_place",
+      "total_orders": 280,
+      "avg_review": 4.03,
+      "late_rate_pct": 4.01,
+      "total_revenue": 28378.47
+    }
+  },
+  {
+    "id": "category_music",
+    "text": "Document Type: Product Category Summary\nProduct Category: music\n\nTotal Orders: 38\nTotal Items Sold: 38\nTotal Product Revenue: 6034.35\nTotal Freight Value: 690.51\nAverage Product Price: 158.80\nAverage Freight Value: 18.17\nAverage Payment Value: 181.62\n\nAverage Review Score: 4.21\nPositive Review Count: 30\nNegative Review Count: 4\n\nLate Delivery Count: 2\nEarly or On-Time Delivery Count: 36\nLate Delivery Rate: 5.26%\nAverage Delivery Days: 11.66\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the music product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "music",
+      "total_orders": 38,
+      "avg_review": 4.21,
+      "late_rate_pct": 5.26,
+      "total_revenue": 6034.35
+    }
+  },
+  {
+    "id": "category_musical_instruments",
+    "text": "Document Type: Product Category Summary\nProduct Category: musical_instruments\n\nTotal Orders: 628\nTotal Items Sold: 680\nTotal Product Revenue: 191498.88\nTotal Freight Value: 18638.49\nAverage Product Price: 281.62\nAverage Freight Value: 27.41\nAverage Payment Value: 336.08\n\nAverage Review Score: 4.18\nPositive Review Count: 500\nNegative Review Count: 82\n\nLate Delivery Count: 46\nEarly or On-Time Delivery Count: 565\nLate Delivery Rate: 7.53%\nAverage Delivery Days: 13.07\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the musical_instruments product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "musical_instruments",
+      "total_orders": 628,
+      "avg_review": 4.18,
+      "late_rate_pct": 7.53,
+      "total_revenue": 191498.88
+    }
+  },
+  {
+    "id": "category_office_furniture",
+    "text": "Document Type: Product Category Summary\nProduct Category: office_furniture\n\nTotal Orders: 1,273\nTotal Items Sold: 1,691\nTotal Product Revenue: 273960.70\nTotal Freight Value: 68571.95\nAverage Product Price: 162.01\nAverage Freight Value: 40.55\nAverage Payment Value: 270.92\n\nAverage Review Score: 3.62\nPositive Review Count: 793\nNegative Review Count: 286\n\nLate Delivery Count: 101\nEarly or On-Time Delivery Count: 1,153\nLate Delivery Rate: 8.05%\nAverage Delivery Days: 20.64\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the office_furniture product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "office_furniture",
+      "total_orders": 1273,
+      "avg_review": 3.62,
+      "late_rate_pct": 8.05,
+      "total_revenue": 273960.7
+    }
+  },
+  {
+    "id": "category_party_supplies",
+    "text": "Document Type: Product Category Summary\nProduct Category: party_supplies\n\nTotal Orders: 39\nTotal Items Sold: 43\nTotal Product Revenue: 4485.18\nTotal Freight Value: 827.97\nAverage Product Price: 104.31\nAverage Freight Value: 19.26\nAverage Payment Value: 139.14\n\nAverage Review Score: 4.00\nPositive Review Count: 28\nNegative Review Count: 7\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 38\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 9.00\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the party_supplies product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "party_supplies",
+      "total_orders": 39,
+      "avg_review": 4.0,
+      "late_rate_pct": 0.0,
+      "total_revenue": 4485.18
+    }
+  },
+  {
+    "id": "category_pc_gamer",
+    "text": "Document Type: Product Category Summary\nProduct Category: pc_gamer\n\nTotal Orders: 8\nTotal Items Sold: 9\nTotal Product Revenue: 1545.95\nTotal Freight Value: 133.57\nAverage Product Price: 171.77\nAverage Freight Value: 14.84\nAverage Payment Value: 214.63\n\nAverage Review Score: 3.12\nPositive Review Count: 5\nNegative Review Count: 3\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 7\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 10.33\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the pc_gamer product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "pc_gamer",
+      "total_orders": 8,
+      "avg_review": 3.12,
+      "late_rate_pct": 0.0,
+      "total_revenue": 1545.95
+    }
+  },
+  {
+    "id": "category_perfumery",
+    "text": "Document Type: Product Category Summary\nProduct Category: perfumery\n\nTotal Orders: 3,162\nTotal Items Sold: 3,419\nTotal Product Revenue: 399124.87\nTotal Freight Value: 54213.84\nAverage Product Price: 116.74\nAverage Freight Value: 15.86\nAverage Payment Value: 144.51\n\nAverage Review Score: 4.20\nPositive Review Count: 2,520\nNegative Review Count: 420\n\nLate Delivery Count: 202\nEarly or On-Time Delivery Count: 2,886\nLate Delivery Rate: 6.54%\nAverage Delivery Days: 11.91\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the perfumery product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "perfumery",
+      "total_orders": 3162,
+      "avg_review": 4.2,
+      "late_rate_pct": 6.54,
+      "total_revenue": 399124.87
+    }
+  },
+  {
+    "id": "category_pet_shop",
+    "text": "Document Type: Product Category Summary\nProduct Category: pet_shop\n\nTotal Orders: 1,710\nTotal Items Sold: 1,947\nTotal Product Revenue: 214315.41\nTotal Freight Value: 39561.24\nAverage Product Price: 110.07\nAverage Freight Value: 20.32\nAverage Payment Value: 149.32\n\nAverage Review Score: 4.24\nPositive Review Count: 1,383\nNegative Review Count: 198\n\nLate Delivery Count: 86\nEarly or On-Time Delivery Count: 1,602\nLate Delivery Rate: 5.09%\nAverage Delivery Days: 11.37\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the pet_shop product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "pet_shop",
+      "total_orders": 1710,
+      "avg_review": 4.24,
+      "late_rate_pct": 5.09,
+      "total_revenue": 214315.41
+    }
+  },
+  {
+    "id": "category_portateis_cozinha_e_preparadores_de_alimentos",
+    "text": "Document Type: Product Category Summary\nProduct Category: portateis_cozinha_e_preparadores_de_alimentos\n\nTotal Orders: 14\nTotal Items Sold: 15\nTotal Product Revenue: 3968.53\nTotal Freight Value: 309.76\nAverage Product Price: 264.57\nAverage Freight Value: 20.65\nAverage Payment Value: 305.59\n\nAverage Review Score: 3.43\nPositive Review Count: 7\nNegative Review Count: 4\n\nLate Delivery Count: 1\nEarly or On-Time Delivery Count: 12\nLate Delivery Rate: 7.69%\nAverage Delivery Days: 8.44\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the portateis_cozinha_e_preparadores_de_alimentos product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "portateis_cozinha_e_preparadores_de_alimentos",
+      "total_orders": 14,
+      "avg_review": 3.43,
+      "late_rate_pct": 7.69,
+      "total_revenue": 3968.53
+    }
+  },
+  {
+    "id": "category_security_and_services",
+    "text": "Document Type: Product Category Summary\nProduct Category: security_and_services\n\nTotal Orders: 2\nTotal Items Sold: 2\nTotal Product Revenue: 283.29\nTotal Freight Value: 41.22\nAverage Product Price: 141.64\nAverage Freight Value: 20.61\nAverage Payment Value: 162.25\n\nAverage Review Score: 2.50\nPositive Review Count: 1\nNegative Review Count: 1\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 2\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 15.14\n\nTop Customer State: RO\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the security_and_services product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "security_and_services",
+      "total_orders": 2,
+      "avg_review": 2.5,
+      "late_rate_pct": 0.0,
+      "total_revenue": 283.29
+    }
+  },
+  {
+    "id": "category_signaling_and_security",
+    "text": "Document Type: Product Category Summary\nProduct Category: signaling_and_security\n\nTotal Orders: 140\nTotal Items Sold: 199\nTotal Product Revenue: 21509.23\nTotal Freight Value: 6507.82\nAverage Product Price: 108.09\nAverage Freight Value: 32.70\nAverage Payment Value: 200.84\n\nAverage Review Score: 4.11\nPositive Review Count: 105\nNegative Review Count: 16\n\nLate Delivery Count: 6\nEarly or On-Time Delivery Count: 132\nLate Delivery Rate: 4.35%\nAverage Delivery Days: 10.87\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the signaling_and_security product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "signaling_and_security",
+      "total_orders": 140,
+      "avg_review": 4.11,
+      "late_rate_pct": 4.35,
+      "total_revenue": 21509.23
+    }
+  },
+  {
+    "id": "category_small_appliances",
+    "text": "Document Type: Product Category Summary\nProduct Category: small_appliances\n\nTotal Orders: 630\nTotal Items Sold: 679\nTotal Product Revenue: 190648.58\nTotal Freight Value: 16020.25\nAverage Product Price: 280.78\nAverage Freight Value: 23.59\nAverage Payment Value: 331.05\n\nAverage Review Score: 4.17\nPositive Review Count: 502\nNegative Review Count: 87\n\nLate Delivery Count: 29\nEarly or On-Time Delivery Count: 580\nLate Delivery Rate: 4.76%\nAverage Delivery Days: 10.98\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the small_appliances product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "small_appliances",
+      "total_orders": 630,
+      "avg_review": 4.17,
+      "late_rate_pct": 4.76,
+      "total_revenue": 190648.58
+    }
+  },
+  {
+    "id": "category_small_appliances_home_oven_and_coffee",
+    "text": "Document Type: Product Category Summary\nProduct Category: small_appliances_home_oven_and_coffee\n\nTotal Orders: 75\nTotal Items Sold: 76\nTotal Product Revenue: 47445.71\nTotal Freight Value: 2747.86\nAverage Product Price: 624.29\nAverage Freight Value: 36.16\nAverage Payment Value: 669.55\n\nAverage Review Score: 4.29\nPositive Review Count: 63\nNegative Review Count: 8\n\nLate Delivery Count: 4\nEarly or On-Time Delivery Count: 68\nLate Delivery Rate: 5.56%\nAverage Delivery Days: 9.93\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the small_appliances_home_oven_and_coffee product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "small_appliances_home_oven_and_coffee",
+      "total_orders": 75,
+      "avg_review": 4.29,
+      "late_rate_pct": 5.56,
+      "total_revenue": 47445.71
+    }
+  },
+  {
+    "id": "category_sports_leisure",
+    "text": "Document Type: Product Category Summary\nProduct Category: sports_leisure\n\nTotal Orders: 7,720\nTotal Items Sold: 8,641\nTotal Product Revenue: 988048.97\nTotal Freight Value: 168607.51\nAverage Product Price: 114.34\nAverage Freight Value: 19.51\nAverage Payment Value: 151.04\n\nAverage Review Score: 4.17\nPositive Review Count: 6,115\nNegative Review Count: 998\n\nLate Delivery Count: 495\nEarly or On-Time Delivery Count: 7,035\nLate Delivery Rate: 6.57%\nAverage Delivery Days: 12.24\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the sports_leisure product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "sports_leisure",
+      "total_orders": 7720,
+      "avg_review": 4.17,
+      "late_rate_pct": 6.57,
+      "total_revenue": 988048.97
+    }
+  },
+  {
+    "id": "category_stationery",
+    "text": "Document Type: Product Category Summary\nProduct Category: stationery\n\nTotal Orders: 2,311\nTotal Items Sold: 2,517\nTotal Product Revenue: 230943.23\nTotal Freight Value: 46798.48\nAverage Product Price: 91.75\nAverage Freight Value: 18.59\nAverage Payment Value: 121.64\n\nAverage Review Score: 4.25\nPositive Review Count: 1,885\nNegative Review Count: 263\n\nLate Delivery Count: 148\nEarly or On-Time Delivery Count: 2,116\nLate Delivery Rate: 6.54%\nAverage Delivery Days: 12.78\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the stationery product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "stationery",
+      "total_orders": 2311,
+      "avg_review": 4.25,
+      "late_rate_pct": 6.54,
+      "total_revenue": 230943.23
+    }
+  },
+  {
+    "id": "category_tablets_printing_image",
+    "text": "Document Type: Product Category Summary\nProduct Category: tablets_printing_image\n\nTotal Orders: 79\nTotal Items Sold: 83\nTotal Product Revenue: 7528.41\nTotal Freight Value: 1226.20\nAverage Product Price: 90.70\nAverage Freight Value: 14.77\nAverage Payment Value: 116.68\n\nAverage Review Score: 4.16\nPositive Review Count: 62\nNegative Review Count: 10\n\nLate Delivery Count: 4\nEarly or On-Time Delivery Count: 75\nLate Delivery Rate: 5.06%\nAverage Delivery Days: 12.83\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the tablets_printing_image product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "tablets_printing_image",
+      "total_orders": 79,
+      "avg_review": 4.16,
+      "late_rate_pct": 5.06,
+      "total_revenue": 7528.41
+    }
+  },
+  {
+    "id": "category_telephony",
+    "text": "Document Type: Product Category Summary\nProduct Category: telephony\n\nTotal Orders: 4,199\nTotal Items Sold: 4,545\nTotal Product Revenue: 323667.53\nTotal Freight Value: 71215.79\nAverage Product Price: 71.21\nAverage Freight Value: 15.67\nAverage Payment Value: 94.97\n\nAverage Review Score: 4.00\nPositive Review Count: 3,106\nNegative Review Count: 645\n\nLate Delivery Count: 291\nEarly or On-Time Delivery Count: 3,802\nLate Delivery Rate: 7.11%\nAverage Delivery Days: 12.96\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the telephony product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "telephony",
+      "total_orders": 4199,
+      "avg_review": 4.0,
+      "late_rate_pct": 7.11,
+      "total_revenue": 323667.53
+    }
+  },
+  {
+    "id": "category_toys",
+    "text": "Document Type: Product Category Summary\nProduct Category: toys\n\nTotal Orders: 3,886\nTotal Items Sold: 4,117\nTotal Product Revenue: 483946.60\nTotal Freight Value: 77425.95\nAverage Product Price: 117.55\nAverage Freight Value: 18.81\nAverage Payment Value: 145.89\n\nAverage Review Score: 4.19\nPositive Review Count: 3,071\nNegative Review Count: 489\n\nLate Delivery Count: 243\nEarly or On-Time Delivery Count: 3,561\nLate Delivery Rate: 6.39%\nAverage Delivery Days: 11.73\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the toys product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "toys",
+      "total_orders": 3886,
+      "avg_review": 4.19,
+      "late_rate_pct": 6.39,
+      "total_revenue": 483946.6
+    }
+  },
+  {
+    "id": "category_unknown",
+    "text": "Document Type: Product Category Summary\nProduct Category: unknown\n\nTotal Orders: 2,226\nTotal Items Sold: 1,603\nTotal Product Revenue: 179535.28\nTotal Freight Value: 28169.81\nAverage Product Price: 112.00\nAverage Freight Value: 17.57\nAverage Payment Value: 169.40\n\nAverage Review Score: 3.16\nPositive Review Count: 1,161\nNegative Review Count: 890\n\nLate Delivery Count: 101\nEarly or On-Time Delivery Count: 1,291\nLate Delivery Rate: 7.26%\nAverage Delivery Days: 12.73\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the unknown product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "unknown",
+      "total_orders": 2226,
+      "avg_review": 3.16,
+      "late_rate_pct": 7.26,
+      "total_revenue": 179535.28
+    }
+  },
+  {
+    "id": "category_watches_gifts",
+    "text": "Document Type: Product Category Summary\nProduct Category: watches_gifts\n\nTotal Orders: 5,624\nTotal Items Sold: 5,991\nTotal Product Revenue: 1205005.68\nTotal Freight Value: 100535.93\nAverage Product Price: 201.14\nAverage Freight Value: 16.78\nAverage Payment Value: 233.09\n\nAverage Review Score: 4.07\nPositive Review Count: 4,249\nNegative Review Count: 848\n\nLate Delivery Count: 406\nEarly or On-Time Delivery Count: 5,087\nLate Delivery Rate: 7.39%\nAverage Delivery Days: 12.81\n\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises sales, delivery, freight, and review performance for the watches_gifts product category.",
+    "metadata": {
+      "document_type": "category_level",
+      "source_id": "watches_gifts",
+      "total_orders": 5624,
+      "avg_review": 4.07,
+      "late_rate_pct": 7.39,
+      "total_revenue": 1205005.68
+    }
+  }
+]

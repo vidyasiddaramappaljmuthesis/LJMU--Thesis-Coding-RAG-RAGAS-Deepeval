@@ -1,0 +1,50 @@
+[
+  {
+    "id": "delivery_status_early",
+    "text": "Document Type: Delivery-Status Insight\nDelivery Status: early\n\nTotal Orders in Group: 88,649\nShare of Delivered Orders: 91.89%\nAverage Delivery Days: 10.88\nAverage Difference vs Estimated: -13.71 days early\n\nAverage Review Score: 4.29\nAverage Payment Value: 158.72\n\nTop Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document provides aggregate insight into orders with delivery status 'early'.",
+    "metadata": {
+      "document_type": "delivery_status_insight",
+      "source_id": "early",
+      "delivery_status": "early",
+      "total_orders": 88649,
+      "avg_review": 4.29,
+      "avg_delivery_days": 10.88
+    }
+  },
+  {
+    "id": "delivery_status_late",
+    "text": "Document Type: Delivery-Status Insight\nDelivery Status: late\n\nTotal Orders in Group: 6,535\nShare of Delivered Orders: 6.77%\nAverage Delivery Days: 33.95\nAverage Difference vs Estimated: 10.62 days late\n\nAverage Review Score: 2.27\nAverage Payment Value: 176.14\n\nTop Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document provides aggregate insight into orders with delivery status 'late'.",
+    "metadata": {
+      "document_type": "delivery_status_insight",
+      "source_id": "late",
+      "delivery_status": "late",
+      "total_orders": 6535,
+      "avg_review": 2.27,
+      "avg_delivery_days": 33.95
+    }
+  },
+  {
+    "id": "delivery_status_not_delivered",
+    "text": "Document Type: Delivery-Status Insight\nDelivery Status: not_delivered\n\nTotal Orders in Group: 2,965\nShare of Delivered Orders: N/A (undelivered)\nAverage Delivery Days: 0.00\nAverage Difference vs Estimated: N/A\n\nAverage Review Score: 1.75\nAverage Payment Value: 197.99\n\nTop Product Category: unknown\nTop Customer State: SP\nTop Seller State: SP\n\nThis document provides aggregate insight into orders with delivery status 'not_delivered'.",
+    "metadata": {
+      "document_type": "delivery_status_insight",
+      "source_id": "not_delivered",
+      "delivery_status": "not_delivered",
+      "total_orders": 2965,
+      "avg_review": 1.75,
+      "avg_delivery_days": 0.0
+    }
+  },
+  {
+    "id": "delivery_status_on_time",
+    "text": "Document Type: Delivery-Status Insight\nDelivery Status: on_time\n\nTotal Orders in Group: 1,292\nShare of Delivered Orders: 1.34%\nAverage Delivery Days: 19.22\nAverage Difference vs Estimated: 0.00 days late\n\nAverage Review Score: 4.03\nAverage Payment Value: 155.40\n\nTop Product Category: health_beauty\nTop Customer State: SP\nTop Seller State: SP\n\nThis document provides aggregate insight into orders with delivery status 'on_time'.",
+    "metadata": {
+      "document_type": "delivery_status_insight",
+      "source_id": "on_time",
+      "delivery_status": "on_time",
+      "total_orders": 1292,
+      "avg_review": 4.03,
+      "avg_delivery_days": 19.22
+    }
+  }
+]

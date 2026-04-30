@@ -1,0 +1,326 @@
+[
+  {
+    "id": "state_AC",
+    "text": "Document Type: Customer-State Summary\nCustomer State: AC\n\nTotal Orders: 81\nUnique Customers: 77\nTotal Payment Value: 19680.62\nAverage Payment Value: 242.97\n\nAverage Review Score: 4.05\nPositive Review Count: 60\nNegative Review Count: 13\n\nLate Delivery Count: 3\nLate Delivery Rate: 3.75%\nAverage Delivery Days: 21.04\n\nTop Product Category: sports_leisure\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in AC.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "AC",
+      "total_orders": 81,
+      "avg_review": 4.05,
+      "late_rate_pct": 3.75,
+      "avg_delivery_days": 21.04
+    }
+  },
+  {
+    "id": "state_AL",
+    "text": "Document Type: Customer-State Summary\nCustomer State: AL\n\nTotal Orders: 413\nUnique Customers: 401\nTotal Payment Value: 96962.06\nAverage Payment Value: 234.77\n\nAverage Review Score: 3.76\nPositive Review Count: 284\nNegative Review Count: 98\n\nLate Delivery Count: 85\nLate Delivery Rate: 21.41%\nAverage Delivery Days: 24.54\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in AL.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "AL",
+      "total_orders": 413,
+      "avg_review": 3.76,
+      "late_rate_pct": 21.41,
+      "avg_delivery_days": 24.54
+    }
+  },
+  {
+    "id": "state_AM",
+    "text": "Document Type: Customer-State Summary\nCustomer State: AM\n\nTotal Orders: 148\nUnique Customers: 143\nTotal Payment Value: 27966.93\nAverage Payment Value: 188.97\n\nAverage Review Score: 4.21\nPositive Review Count: 119\nNegative Review Count: 21\n\nLate Delivery Count: 4\nLate Delivery Rate: 2.76%\nAverage Delivery Days: 26.43\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in AM.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "AM",
+      "total_orders": 148,
+      "avg_review": 4.21,
+      "late_rate_pct": 2.76,
+      "avg_delivery_days": 26.43
+    }
+  },
+  {
+    "id": "state_AP",
+    "text": "Document Type: Customer-State Summary\nCustomer State: AP\n\nTotal Orders: 68\nUnique Customers: 67\nTotal Payment Value: 16262.80\nAverage Payment Value: 239.16\n\nAverage Review Score: 4.19\nPositive Review Count: 54\nNegative Review Count: 5\n\nLate Delivery Count: 2\nLate Delivery Rate: 2.99%\nAverage Delivery Days: 27.19\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in AP.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "AP",
+      "total_orders": 68,
+      "avg_review": 4.19,
+      "late_rate_pct": 2.99,
+      "avg_delivery_days": 27.19
+    }
+  },
+  {
+    "id": "state_BA",
+    "text": "Document Type: Customer-State Summary\nCustomer State: BA\n\nTotal Orders: 3,380\nUnique Customers: 3,277\nTotal Payment Value: 616645.82\nAverage Payment Value: 182.44\n\nAverage Review Score: 3.86\nPositive Review Count: 2,375\nNegative Review Count: 631\n\nLate Delivery Count: 396\nLate Delivery Rate: 12.16%\nAverage Delivery Days: 19.34\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in BA.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "BA",
+      "total_orders": 3380,
+      "avg_review": 3.86,
+      "late_rate_pct": 12.16,
+      "avg_delivery_days": 19.34
+    }
+  },
+  {
+    "id": "state_CE",
+    "text": "Document Type: Customer-State Summary\nCustomer State: CE\n\nTotal Orders: 1,336\nUnique Customers: 1,313\nTotal Payment Value: 279464.03\nAverage Payment Value: 209.18\n\nAverage Review Score: 3.86\nPositive Review Count: 934\nNegative Review Count: 261\n\nLate Delivery Count: 176\nLate Delivery Rate: 13.76%\nAverage Delivery Days: 21.27\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in CE.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "CE",
+      "total_orders": 1336,
+      "avg_review": 3.86,
+      "late_rate_pct": 13.76,
+      "avg_delivery_days": 21.27
+    }
+  },
+  {
+    "id": "state_DF",
+    "text": "Document Type: Customer-State Summary\nCustomer State: DF\n\nTotal Orders: 2,140\nUnique Customers: 2,075\nTotal Payment Value: 355141.08\nAverage Payment Value: 165.95\n\nAverage Review Score: 4.06\nPositive Review Count: 1,640\nNegative Review Count: 321\n\nLate Delivery Count: 118\nLate Delivery Rate: 5.67%\nAverage Delivery Days: 12.97\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in DF.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "DF",
+      "total_orders": 2140,
+      "avg_review": 4.06,
+      "late_rate_pct": 5.67,
+      "avg_delivery_days": 12.97
+    }
+  },
+  {
+    "id": "state_ES",
+    "text": "Document Type: Customer-State Summary\nCustomer State: ES\n\nTotal Orders: 2,033\nUnique Customers: 1,964\nTotal Payment Value: 325967.55\nAverage Payment Value: 160.34\n\nAverage Review Score: 4.04\nPositive Review Count: 1,524\nNegative Review Count: 300\n\nLate Delivery Count: 214\nLate Delivery Rate: 10.73%\nAverage Delivery Days: 15.79\n\nTop Product Category: bed_bath_table\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in ES.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "ES",
+      "total_orders": 2033,
+      "avg_review": 4.04,
+      "late_rate_pct": 10.73,
+      "avg_delivery_days": 15.79
+    }
+  },
+  {
+    "id": "state_GO",
+    "text": "Document Type: Customer-State Summary\nCustomer State: GO\n\nTotal Orders: 2,020\nUnique Customers: 1,952\nTotal Payment Value: 350092.31\nAverage Payment Value: 173.31\n\nAverage Review Score: 4.04\nPositive Review Count: 1,521\nNegative Review Count: 296\n\nLate Delivery Count: 128\nLate Delivery Rate: 6.54%\nAverage Delivery Days: 15.61\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in GO.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "GO",
+      "total_orders": 2020,
+      "avg_review": 4.04,
+      "late_rate_pct": 6.54,
+      "avg_delivery_days": 15.61
+    }
+  },
+  {
+    "id": "state_MA",
+    "text": "Document Type: Customer-State Summary\nCustomer State: MA\n\nTotal Orders: 747\nUnique Customers: 726\nTotal Payment Value: 152523.02\nAverage Payment Value: 204.18\n\nAverage Review Score: 3.76\nPositive Review Count: 506\nNegative Review Count: 162\n\nLate Delivery Count: 125\nLate Delivery Rate: 17.43%\nAverage Delivery Days: 21.57\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MA.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "MA",
+      "total_orders": 747,
+      "avg_review": 3.76,
+      "late_rate_pct": 17.43,
+      "avg_delivery_days": 21.57
+    }
+  },
+  {
+    "id": "state_MG",
+    "text": "Document Type: Customer-State Summary\nCustomer State: MG\n\nTotal Orders: 11,635\nUnique Customers: 11,259\nTotal Payment Value: 1872257.26\nAverage Payment Value: 160.92\n\nAverage Review Score: 4.14\nPositive Review Count: 9,053\nNegative Review Count: 1,538\n\nLate Delivery Count: 520\nLate Delivery Rate: 4.58%\nAverage Delivery Days: 12.01\n\nTop Product Category: bed_bath_table\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MG.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "MG",
+      "total_orders": 11635,
+      "avg_review": 4.14,
+      "late_rate_pct": 4.58,
+      "avg_delivery_days": 12.01
+    }
+  },
+  {
+    "id": "state_MS",
+    "text": "Document Type: Customer-State Summary\nCustomer State: MS\n\nTotal Orders: 715\nUnique Customers: 694\nTotal Payment Value: 137534.84\nAverage Payment Value: 192.36\n\nAverage Review Score: 4.11\nPositive Review Count: 555\nNegative Review Count: 104\n\nLate Delivery Count: 68\nLate Delivery Rate: 9.70%\nAverage Delivery Days: 15.62\n\nTop Product Category: sports_leisure\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MS.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "MS",
+      "total_orders": 715,
+      "avg_review": 4.11,
+      "late_rate_pct": 9.7,
+      "avg_delivery_days": 15.62
+    }
+  },
+  {
+    "id": "state_MT",
+    "text": "Document Type: Customer-State Summary\nCustomer State: MT\n\nTotal Orders: 907\nUnique Customers: 876\nTotal Payment Value: 187029.29\nAverage Payment Value: 206.21\n\nAverage Review Score: 4.10\nPositive Review Count: 698\nNegative Review Count: 124\n\nLate Delivery Count: 53\nLate Delivery Rate: 5.98%\nAverage Delivery Days: 18.06\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MT.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "MT",
+      "total_orders": 907,
+      "avg_review": 4.1,
+      "late_rate_pct": 5.98,
+      "avg_delivery_days": 18.06
+    }
+  },
+  {
+    "id": "state_PA",
+    "text": "Document Type: Customer-State Summary\nCustomer State: PA\n\nTotal Orders: 975\nUnique Customers: 949\nTotal Payment Value: 218295.85\nAverage Payment Value: 223.89\n\nAverage Review Score: 3.85\nPositive Review Count: 678\nNegative Review Count: 188\n\nLate Delivery Count: 106\nLate Delivery Rate: 11.21%\nAverage Delivery Days: 23.77\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in PA.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "PA",
+      "total_orders": 975,
+      "avg_review": 3.85,
+      "late_rate_pct": 11.21,
+      "avg_delivery_days": 23.77
+    }
+  },
+  {
+    "id": "state_PB",
+    "text": "Document Type: Customer-State Summary\nCustomer State: PB\n\nTotal Orders: 536\nUnique Customers: 519\nTotal Payment Value: 141545.72\nAverage Payment Value: 264.08\n\nAverage Review Score: 4.02\nPositive Review Count: 394\nNegative Review Count: 88\n\nLate Delivery Count: 54\nLate Delivery Rate: 10.44%\nAverage Delivery Days: 20.43\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in PB.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "PB",
+      "total_orders": 536,
+      "avg_review": 4.02,
+      "late_rate_pct": 10.44,
+      "avg_delivery_days": 20.43
+    }
+  },
+  {
+    "id": "state_PE",
+    "text": "Document Type: Customer-State Summary\nCustomer State: PE\n\nTotal Orders: 1,652\nUnique Customers: 1,609\nTotal Payment Value: 324850.44\nAverage Payment Value: 196.64\n\nAverage Review Score: 4.01\nPositive Review Count: 1,231\nNegative Review Count: 274\n\nLate Delivery Count: 153\nLate Delivery Rate: 9.60%\nAverage Delivery Days: 18.45\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in PE.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "PE",
+      "total_orders": 1652,
+      "avg_review": 4.01,
+      "late_rate_pct": 9.6,
+      "avg_delivery_days": 18.45
+    }
+  },
+  {
+    "id": "state_PI",
+    "text": "Document Type: Customer-State Summary\nCustomer State: PI\n\nTotal Orders: 495\nUnique Customers: 482\nTotal Payment Value: 108523.97\nAverage Payment Value: 219.24\n\nAverage Review Score: 3.92\nPositive Review Count: 358\nNegative Review Count: 90\n\nLate Delivery Count: 66\nLate Delivery Rate: 13.87%\nAverage Delivery Days: 19.46\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in PI.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "PI",
+      "total_orders": 495,
+      "avg_review": 3.92,
+      "late_rate_pct": 13.87,
+      "avg_delivery_days": 19.46
+    }
+  },
+  {
+    "id": "state_PR",
+    "text": "Document Type: Customer-State Summary\nCustomer State: PR\n\nTotal Orders: 5,045\nUnique Customers: 4,882\nTotal Payment Value: 811156.38\nAverage Payment Value: 160.78\n\nAverage Review Score: 4.18\nPositive Review Count: 4,014\nNegative Review Count: 625\n\nLate Delivery Count: 199\nLate Delivery Rate: 4.04%\nAverage Delivery Days: 11.99\n\nTop Product Category: sports_leisure\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in PR.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "PR",
+      "total_orders": 5045,
+      "avg_review": 4.18,
+      "late_rate_pct": 4.04,
+      "avg_delivery_days": 11.99
+    }
+  },
+  {
+    "id": "state_RJ",
+    "text": "Document Type: Customer-State Summary\nCustomer State: RJ\n\nTotal Orders: 12,852\nUnique Customers: 12,384\nTotal Payment Value: 2144379.69\nAverage Payment Value: 166.85\n\nAverage Review Score: 3.88\nPositive Review Count: 9,022\nNegative Review Count: 2,625\n\nLate Delivery Count: 1,495\nLate Delivery Rate: 12.10%\nAverage Delivery Days: 15.31\n\nTop Product Category: bed_bath_table\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RJ.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "RJ",
+      "total_orders": 12852,
+      "avg_review": 3.88,
+      "late_rate_pct": 12.1,
+      "avg_delivery_days": 15.31
+    }
+  },
+  {
+    "id": "state_RN",
+    "text": "Document Type: Customer-State Summary\nCustomer State: RN\n\nTotal Orders: 485\nUnique Customers: 474\nTotal Payment Value: 102718.13\nAverage Payment Value: 211.79\n\nAverage Review Score: 4.11\nPositive Review Count: 374\nNegative Review Count: 68\n\nLate Delivery Count: 44\nLate Delivery Rate: 9.28%\nAverage Delivery Days: 19.28\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RN.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "RN",
+      "total_orders": 485,
+      "avg_review": 4.11,
+      "late_rate_pct": 9.28,
+      "avg_delivery_days": 19.28
+    }
+  },
+  {
+    "id": "state_RO",
+    "text": "Document Type: Customer-State Summary\nCustomer State: RO\n\nTotal Orders: 253\nUnique Customers: 240\nTotal Payment Value: 60866.20\nAverage Payment Value: 240.58\n\nAverage Review Score: 4.05\nPositive Review Count: 186\nNegative Review Count: 39\n\nLate Delivery Count: 7\nLate Delivery Rate: 2.88%\nAverage Delivery Days: 19.37\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RO.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "RO",
+      "total_orders": 253,
+      "avg_review": 4.05,
+      "late_rate_pct": 2.88,
+      "avg_delivery_days": 19.37
+    }
+  },
+  {
+    "id": "state_RR",
+    "text": "Document Type: Customer-State Summary\nCustomer State: RR\n\nTotal Orders: 46\nUnique Customers: 45\nTotal Payment Value: 10064.62\nAverage Payment Value: 218.80\n\nAverage Review Score: 3.61\nPositive Review Count: 28\nNegative Review Count: 11\n\nLate Delivery Count: 5\nLate Delivery Rate: 12.20%\nAverage Delivery Days: 29.39\n\nTop Product Category: sports_leisure\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RR.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "RR",
+      "total_orders": 46,
+      "avg_review": 3.61,
+      "late_rate_pct": 12.2,
+      "avg_delivery_days": 29.39
+    }
+  },
+  {
+    "id": "state_RS",
+    "text": "Document Type: Customer-State Summary\nCustomer State: RS\n\nTotal Orders: 5,466\nUnique Customers: 5,277\nTotal Payment Value: 890898.54\nAverage Payment Value: 162.99\n\nAverage Review Score: 4.13\nPositive Review Count: 4,268\nNegative Review Count: 728\n\nLate Delivery Count: 325\nLate Delivery Rate: 6.08%\nAverage Delivery Days: 15.30\n\nTop Product Category: bed_bath_table\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RS.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "RS",
+      "total_orders": 5466,
+      "avg_review": 4.13,
+      "late_rate_pct": 6.08,
+      "avg_delivery_days": 15.3
+    }
+  },
+  {
+    "id": "state_SC",
+    "text": "Document Type: Customer-State Summary\nCustomer State: SC\n\nTotal Orders: 3,637\nUnique Customers: 3,534\nTotal Payment Value: 623086.43\nAverage Payment Value: 171.32\n\nAverage Review Score: 4.07\nPositive Review Count: 2,762\nNegative Review Count: 528\n\nLate Delivery Count: 291\nLate Delivery Rate: 8.20%\nAverage Delivery Days: 14.96\n\nTop Product Category: sports_leisure\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in SC.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "SC",
+      "total_orders": 3637,
+      "avg_review": 4.07,
+      "late_rate_pct": 8.2,
+      "avg_delivery_days": 14.96
+    }
+  },
+  {
+    "id": "state_SE",
+    "text": "Document Type: Customer-State Summary\nCustomer State: SE\n\nTotal Orders: 350\nUnique Customers: 342\nTotal Payment Value: 75246.25\nAverage Payment Value: 214.99\n\nAverage Review Score: 3.81\nPositive Review Count: 244\nNegative Review Count: 76\n\nLate Delivery Count: 51\nLate Delivery Rate: 15.22%\nAverage Delivery Days: 21.52\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in SE.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "SE",
+      "total_orders": 350,
+      "avg_review": 3.81,
+      "late_rate_pct": 15.22,
+      "avg_delivery_days": 21.52
+    }
+  },
+  {
+    "id": "state_SP",
+    "text": "Document Type: Customer-State Summary\nCustomer State: SP\n\nTotal Orders: 41,746\nUnique Customers: 40,302\nTotal Payment Value: 5998226.96\nAverage Payment Value: 143.69\n\nAverage Review Score: 4.17\nPositive Review Count: 32,946\nNegative Review Count: 5,242\n\nLate Delivery Count: 1,820\nLate Delivery Rate: 4.49%\nAverage Delivery Days: 8.76\n\nTop Product Category: bed_bath_table\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in SP.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "SP",
+      "total_orders": 41746,
+      "avg_review": 4.17,
+      "late_rate_pct": 4.49,
+      "avg_delivery_days": 8.76
+    }
+  },
+  {
+    "id": "state_TO",
+    "text": "Document Type: Customer-State Summary\nCustomer State: TO\n\nTotal Orders: 280\nUnique Customers: 273\nTotal Payment Value: 61485.33\nAverage Payment Value: 219.59\n\nAverage Review Score: 4.10\nPositive Review Count: 218\nNegative Review Count: 38\n\nLate Delivery Count: 27\nLate Delivery Rate: 9.85%\nAverage Delivery Days: 17.66\n\nTop Product Category: health_beauty\nTop Payment Type: credit_card\n\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in TO.",
+    "metadata": {
+      "document_type": "customer_state_level",
+      "source_id": "TO",
+      "total_orders": 280,
+      "avg_review": 4.1,
+      "late_rate_pct": 9.85,
+      "avg_delivery_days": 17.66
+    }
+  }
+]

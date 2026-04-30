@@ -1,0 +1,377 @@
+[
+  {
+    "id": "month_2016_09",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2016-09\nMonth Name: September 2016\n\nTotal Orders: 4\nDelivered Orders: 1\nCanceled Orders: 2\n\nLate Delivery Count: 1\nEarly or On-Time Delivery Count: 0\nLate Delivery Rate: 100.00%\nAverage Delivery Days: 54.81\n\nTotal Payment Value: 252.24\nAverage Payment Value: 84.08\nAverage Freight Value: 14.56\n\nAverage Review Score: 1.00\nNegative Review Count: 4\n\nMost Popular Product Category: unknown\nTop Customer State: SP\nTop Seller State: PR\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2016-09",
+      "year": 2016,
+      "month": 9,
+      "month_name": "September",
+      "total_orders": 4,
+      "late_rate_pct": 100.0,
+      "avg_review": 1.0,
+      "total_payment": 252.24
+    }
+  },
+  {
+    "id": "month_2016_10",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2016-10\nMonth Name: October 2016\n\nTotal Orders: 324\nDelivered Orders: 270\nCanceled Orders: 24\n\nLate Delivery Count: 2\nEarly or On-Time Delivery Count: 268\nLate Delivery Rate: 0.74%\nAverage Delivery Days: 19.58\n\nTotal Payment Value: 59090.48\nAverage Payment Value: 182.38\nAverage Freight Value: 20.11\n\nAverage Review Score: 3.56\nNegative Review Count: 93\n\nMost Popular Product Category: furniture_decor\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2016-10",
+      "year": 2016,
+      "month": 10,
+      "month_name": "October",
+      "total_orders": 324,
+      "late_rate_pct": 0.74,
+      "avg_review": 3.56,
+      "total_payment": 59090.48
+    }
+  },
+  {
+    "id": "month_2016_12",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2016-12\nMonth Name: December 2016\n\nTotal Orders: 1\nDelivered Orders: 1\nCanceled Orders: 0\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 1\nLate Delivery Rate: 0.00%\nAverage Delivery Days: 4.69\n\nTotal Payment Value: 19.62\nAverage Payment Value: 19.62\nAverage Freight Value: 8.72\n\nAverage Review Score: 5.00\nNegative Review Count: 0\n\nMost Popular Product Category: fashion_bags_accessories\nTop Customer State: PR\nTop Seller State: PR\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2016-12",
+      "year": 2016,
+      "month": 12,
+      "month_name": "December",
+      "total_orders": 1,
+      "late_rate_pct": 0.0,
+      "avg_review": 5.0,
+      "total_payment": 19.62
+    }
+  },
+  {
+    "id": "month_2017_01",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-01\nMonth Name: January 2017\n\nTotal Orders: 800\nDelivered Orders: 750\nCanceled Orders: 3\n\nLate Delivery Count: 22\nEarly or On-Time Delivery Count: 728\nLate Delivery Rate: 2.93%\nAverage Delivery Days: 12.65\n\nTotal Payment Value: 138488.04\nAverage Payment Value: 173.11\nAverage Freight Value: 17.67\n\nAverage Review Score: 4.06\nNegative Review Count: 123\n\nMost Popular Product Category: furniture_decor\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-01",
+      "year": 2017,
+      "month": 1,
+      "month_name": "January",
+      "total_orders": 800,
+      "late_rate_pct": 2.93,
+      "avg_review": 4.06,
+      "total_payment": 138488.04
+    }
+  },
+  {
+    "id": "month_2017_02",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-02\nMonth Name: February 2017\n\nTotal Orders: 1,780\nDelivered Orders: 1,653\nCanceled Orders: 17\n\nLate Delivery Count: 49\nEarly or On-Time Delivery Count: 1,604\nLate Delivery Rate: 2.96%\nAverage Delivery Days: 13.17\n\nTotal Payment Value: 291908.01\nAverage Payment Value: 163.99\nAverage Freight Value: 19.98\n\nAverage Review Score: 4.02\nNegative Review Count: 286\n\nMost Popular Product Category: furniture_decor\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-02",
+      "year": 2017,
+      "month": 2,
+      "month_name": "February",
+      "total_orders": 1780,
+      "late_rate_pct": 2.96,
+      "avg_review": 4.02,
+      "total_payment": 291908.01
+    }
+  },
+  {
+    "id": "month_2017_03",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-03\nMonth Name: March 2017\n\nTotal Orders: 2,682\nDelivered Orders: 2,546\nCanceled Orders: 33\n\nLate Delivery Count: 116\nEarly or On-Time Delivery Count: 2,430\nLate Delivery Rate: 4.56%\nAverage Delivery Days: 12.95\n\nTotal Payment Value: 449863.60\nAverage Payment Value: 167.73\nAverage Freight Value: 19.23\n\nAverage Review Score: 4.07\nNegative Review Count: 377\n\nMost Popular Product Category: furniture_decor\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-03",
+      "year": 2017,
+      "month": 3,
+      "month_name": "March",
+      "total_orders": 2682,
+      "late_rate_pct": 4.56,
+      "avg_review": 4.07,
+      "total_payment": 449863.6
+    }
+  },
+  {
+    "id": "month_2017_04",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-04\nMonth Name: April 2017\n\nTotal Orders: 2,404\nDelivered Orders: 2,303\nCanceled Orders: 18\n\nLate Delivery Count: 151\nEarly or On-Time Delivery Count: 2,152\nLate Delivery Rate: 6.56%\nAverage Delivery Days: 14.92\n\nTotal Payment Value: 417788.03\nAverage Payment Value: 173.79\nAverage Freight Value: 19.56\n\nAverage Review Score: 4.04\nNegative Review Count: 369\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-04",
+      "year": 2017,
+      "month": 4,
+      "month_name": "April",
+      "total_orders": 2404,
+      "late_rate_pct": 6.56,
+      "avg_review": 4.04,
+      "total_payment": 417788.03
+    }
+  },
+  {
+    "id": "month_2017_05",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-05\nMonth Name: May 2017\n\nTotal Orders: 3,700\nDelivered Orders: 3,545\nCanceled Orders: 29\n\nLate Delivery Count: 106\nEarly or On-Time Delivery Count: 3,439\nLate Delivery Rate: 2.99%\nAverage Delivery Days: 11.32\n\nTotal Payment Value: 592918.82\nAverage Payment Value: 160.25\nAverage Freight Value: 19.37\n\nAverage Review Score: 4.14\nNegative Review Count: 468\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-05",
+      "year": 2017,
+      "month": 5,
+      "month_name": "May",
+      "total_orders": 3700,
+      "late_rate_pct": 2.99,
+      "avg_review": 4.14,
+      "total_payment": 592918.82
+    }
+  },
+  {
+    "id": "month_2017_06",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-06\nMonth Name: June 2017\n\nTotal Orders: 3,245\nDelivered Orders: 3,135\nCanceled Orders: 16\n\nLate Delivery Count: 95\nEarly or On-Time Delivery Count: 3,040\nLate Delivery Rate: 3.03%\nAverage Delivery Days: 12.01\n\nTotal Payment Value: 511276.38\nAverage Payment Value: 157.56\nAverage Freight Value: 19.52\n\nAverage Review Score: 4.15\nNegative Review Count: 410\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-06",
+      "year": 2017,
+      "month": 6,
+      "month_name": "June",
+      "total_orders": 3245,
+      "late_rate_pct": 3.03,
+      "avg_review": 4.15,
+      "total_payment": 511276.38
+    }
+  },
+  {
+    "id": "month_2017_07",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-07\nMonth Name: July 2017\n\nTotal Orders: 4,026\nDelivered Orders: 3,872\nCanceled Orders: 28\n\nLate Delivery Count: 108\nEarly or On-Time Delivery Count: 3,764\nLate Delivery Rate: 2.79%\nAverage Delivery Days: 11.59\n\nTotal Payment Value: 592382.92\nAverage Payment Value: 147.14\nAverage Freight Value: 19.24\n\nAverage Review Score: 4.18\nNegative Review Count: 487\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-07",
+      "year": 2017,
+      "month": 7,
+      "month_name": "July",
+      "total_orders": 4026,
+      "late_rate_pct": 2.79,
+      "avg_review": 4.18,
+      "total_payment": 592382.92
+    }
+  },
+  {
+    "id": "month_2017_08",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-08\nMonth Name: August 2017\n\nTotal Orders: 4,331\nDelivered Orders: 4,193\nCanceled Orders: 27\n\nLate Delivery Count: 122\nEarly or On-Time Delivery Count: 4,071\nLate Delivery Rate: 2.91%\nAverage Delivery Days: 11.15\n\nTotal Payment Value: 674396.32\nAverage Payment Value: 155.71\nAverage Freight Value: 19.19\n\nAverage Review Score: 4.24\nNegative Review Count: 488\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-08",
+      "year": 2017,
+      "month": 8,
+      "month_name": "August",
+      "total_orders": 4331,
+      "late_rate_pct": 2.91,
+      "avg_review": 4.24,
+      "total_payment": 674396.32
+    }
+  },
+  {
+    "id": "month_2017_09",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-09\nMonth Name: September 2017\n\nTotal Orders: 4,285\nDelivered Orders: 4,150\nCanceled Orders: 20\n\nLate Delivery Count: 182\nEarly or On-Time Delivery Count: 3,968\nLate Delivery Rate: 4.39%\nAverage Delivery Days: 11.85\n\nTotal Payment Value: 727762.45\nAverage Payment Value: 169.84\nAverage Freight Value: 19.87\n\nAverage Review Score: 4.19\nNegative Review Count: 529\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-09",
+      "year": 2017,
+      "month": 9,
+      "month_name": "September",
+      "total_orders": 4285,
+      "late_rate_pct": 4.39,
+      "avg_review": 4.19,
+      "total_payment": 727762.45
+    }
+  },
+  {
+    "id": "month_2017_10",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-10\nMonth Name: October 2017\n\nTotal Orders: 4,631\nDelivered Orders: 4,478\nCanceled Orders: 26\n\nLate Delivery Count: 187\nEarly or On-Time Delivery Count: 4,291\nLate Delivery Rate: 4.18%\nAverage Delivery Days: 11.86\n\nTotal Payment Value: 779677.88\nAverage Payment Value: 168.36\nAverage Freight Value: 19.75\n\nAverage Review Score: 4.12\nNegative Review Count: 608\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-10",
+      "year": 2017,
+      "month": 10,
+      "month_name": "October",
+      "total_orders": 4631,
+      "late_rate_pct": 4.18,
+      "avg_review": 4.12,
+      "total_payment": 779677.88
+    }
+  },
+  {
+    "id": "month_2017_11",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-11\nMonth Name: November 2017\n\nTotal Orders: 7,544\nDelivered Orders: 7,288\nCanceled Orders: 37\n\nLate Delivery Count: 904\nEarly or On-Time Delivery Count: 6,384\nLate Delivery Rate: 12.40%\nAverage Delivery Days: 15.16\n\nTotal Payment Value: 1194882.80\nAverage Payment Value: 158.39\nAverage Freight Value: 19.49\n\nAverage Review Score: 3.91\nNegative Review Count: 1,404\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-11",
+      "year": 2017,
+      "month": 11,
+      "month_name": "November",
+      "total_orders": 7544,
+      "late_rate_pct": 12.4,
+      "avg_review": 3.91,
+      "total_payment": 1194882.8
+    }
+  },
+  {
+    "id": "month_2017_12",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2017-12\nMonth Name: December 2017\n\nTotal Orders: 5,673\nDelivered Orders: 5,513\nCanceled Orders: 11\n\nLate Delivery Count: 411\nEarly or On-Time Delivery Count: 5,102\nLate Delivery Rate: 7.46%\nAverage Delivery Days: 15.39\n\nTotal Payment Value: 878401.48\nAverage Payment Value: 154.84\nAverage Freight Value: 18.97\n\nAverage Review Score: 4.02\nNegative Review Count: 920\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2017-12",
+      "year": 2017,
+      "month": 12,
+      "month_name": "December",
+      "total_orders": 5673,
+      "late_rate_pct": 7.46,
+      "avg_review": 4.02,
+      "total_payment": 878401.48
+    }
+  },
+  {
+    "id": "month_2018_01",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-01\nMonth Name: January 2018\n\nTotal Orders: 7,269\nDelivered Orders: 7,069\nCanceled Orders: 34\n\nLate Delivery Count: 403\nEarly or On-Time Delivery Count: 6,666\nLate Delivery Rate: 5.70%\nAverage Delivery Days: 14.08\n\nTotal Payment Value: 1115004.18\nAverage Payment Value: 153.39\nAverage Freight Value: 19.16\n\nAverage Review Score: 4.04\nNegative Review Count: 1,117\n\nMost Popular Product Category: bed_bath_table\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-01",
+      "year": 2018,
+      "month": 1,
+      "month_name": "January",
+      "total_orders": 7269,
+      "late_rate_pct": 5.7,
+      "avg_review": 4.04,
+      "total_payment": 1115004.18
+    }
+  },
+  {
+    "id": "month_2018_02",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-02\nMonth Name: February 2018\n\nTotal Orders: 6,728\nDelivered Orders: 6,556\nCanceled Orders: 73\n\nLate Delivery Count: 927\nEarly or On-Time Delivery Count: 5,629\nLate Delivery Rate: 14.14%\nAverage Delivery Days: 16.95\n\nTotal Payment Value: 992463.34\nAverage Payment Value: 147.51\nAverage Freight Value: 18.60\n\nAverage Review Score: 3.83\nNegative Review Count: 1,394\n\nMost Popular Product Category: computers_accessories\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-02",
+      "year": 2018,
+      "month": 2,
+      "month_name": "February",
+      "total_orders": 6728,
+      "late_rate_pct": 14.14,
+      "avg_review": 3.83,
+      "total_payment": 992463.34
+    }
+  },
+  {
+    "id": "month_2018_03",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-03\nMonth Name: March 2018\n\nTotal Orders: 7,211\nDelivered Orders: 7,003\nCanceled Orders: 26\n\nLate Delivery Count: 1,328\nEarly or On-Time Delivery Count: 5,675\nLate Delivery Rate: 18.96%\nAverage Delivery Days: 16.30\n\nTotal Payment Value: 1159652.12\nAverage Payment Value: 160.82\nAverage Freight Value: 20.92\n\nAverage Review Score: 3.75\nNegative Review Count: 1,629\n\nMost Popular Product Category: sports_leisure\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-03",
+      "year": 2018,
+      "month": 3,
+      "month_name": "March",
+      "total_orders": 7211,
+      "late_rate_pct": 18.96,
+      "avg_review": 3.75,
+      "total_payment": 1159652.12
+    }
+  },
+  {
+    "id": "month_2018_04",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-04\nMonth Name: April 2018\n\nTotal Orders: 6,939\nDelivered Orders: 6,798\nCanceled Orders: 15\n\nLate Delivery Count: 306\nEarly or On-Time Delivery Count: 6,492\nLate Delivery Rate: 4.50%\nAverage Delivery Days: 11.50\n\nTotal Payment Value: 1160785.48\nAverage Payment Value: 167.28\nAverage Freight Value: 20.45\n\nAverage Review Score: 4.16\nNegative Review Count: 894\n\nMost Popular Product Category: health_beauty\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-04",
+      "year": 2018,
+      "month": 4,
+      "month_name": "April",
+      "total_orders": 6939,
+      "late_rate_pct": 4.5,
+      "avg_review": 4.16,
+      "total_payment": 1160785.48
+    }
+  },
+  {
+    "id": "month_2018_05",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-05\nMonth Name: May 2018\n\nTotal Orders: 6,873\nDelivered Orders: 6,749\nCanceled Orders: 24\n\nLate Delivery Count: 443\nEarly or On-Time Delivery Count: 6,306\nLate Delivery Rate: 6.56%\nAverage Delivery Days: 11.42\n\nTotal Payment Value: 1153982.15\nAverage Payment Value: 167.90\nAverage Freight Value: 19.34\n\nAverage Review Score: 4.19\nNegative Review Count: 814\n\nMost Popular Product Category: health_beauty\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-05",
+      "year": 2018,
+      "month": 5,
+      "month_name": "May",
+      "total_orders": 6873,
+      "late_rate_pct": 6.56,
+      "avg_review": 4.19,
+      "total_payment": 1153982.15
+    }
+  },
+  {
+    "id": "month_2018_06",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-06\nMonth Name: June 2018\n\nTotal Orders: 6,167\nDelivered Orders: 6,096\nCanceled Orders: 18\n\nLate Delivery Count: 71\nEarly or On-Time Delivery Count: 6,025\nLate Delivery Rate: 1.16%\nAverage Delivery Days: 9.24\n\nTotal Payment Value: 1023880.50\nAverage Payment Value: 166.03\nAverage Freight Value: 22.26\n\nAverage Review Score: 4.28\nNegative Review Count: 662\n\nMost Popular Product Category: health_beauty\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-06",
+      "year": 2018,
+      "month": 6,
+      "month_name": "June",
+      "total_orders": 6167,
+      "late_rate_pct": 1.16,
+      "avg_review": 4.28,
+      "total_payment": 1023880.5
+    }
+  },
+  {
+    "id": "month_2018_07",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-07\nMonth Name: July 2018\n\nTotal Orders: 6,292\nDelivered Orders: 6,156\nCanceled Orders: 41\n\nLate Delivery Count: 208\nEarly or On-Time Delivery Count: 5,948\nLate Delivery Rate: 3.38%\nAverage Delivery Days: 8.96\n\nTotal Payment Value: 1066540.75\nAverage Payment Value: 169.51\nAverage Freight Value: 23.01\n\nAverage Review Score: 4.26\nNegative Review Count: 694\n\nMost Popular Product Category: health_beauty\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-07",
+      "year": 2018,
+      "month": 7,
+      "month_name": "July",
+      "total_orders": 6292,
+      "late_rate_pct": 3.38,
+      "avg_review": 4.26,
+      "total_payment": 1066540.75
+    }
+  },
+  {
+    "id": "month_2018_08",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-08\nMonth Name: August 2018\n\nTotal Orders: 6,512\nDelivered Orders: 6,351\nCanceled Orders: 84\n\nLate Delivery Count: 393\nEarly or On-Time Delivery Count: 5,958\nLate Delivery Rate: 6.19%\nAverage Delivery Days: 7.73\n\nTotal Payment Value: 1022425.32\nAverage Payment Value: 157.01\nAverage Freight Value: 20.51\n\nAverage Review Score: 4.26\nNegative Review Count: 709\n\nMost Popular Product Category: health_beauty\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-08",
+      "year": 2018,
+      "month": 8,
+      "month_name": "August",
+      "total_orders": 6512,
+      "late_rate_pct": 6.19,
+      "avg_review": 4.26,
+      "total_payment": 1022425.32
+    }
+  },
+  {
+    "id": "month_2018_09",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-09\nMonth Name: September 2018\n\nTotal Orders: 16\nDelivered Orders: 0\nCanceled Orders: 15\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 0\nLate Delivery Rate: N/A\nAverage Delivery Days: 0.00\n\nTotal Payment Value: 4439.54\nAverage Payment Value: 277.47\nAverage Freight Value: 21.46\n\nAverage Review Score: 1.80\nNegative Review Count: 12\n\nMost Popular Product Category: unknown\nTop Customer State: SP\nTop Seller State: SP\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-09",
+      "year": 2018,
+      "month": 9,
+      "month_name": "September",
+      "total_orders": 16,
+      "late_rate_pct": 0,
+      "avg_review": 1.8,
+      "total_payment": 4439.54
+    }
+  },
+  {
+    "id": "month_2018_10",
+    "text": "Document Type: Month-Level Temporal Summary\nPurchase Month: 2018-10\nMonth Name: October 2018\n\nTotal Orders: 4\nDelivered Orders: 0\nCanceled Orders: 4\n\nLate Delivery Count: 0\nEarly or On-Time Delivery Count: 0\nLate Delivery Rate: N/A\nAverage Delivery Days: 0.00\n\nTotal Payment Value: 589.67\nAverage Payment Value: 147.42\nAverage Freight Value: 0.00\n\nAverage Review Score: 2.25\nNegative Review Count: 3\n\nMost Popular Product Category: unknown\nTop Customer State: SP\nTop Seller State: N/A\n\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.",
+    "metadata": {
+      "document_type": "month_level",
+      "source_id": "2018-10",
+      "year": 2018,
+      "month": 10,
+      "month_name": "October",
+      "total_orders": 4,
+      "late_rate_pct": 0,
+      "avg_review": 2.25,
+      "total_payment": 589.67
+    }
+  }
+]

@@ -1,0 +1,299 @@
+14:55:46  INFO      ============================================================
+14:55:46  INFO        Olist E-commerce RAG Data Preparation Pipeline
+14:55:46  INFO        Mode: --steps enrich
+14:55:46  INFO      ============================================================
+14:55:50  INFO      NumExpr defaulting to 8 threads.
+14:55:52  INFO      
+[Step 1/3]  Loading raw CSV files
+14:55:52  INFO      Loading all raw datasets…
+14:55:52  INFO        Loading customers                 from olist_customers_dataset.csv
+14:55:52  INFO        → customers                   99,441 rows  ×  5 cols
+14:55:52  INFO        Loading geolocation               from olist_geolocation_dataset.csv
+14:55:53  INFO        → geolocation               1,000,163 rows  ×  5 cols
+14:55:53  INFO        Loading order_items               from olist_order_items_dataset.csv
+14:55:53  INFO        → order_items                112,650 rows  ×  7 cols
+14:55:53  INFO        Loading payments                  from olist_order_payments_dataset.csv
+14:55:53  INFO        → payments                   103,886 rows  ×  5 cols
+14:55:53  INFO        Loading reviews                   from olist_order_reviews_dataset.csv
+14:55:54  INFO        → reviews                     99,224 rows  ×  7 cols
+14:55:54  INFO        Loading orders                    from olist_orders_dataset.csv
+14:55:55  INFO        → orders                      99,441 rows  ×  8 cols
+14:55:55  INFO        Loading products                  from olist_products_dataset.csv
+14:55:55  INFO        → products                    32,951 rows  ×  9 cols
+14:55:55  INFO        Loading sellers                   from olist_sellers_dataset.csv
+14:55:55  INFO        → sellers                      3,095 rows  ×  4 cols
+14:55:55  INFO        Loading category_translation      from product_category_name_translation.csv
+14:55:55  INFO        → category_translation            71 rows  ×  2 cols
+14:55:55  INFO      All 9 datasets loaded successfully.
+
+14:55:55  INFO      [Step 2/3]  Joining all datasets into master
+14:55:55  INFO      Building master dataset…
+14:55:55  INFO        Aggregating payments → 1 row per order…
+14:55:57  INFO        → 99,440 aggregated payment rows
+14:55:57  INFO        Aggregating reviews  → 1 row per order (latest review)…
+14:55:57  INFO        → 98,673 aggregated review rows
+
+14:55:57  INFO        Start  (orders)                   →   99,441 rows
+14:55:57  INFO        + order_items                    →  113,425 rows
+14:55:57  INFO        + payments (aggregated)          →  113,425 rows
+14:55:58  INFO        + reviews  (aggregated)          →  113,425 rows
+14:55:58  INFO        + customers                      →  113,425 rows
+14:55:58  INFO        + products                       →  113,425 rows
+14:55:58  INFO        + sellers                        →  113,425 rows
+14:55:58  INFO        + category_translation           →  113,425 rows
+14:55:58  INFO      
+  Master dataset ready: 113,425 rows × 40 columns
+
+14:56:03  INFO        Saved → C:\Users\Akshat\Downloads\Ecommerece RAG with RAGAS and Deepeval\dataset\processed\final_olist_master.csv  (113,425 rows × 40 cols)
+14:56:03  INFO      [Step 3/3]  Enriching with derived features
+14:56:03  INFO      Enriching master dataset…
+14:56:06  INFO        ✓ Time features
+14:56:06  INFO        ✓ Delivery features
+14:56:06  INFO        ✓ Product features
+14:56:06  INFO        ✓ Review features
+14:56:06  INFO      
+  Enriched: 113,425 rows × 55 columns  (+15 new)
+
+14:56:13  INFO        Saved → C:\Users\Akshat\Downloads\Ecommerece RAG with RAGAS and Deepeval\dataset\processed\final_olist_master_enriched.csv  (113,425 rows × 55 cols)
+14:56:13  INFO      
+============================================================
+14:56:13  INFO        Pipeline complete  (26.4s)
+14:56:13  INFO      ============================================================
+15:07:38  INFO      ============================================================
+15:07:38  INFO        Olist E-commerce RAG Data Preparation Pipeline
+15:07:38  INFO        Mode: --steps kb
+15:07:38  INFO      ============================================================
+15:07:38  INFO      NumExpr defaulting to 8 threads.
+15:07:39  INFO      
+[Step 1/3]  Loading raw CSV files
+15:07:39  INFO      Loading all raw datasets...
+15:07:39  INFO        Loading customers                 from olist_customers_dataset.csv
+15:07:39  INFO        -> customers                   99,441 rows  x  5 cols
+15:07:39  INFO        Loading geolocation               from olist_geolocation_dataset.csv
+15:07:40  INFO        -> geolocation               1,000,163 rows  x  5 cols
+15:07:40  INFO        Loading order_items               from olist_order_items_dataset.csv
+15:07:40  INFO        -> order_items                112,650 rows  x  7 cols
+15:07:40  INFO        Loading payments                  from olist_order_payments_dataset.csv
+15:07:40  INFO        -> payments                   103,886 rows  x  5 cols
+15:07:40  INFO        Loading reviews                   from olist_order_reviews_dataset.csv
+15:07:41  INFO        -> reviews                     99,224 rows  x  7 cols
+15:07:41  INFO        Loading orders                    from olist_orders_dataset.csv
+15:07:41  INFO        -> orders                      99,441 rows  x  8 cols
+15:07:41  INFO        Loading products                  from olist_products_dataset.csv
+15:07:42  INFO        -> products                    32,951 rows  x  9 cols
+15:07:42  INFO        Loading sellers                   from olist_sellers_dataset.csv
+15:07:42  INFO        -> sellers                      3,095 rows  x  4 cols
+15:07:42  INFO        Loading category_translation      from product_category_name_translation.csv
+15:07:42  INFO        -> category_translation            71 rows  x  2 cols
+15:07:42  INFO      All 9 datasets loaded successfully.
+15:07:42  INFO      [Step 2/3]  Joining all datasets into master
+15:07:42  INFO      Building master dataset...
+15:07:42  INFO        Aggregating payments -> 1 row per order...
+15:07:44  INFO        -> 99,440 aggregated payment rows
+15:07:44  INFO        Aggregating reviews  -> 1 row per order (latest review)...
+15:07:44  INFO        -> 98,673 aggregated review rows
+
+15:07:44  INFO        Start  (orders)                   ->   99,441 rows
+15:07:44  INFO        + order_items                    ->  113,425 rows
+15:07:44  INFO        + payments (aggregated)          ->  113,425 rows
+15:07:45  INFO        + reviews  (aggregated)          ->  113,425 rows
+15:07:45  INFO        + customers                      ->  113,425 rows
+15:07:45  INFO        + products                       ->  113,425 rows
+15:07:45  INFO        + sellers                        ->  113,425 rows
+15:07:45  INFO        + category_translation           ->  113,425 rows
+15:07:45  INFO      
+  Master dataset ready: 113,425 rows × 40 columns
+
+15:07:50  INFO        Saved → C:\Users\Akshat\Downloads\Ecommerece RAG with RAGAS and Deepeval\dataset\processed\final_olist_master.csv  (113,425 rows × 40 cols)
+15:07:50  INFO      [Step 3/3]  Enriching with derived features
+15:07:50  INFO      Enriching master dataset...
+15:07:52  INFO        [OK] Time features
+15:07:52  INFO        [OK] Delivery features
+15:07:52  INFO        [OK] Product features
+15:07:52  INFO        [OK] Review features
+15:07:52  INFO        Enriched: 113,425 rows x 55 columns  (+15 new)
+15:08:42  INFO      ============================================================
+15:08:42  INFO        Olist E-commerce RAG Data Preparation Pipeline
+15:08:42  INFO        Mode: --steps kb
+15:08:42  INFO      ============================================================
+15:08:43  INFO      NumExpr defaulting to 8 threads.
+15:08:43  INFO      Loading enriched dataset from final_olist_master_enriched.csv ...
+15:08:47  INFO        Loaded: 113,425 rows x 55 cols
+15:08:47  INFO      [Step 4]  Building knowledge-base documents (6 layers)
+15:08:47  INFO      
+Building knowledge base (6 layers)...
+15:08:47  INFO      Layer 1: Building order documents...
+15:09:09  INFO        Sampled 10,000 / 99,441 orders
+15:09:11  INFO        -> 10,000 order documents
+15:09:11  INFO      Layer 2: Building category documents...
+15:09:12  INFO        -> 74 category documents
+15:09:12  INFO      Layer 3: Building seller documents...
+15:09:14  INFO        -> 3,095 seller documents
+15:09:14  INFO      Layer 4: Building customer-state documents...
+15:09:15  INFO        -> 27 customer-state documents
+15:09:15  INFO      Layer 5: Building month documents...
+15:09:16  INFO        -> 25 month documents
+15:09:16  INFO      Layer 6: Building delivery-status insight documents...
+15:09:16  INFO        -> 4 delivery-status documents
+15:09:17  INFO        Saved 10,000 docs -> kb_order_documents.json
+15:09:17  INFO        Saved     74 docs -> kb_category_documents.json
+15:09:17  INFO        Saved  3,095 docs -> kb_seller_documents.json
+15:09:17  INFO        Saved     27 docs -> kb_customer_state_documents.json
+15:09:17  INFO        Saved     25 docs -> kb_month_documents.json
+15:09:17  INFO        Saved      4 docs -> kb_delivery_status_documents.json
+15:09:18  INFO        Saved 13,225 docs -> kb_all_documents.json
+15:09:18  INFO      
+  KB complete:
+    Layer 1 Orders:          10,000
+    Layer 2 Categories:          74
+    Layer 3 Sellers:          3,095
+    Layer 4 Customer States:     27
+    Layer 5 Months:              25
+    Layer 6 Delivery Status:      4
+    -------------------------
+    Total:                   13,225
+
+15:09:18  INFO      
+============================================================
+15:09:18  INFO        Pipeline complete  (35.2s)
+15:09:18  INFO      ============================================================
+15:21:50  INFO      ============================================================
+15:21:50  INFO        Olist E-commerce RAG Data Preparation Pipeline
+15:21:50  INFO        Mode: --steps kb
+15:21:50  INFO      ============================================================
+15:21:51  INFO      NumExpr defaulting to 8 threads.
+15:21:51  INFO      Loading enriched dataset from final_olist_master_enriched.csv ...
+15:21:54  INFO        Loaded: 113,425 rows x 55 cols
+15:21:54  INFO      [Step 4]  Building knowledge-base documents (6 layers)
+15:21:54  INFO      
+Building knowledge base (6 layers)...
+15:21:54  INFO      Layer 1: Building order documents...
+15:22:14  INFO        Sampled 10,000 / 99,441 orders
+15:22:17  INFO        -> 10,000 order documents
+15:22:17  INFO      Layer 2: Building category documents...
+15:22:18  INFO        -> 74 category documents
+15:22:18  INFO      Layer 3: Building seller documents...
+15:22:20  INFO        -> 3,095 seller documents
+15:22:20  INFO      Layer 4: Building customer-state documents...
+15:22:21  INFO        -> 27 customer-state documents
+15:22:21  INFO      Layer 5: Building month documents...
+15:22:22  INFO        -> 25 month documents
+15:22:22  INFO      Layer 6: Building delivery-status insight documents...
+15:22:22  INFO        -> 4 delivery-status documents
+15:22:23  INFO        Saved 10,000 docs -> kb_order_documents.json
+15:22:23  INFO        Saved     74 docs -> kb_category_documents.json
+15:22:23  INFO        Saved  3,095 docs -> kb_seller_documents.json
+15:22:23  INFO        Saved     27 docs -> kb_customer_state_documents.json
+15:22:23  INFO        Saved     25 docs -> kb_month_documents.json
+15:22:23  INFO        Saved      4 docs -> kb_delivery_status_documents.json
+15:22:24  INFO        Saved 13,225 docs -> kb_all_documents.json
+15:22:24  INFO      
+  KB complete:
+    Layer 1 Orders:          10,000
+    Layer 2 Categories:          74
+    Layer 3 Sellers:          3,095
+    Layer 4 Customer States:     27
+    Layer 5 Months:              25
+    Layer 6 Delivery Status:      4
+    -------------------------
+    Total:                   13,225
+
+15:22:24  INFO      
+============================================================
+15:22:24  INFO        Pipeline complete  (33.8s)
+15:22:24  INFO      ============================================================
+15:29:50  INFO      ============================================================
+15:29:50  INFO        Olist E-commerce RAG Data Preparation Pipeline
+15:29:50  INFO        Mode: --steps kb
+15:29:50  INFO      ============================================================
+15:29:50  INFO      NumExpr defaulting to 8 threads.
+15:29:51  INFO      Loading enriched dataset from final_olist_master_enriched.csv ...
+15:29:54  INFO        Loaded: 113,425 rows x 55 cols
+15:29:54  INFO      [Step 4]  Building knowledge-base documents (6 layers)
+15:29:54  INFO      
+Building knowledge base (6 layers)...
+15:29:54  INFO      Layer 1: Building order documents...
+15:30:15  INFO        Sampled 10,000 / 99,441 orders
+15:30:17  INFO        -> 10,000 order documents
+15:30:17  INFO      Layer 2: Building category documents...
+15:30:17  INFO        -> 74 category documents
+15:30:17  INFO      Layer 3: Building seller documents...
+15:30:20  INFO        -> 3,095 seller documents
+15:30:20  INFO      Layer 4: Building customer-state documents...
+15:30:20  INFO        -> 27 customer-state documents
+15:30:20  INFO      Layer 5: Building month documents...
+15:30:21  INFO        -> 25 month documents
+15:30:21  INFO      Layer 6: Building delivery-status insight documents...
+15:30:22  INFO        -> 4 delivery-status documents
+15:30:22  INFO        Saved 10,000 docs -> kb_order_documents.json
+15:30:22  INFO        Saved     74 docs -> kb_category_documents.json
+15:30:22  INFO        Saved  3,095 docs -> kb_seller_documents.json
+15:30:22  INFO        Saved     27 docs -> kb_customer_state_documents.json
+15:30:22  INFO        Saved     25 docs -> kb_month_documents.json
+15:30:22  INFO        Saved      4 docs -> kb_delivery_status_documents.json
+15:30:23  INFO        Saved 13,225 docs -> kb_all_documents.json
+15:30:23  INFO      
+  KB complete:
+    Layer 1 Orders:          10,000
+    Layer 2 Categories:          74
+    Layer 3 Sellers:          3,095
+    Layer 4 Customer States:     27
+    Layer 5 Months:              25
+    Layer 6 Delivery Status:      4
+    -------------------------
+    Total:                   13,225
+
+15:30:23  INFO      
+============================================================
+15:30:23  INFO        Pipeline complete  (33.2s)
+15:30:23  INFO      ============================================================
+11:43:03  INFO      ============================================================
+11:43:03  INFO        Olist E-commerce RAG Data Preparation Pipeline
+11:43:03  INFO        Mode: --steps golden
+11:43:03  INFO      ============================================================
+11:43:04  INFO      NumExpr defaulting to 8 threads.
+11:43:04  INFO      Loading enriched dataset from final_olist_master_enriched.csv ...
+11:43:07  INFO        Loaded: 113,425 rows x 55 cols
+11:43:07  INFO      [Step 4]  Building knowledge-base documents (6 layers)
+11:43:07  INFO      
+Building knowledge base (6 layers)...
+11:43:07  INFO      Layer 1: Building order documents...
+11:43:29  INFO        Sampled 10,000 / 99,441 orders
+11:43:31  INFO        -> 10,000 order documents
+11:43:31  INFO      Layer 2: Building category documents...
+11:43:31  INFO        -> 74 category documents
+11:43:31  INFO      Layer 3: Building seller documents...
+11:43:34  INFO        -> 3,095 seller documents
+11:43:34  INFO      Layer 4: Building customer-state documents...
+11:43:34  INFO        -> 27 customer-state documents
+11:43:34  INFO      Layer 5: Building month documents...
+11:43:35  INFO        -> 25 month documents
+11:43:35  INFO      Layer 6: Building delivery-status insight documents...
+11:43:36  INFO        -> 4 delivery-status documents
+11:43:36  INFO        Saved 10,000 docs -> kb_order_documents.json
+11:43:36  INFO        Saved     74 docs -> kb_category_documents.json
+11:43:36  INFO        Saved  3,095 docs -> kb_seller_documents.json
+11:43:36  INFO        Saved     27 docs -> kb_customer_state_documents.json
+11:43:36  INFO        Saved     25 docs -> kb_month_documents.json
+11:43:36  INFO        Saved      4 docs -> kb_delivery_status_documents.json
+11:43:37  INFO        Saved 13,225 docs -> kb_all_documents.json
+11:43:37  INFO      
+  KB complete:
+    Layer 1 Orders:          10,000
+    Layer 2 Categories:          74
+    Layer 3 Sellers:          3,095
+    Layer 4 Customer States:     27
+    Layer 5 Months:              25
+    Layer 6 Delivery Status:      4
+    -------------------------
+    Total:                   13,225
+
+11:43:42  INFO      [Step 5]  Generating golden evaluation dataset
+11:43:42  ERROR     GOOGLE_API_KEY environment variable is not set.
+  Windows  : $env:GOOGLE_API_KEY='your-key'
+  Mac/Linux: export GOOGLE_API_KEY='your-key'
+11:43:42  INFO        Saved -> golden_dataset.csv  (0 questions)
+11:43:42  INFO      
+============================================================
+11:43:42  INFO        Pipeline complete  (38.8s)
+11:43:42  INFO      ============================================================
