@@ -1,0 +1,182 @@
+[
+  {
+    "question": "How does the delivery performance in SC relate to the overall customer satisfaction reflected in the review metrics?",
+    "expected_answer": "Despite an 8.20% late delivery rate and an average wait time of approximately 15 days, customer satisfaction remains high with an average review score of 4.07. This is supported by the fact that positive reviews outnumber negative ones by more than five times, suggesting that logistical delays have not severely compromised the state's overall sentiment.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: SC\\n\\nTotal Orders: 3,637\\nUnique Customers: 3,534\\nTotal Payment Value: 623086.43\\nAverage Payment Value: 171.32\\n\\nAverage Review Score: 4.07\\nPositive Review Count: 2,762\\nNegative Review Count: 528\\n\\nLate Delivery Count: 291\\nLate Delivery Rate: 8.20%\\nAverage Delivery Days: 14.96\\n\\nTop Product Category: sports_leisure\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in SC.\"]",
+    "expected_source_ids": "[\"state_SC\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "What was the total number of orders placed by customers in RR?",
+    "expected_answer": "46",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: RR\\n\\nTotal Orders: 46\\nUnique Customers: 45\\nTotal Payment Value: 10064.62\\nAverage Payment Value: 218.80\\n\\nAverage Review Score: 3.61\\nPositive Review Count: 28\\nNegative Review Count: 11\\n\\nLate Delivery Count: 5\\nLate Delivery Rate: 12.20%\\nAverage Delivery Days: 29.39\\n\\nTop Product Category: sports_leisure\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RR.\"]",
+    "expected_source_ids": "[\"state_RR\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "What strategic insight can be derived from the relationship between delivery timelines and customer satisfaction levels in the state of MT?",
+    "expected_answer": "Despite a relatively long average delivery time of 18.06 days and a late delivery rate of 5.98%, the state maintains a high average review score of 4.10 with 698 positive reviews. This suggests that customer satisfaction remains resilient against logistical delays, potentially because the high average payment value of 206.21 and focus on health_beauty products create a consumer base that prioritizes product quality or availability over rapid shipping.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: MT\\n\\nTotal Orders: 907\\nUnique Customers: 876\\nTotal Payment Value: 187029.29\\nAverage Payment Value: 206.21\\n\\nAverage Review Score: 4.10\\nPositive Review Count: 698\\nNegative Review Count: 124\\n\\nLate Delivery Count: 53\\nLate Delivery Rate: 5.98%\\nAverage Delivery Days: 18.06\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MT.\"]",
+    "expected_source_ids": "[\"state_MT\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "How does the delivery performance in DF relate to the overall customer satisfaction levels observed in the data?",
+    "expected_answer": "Despite an average delivery time of nearly 13 days and a 5.67% late delivery rate, customer satisfaction remains high with an average review score of 4.06 and over five times as many positive reviews as negative ones.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: DF\\n\\nTotal Orders: 2,140\\nUnique Customers: 2,075\\nTotal Payment Value: 355141.08\\nAverage Payment Value: 165.95\\n\\nAverage Review Score: 4.06\\nPositive Review Count: 1,640\\nNegative Review Count: 321\\n\\nLate Delivery Count: 118\\nLate Delivery Rate: 5.67%\\nAverage Delivery Days: 12.97\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in DF.\"]",
+    "expected_source_ids": "[\"state_DF\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "How does the logistics performance of the fixed_telephony category compare to its customer satisfaction metrics?",
+    "expected_answer": "The category demonstrates strong logistics efficiency with a low late delivery rate of 4.72% and an average delivery time of 12.53 days, which correlates with a generally positive customer sentiment reflected in the 3.90 average review score and 156 positive reviews.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: fixed_telephony\\n\\nTotal Orders: 217\\nTotal Items Sold: 264\\nTotal Product Revenue: 59583.00\\nTotal Freight Value: 4637.81\\nAverage Product Price: 225.69\\nAverage Freight Value: 17.57\\nAverage Payment Value: 296.45\\n\\nAverage Review Score: 3.90\\nPositive Review Count: 156\\nNegative Review Count: 40\\n\\nLate Delivery Count: 10\\nEarly or On-Time Delivery Count: 202\\nLate Delivery Rate: 4.72%\\nAverage Delivery Days: 12.53\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the fixed_telephony product category.\"]",
+    "expected_source_ids": "[\"category_fixed_telephony\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What is the total product revenue for the agro_industry_and_commerce category?",
+    "expected_answer": "72530.47",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: agro_industry_and_commerce\\n\\nTotal Orders: 182\\nTotal Items Sold: 212\\nTotal Product Revenue: 72530.47\\nTotal Freight Value: 5843.60\\nAverage Product Price: 342.12\\nAverage Freight Value: 27.56\\nAverage Payment Value: 430.65\\n\\nAverage Review Score: 4.02\\nPositive Review Count: 142\\nNegative Review Count: 27\\n\\nLate Delivery Count: 7\\nEarly or On-Time Delivery Count: 170\\nLate Delivery Rate: 3.95%\\nAverage Delivery Days: 11.43\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the agro_industry_and_commerce product category.\"]",
+    "expected_source_ids": "[\"category_agro_industry_and_commerce\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "How does the delivery performance of the arts_and_craftmanship category relate to its overall customer satisfaction levels?",
+    "expected_answer": "The category shows high efficiency with a 95.65% on-time delivery rate and a fast average delivery time of 5.8 days, which correlates with a strong average review score of 4.17 and a high ratio of 18 positive reviews compared to only 3 negative ones.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: arts_and_craftmanship\\n\\nTotal Orders: 23\\nTotal Items Sold: 24\\nTotal Product Revenue: 1814.01\\nTotal Freight Value: 370.13\\nAverage Product Price: 75.58\\nAverage Freight Value: 15.42\\nAverage Payment Value: 97.46\\n\\nAverage Review Score: 4.17\\nPositive Review Count: 18\\nNegative Review Count: 3\\n\\nLate Delivery Count: 1\\nEarly or On-Time Delivery Count: 22\\nLate Delivery Rate: 4.35%\\nAverage Delivery Days: 5.80\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the arts_and_craftmanship product category.\"]",
+    "expected_source_ids": "[\"category_arts_and_craftmanship\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What is the average review score for the health_beauty product category?",
+    "expected_answer": "4.18",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: health_beauty\\n\\nTotal Orders: 8,836\\nTotal Items Sold: 9,670\\nTotal Product Revenue: 1258681.34\\nTotal Freight Value: 182566.73\\nAverage Product Price: 130.16\\nAverage Freight Value: 18.88\\nAverage Payment Value: 163.98\\n\\nAverage Review Score: 4.18\\nPositive Review Count: 6,974\\nNegative Review Count: 1,114\\n\\nLate Delivery Count: 650\\nEarly or On-Time Delivery Count: 7,999\\nLate Delivery Rate: 7.52%\\nAverage Delivery Days: 12.08\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the health_beauty product category.\"]",
+    "expected_source_ids": "[\"category_health_beauty\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What does the relationship between the top customer and seller states suggest about the impact of non-delivery on customer satisfaction in the SP region?",
+    "expected_answer": "Despite both the top customer and seller states being concentrated in São Paulo (SP), the average review score is extremely low at 1.75, indicating that proximity between parties does not prevent significant customer dissatisfaction when orders fail to be delivered.",
+    "expected_context": "[\"Document Type: Delivery-Status Insight\\nDelivery Status: not_delivered\\n\\nTotal Orders in Group: 2,965\\nShare of Delivered Orders: N/A (undelivered)\\nAverage Delivery Days: 0.00\\nAverage Difference vs Estimated: N/A\\n\\nAverage Review Score: 1.75\\nAverage Payment Value: 197.99\\n\\nTop Product Category: unknown\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document provides aggregate insight into orders with delivery status 'not_delivered'.\"]",
+    "expected_source_ids": "[\"delivery_status_not_delivered\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "delivery_status"
+  },
+  {
+    "question": "What is the product category for order cf63ae7deea63fed5306a81bae27e4f8?",
+    "expected_answer": "fashion_bags_accessories",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: cf63ae7deea63fed5306a81bae27e4f8\\nCustomer ID: 7f148c3a12b98bfccd2c119c3c97a9e4\\nCustomer City: brasilia\\nCustomer State: DF\\n\\nOrder Status: delivered\\nPurchase Month: April 2018\\nPurchase Timestamp: 2018-04-15 20:17:11\\nApproved At: 2018-04-15 21:15:18\\nDelivered to Carrier Date: 2018-04-17 18:18:29\\nDelivered to Customer Date: 2018-04-25 18:22:46\\nEstimated Delivery Date: 2018-05-08 00:00:00\\n\\nDelivery Days: 9.92\\nEstimated Delivery Days: 22.15\\nDelivery Difference Days: -12.23\\nDelivery Status: early\\nDelivery Bucket: early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: fashion_bags_accessories\\nSeller States: SP\\n\\nTotal Product Price: 169.90\\nTotal Freight Value: 18.77\\nTotal Item Value: 188.67\\nPayment Types: credit_card\\nTotal Payment Value: 188.67\\nMaximum Payment Installments: 1\\n\\nReview Score: 5\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_cf63ae7deea63fed5306a81bae27e4f8\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "What was the total product revenue for the signaling_and_security category?",
+    "expected_answer": "21509.23",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: signaling_and_security\\n\\nTotal Orders: 140\\nTotal Items Sold: 199\\nTotal Product Revenue: 21509.23\\nTotal Freight Value: 6507.82\\nAverage Product Price: 108.09\\nAverage Freight Value: 32.70\\nAverage Payment Value: 200.84\\n\\nAverage Review Score: 4.11\\nPositive Review Count: 105\\nNegative Review Count: 16\\n\\nLate Delivery Count: 6\\nEarly or On-Time Delivery Count: 132\\nLate Delivery Rate: 4.35%\\nAverage Delivery Days: 10.87\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the signaling_and_security product category.\"]",
+    "expected_source_ids": "[\"category_signaling_and_security\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What is the total product revenue for seller e7d5b006eb624f13074497221eb37807?",
+    "expected_answer": "3478.93",
+    "expected_context": "[\"Document Type: Seller-Level Summary\\nSeller ID: e7d5b006eb624f13074497221eb37807\\nSeller City: santo andre\\nSeller State: SP\\n\\nTotal Orders: 28\\nTotal Items Sold: 63\\nTotal Product Revenue: 3478.93\\nTotal Freight Value: 741.49\\nAverage Freight Value: 11.77\\n\\nAverage Review Score: 3.93\\nPositive Review Count: 21\\nNegative Review Count: 6\\n\\nLate Delivery Count: 2\\nLate Delivery Rate: 7.14%\\nAverage Delivery Days: 11.17\\n\\nTop Product Category: computers_accessories\\nTop Customer State: SP\\n\\nThis document summarises seller fulfilment, revenue, freight, delivery, and review performance.\"]",
+    "expected_source_ids": "[\"seller_e7d5b006eb624f13074497221eb37807\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "seller"
+  },
+  {
+    "question": "How does the average payment value per order relate to the individual product pricing and shipping costs for garden tools?",
+    "expected_answer": "The average payment value of 169.63 exceeds the average product price of 111.63 because it includes the average freight cost of 22.77 and reflects multiple items per order, given that 4,347 items were sold across 3,518 total orders.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: garden_tools\\n\\nTotal Orders: 3,518\\nTotal Items Sold: 4,347\\nTotal Product Revenue: 485256.46\\nTotal Freight Value: 98962.75\\nAverage Product Price: 111.63\\nAverage Freight Value: 22.77\\nAverage Payment Value: 169.63\\n\\nAverage Review Score: 4.14\\nPositive Review Count: 2,747\\nNegative Review Count: 470\\n\\nLate Delivery Count: 225\\nEarly or On-Time Delivery Count: 3,223\\nLate Delivery Rate: 6.53%\\nAverage Delivery Days: 13.63\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the garden_tools product category.\"]",
+    "expected_source_ids": "[\"category_garden_tools\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What strategic insight can be derived from the relationship between logistics efficiency and customer satisfaction within the cine_photo category?",
+    "expected_answer": "The cine_photo category demonstrates a high level of customer satisfaction with an average review score of 4.23, likely driven by a robust logistics performance where 90.7% of orders are delivered on-time or early. Although the average freight value of 17.45 represents a significant 18% addition to the average product price, the low late delivery rate of 6.35% suggests that the current delivery speed and reliability justify the shipping costs for consumers.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: cine_photo\\n\\nTotal Orders: 65\\nTotal Items Sold: 72\\nTotal Product Revenue: 6933.46\\nTotal Freight Value: 1256.20\\nAverage Product Price: 96.30\\nAverage Freight Value: 17.45\\nAverage Payment Value: 129.58\\n\\nAverage Review Score: 4.23\\nPositive Review Count: 51\\nNegative Review Count: 9\\n\\nLate Delivery Count: 4\\nEarly or On-Time Delivery Count: 59\\nLate Delivery Rate: 6.35%\\nAverage Delivery Days: 10.47\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the cine_photo product category.\"]",
+    "expected_source_ids": "[\"category_cine_photo\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What is the total product revenue for seller 9140bd1d9de28b197dce077bdd687438?",
+    "expected_answer": "1258.87",
+    "expected_context": "[\"Document Type: Seller-Level Summary\\nSeller ID: 9140bd1d9de28b197dce077bdd687438\\nSeller City: amparo\\nSeller State: SP\\n\\nTotal Orders: 6\\nTotal Items Sold: 8\\nTotal Product Revenue: 1258.87\\nTotal Freight Value: 184.06\\nAverage Freight Value: 23.01\\n\\nAverage Review Score: 4.17\\nPositive Review Count: 5\\nNegative Review Count: 0\\n\\nLate Delivery Count: 0\\nLate Delivery Rate: 0.00%\\nAverage Delivery Days: 6.24\\n\\nTop Product Category: sports_leisure\\nTop Customer State: SP\\n\\nThis document summarises seller fulfilment, revenue, freight, delivery, and review performance.\"]",
+    "expected_source_ids": "[\"seller_9140bd1d9de28b197dce077bdd687438\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "seller"
+  },
+  {
+    "question": "What does the relationship between delivery timelines and review scores suggest about customer satisfaction for this specific order group?",
+    "expected_answer": "The data suggests a strong negative correlation between logistics performance and customer satisfaction, as an average delay of 10.62 days past the estimate results in a low review score of 2.27. This indicates that the extended total delivery time of nearly 34 days is a primary driver for poor customer sentiment, despite the group representing a significant volume of 6,535 orders.",
+    "expected_context": "[\"Document Type: Delivery-Status Insight\\nDelivery Status: late\\n\\nTotal Orders in Group: 6,535\\nShare of Delivered Orders: 6.77%\\nAverage Delivery Days: 33.95\\nAverage Difference vs Estimated: 10.62 days late\\n\\nAverage Review Score: 2.27\\nAverage Payment Value: 176.14\\n\\nTop Product Category: bed_bath_table\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document provides aggregate insight into orders with delivery status 'late'.\"]",
+    "expected_source_ids": "[\"delivery_status_late\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "delivery_status"
+  },
+  {
+    "question": "What was the total freight value for order a3708faf029ec4c5f84127cf7e872aa5?",
+    "expected_answer": "18.23",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: a3708faf029ec4c5f84127cf7e872aa5\\nCustomer ID: fd6bd5c85fed4fcf4f7b19c0e562bc13\\nCustomer City: conceicao do mato dentro\\nCustomer State: MG\\n\\nOrder Status: delivered\\nPurchase Month: May 2018\\nPurchase Timestamp: 2018-05-16 11:49:15\\nApproved At: 2018-05-18 05:34:25\\nDelivered to Carrier Date: 2018-05-18 08:27:00\\nDelivered to Customer Date: 2018-06-04 13:03:07\\nEstimated Delivery Date: 2018-06-06 00:00:00\\n\\nDelivery Days: 19.05\\nEstimated Delivery Days: 20.51\\nDelivery Difference Days: -1.46\\nDelivery Status: early\\nDelivery Bucket: slightly_early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: bed_bath_table\\nSeller States: SP\\n\\nTotal Product Price: 35.90\\nTotal Freight Value: 18.23\\nTotal Item Value: 54.13\\nPayment Types: boleto\\nTotal Payment Value: 54.13\\nMaximum Payment Installments: 1\\n\\nReview Score: 5\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_a3708faf029ec4c5f84127cf7e872aa5\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "What was the total product revenue for the air conditioning category?",
+    "expected_answer": "55024.96",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: air_conditioning\\n\\nTotal Orders: 253\\nTotal Items Sold: 297\\nTotal Product Revenue: 55024.96\\nTotal Freight Value: 6749.23\\nAverage Product Price: 185.27\\nAverage Freight Value: 22.72\\nAverage Payment Value: 245.24\\n\\nAverage Review Score: 4.03\\nPositive Review Count: 189\\nNegative Review Count: 41\\n\\nLate Delivery Count: 10\\nEarly or On-Time Delivery Count: 236\\nLate Delivery Rate: 4.07%\\nAverage Delivery Days: 11.88\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the air_conditioning product category.\"]",
+    "expected_source_ids": "[\"category_air_conditioning\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "How does the delivery performance in the music category relate to its overall customer satisfaction levels?",
+    "expected_answer": "With a high on-time delivery rate of approximately 94.7% and an average delivery time of 11.66 days, the category maintains a strong average review score of 4.21, with positive reviews outnumbering negative ones by more than seven to one.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: music\\n\\nTotal Orders: 38\\nTotal Items Sold: 38\\nTotal Product Revenue: 6034.35\\nTotal Freight Value: 690.51\\nAverage Product Price: 158.80\\nAverage Freight Value: 18.17\\nAverage Payment Value: 181.62\\n\\nAverage Review Score: 4.21\\nPositive Review Count: 30\\nNegative Review Count: 4\\n\\nLate Delivery Count: 2\\nEarly or On-Time Delivery Count: 36\\nLate Delivery Rate: 5.26%\\nAverage Delivery Days: 11.66\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the music product category.\"]",
+    "expected_source_ids": "[\"category_music\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What strategic insight can be drawn from the relationship between the delivery performance metrics and the overall customer satisfaction levels in the PE region?",
+    "expected_answer": "Despite an average delivery time of 18.45 days and a late delivery rate of 9.60%, the region maintains a high average review score of 4.01 with 1,231 positive reviews. This indicates that customer satisfaction remains robust even with logistical delays, suggesting that the value provided by top categories like health_beauty outweighs delivery friction for the 1,609 unique customers.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: PE\\n\\nTotal Orders: 1,652\\nUnique Customers: 1,609\\nTotal Payment Value: 324850.44\\nAverage Payment Value: 196.64\\n\\nAverage Review Score: 4.01\\nPositive Review Count: 1,231\\nNegative Review Count: 274\\n\\nLate Delivery Count: 153\\nLate Delivery Rate: 9.60%\\nAverage Delivery Days: 18.45\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in PE.\"]",
+    "expected_source_ids": "[\"state_PE\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "state"
+  }
+]

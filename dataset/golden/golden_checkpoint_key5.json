@@ -1,0 +1,182 @@
+[
+  {
+    "question": "How does the customer satisfaction for the 'pc_gamer' category compare to the general performance of early deliveries, and what is notable about their respective delivery speeds?",
+    "expected_answer": "While the 'pc_gamer' category maintains an average delivery time of 10.33 days with no late deliveries, its average review score of 3.12 is significantly lower than the 4.29 average score typical of early deliveries. This suggests that despite 'pc_gamer' orders arriving faster than the general early delivery average of 10.88 days, speed is not the primary driver of satisfaction for this specific product group.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: pc_gamer\\n\\nTotal Orders: 8\\nTotal Items Sold: 9\\nTotal Product Revenue: 1545.95\\nTotal Freight Value: 133.57\\nAverage Product Price: 171.77\\nAverage Freight Value: 14.84\\nAverage Payment Value: 214.63\\n\\nAverage Review Score: 3.12\\nPositive Review Count: 5\\nNegative Review Count: 3\\n\\nLate Delivery Count: 0\\nEarly or On-Time Delivery Count: 7\\nLate Delivery Rate: 0.00%\\nAverage Delivery Days: 10.33\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the pc_gamer product category.\", \"Document Type: Delivery-Status Insight\\nDelivery Status: early\\n\\nTotal Orders in Group: 88,649\\nShare of Delivered Orders: 91.89%\\nAverage Delivery Days: 10.88\\nAverage Difference vs Estimated: -13.71 days early\\n\\nAverage Review Score: 4.29\\nAverage Payment Value: 158.72\\n\\nTop Product Category: bed_bath_table\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document provides aggregate insight into orders with delivery status 'early'.\"]",
+    "expected_source_ids": "[\"category_pc_gamer\", \"delivery_status_early\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "category+delivery_status"
+  },
+  {
+    "question": "What was the total payment value for this order?",
+    "expected_answer": "713.08",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: 901fa9040bdb5022b65e359c25dcf76a\\nCustomer ID: 57ce584c0a8742956ee423f2f0b488b4\\nCustomer City: sao paulo\\nCustomer State: SP\\n\\nOrder Status: delivered\\nPurchase Month: November 2017\\nPurchase Timestamp: 2017-11-21 17:35:26\\nApproved At: 2017-11-21 17:47:06\\nDelivered to Carrier Date: 2017-11-22 22:41:14\\nDelivered to Customer Date: 2017-11-24 16:10:10\\nEstimated Delivery Date: 2017-12-01 00:00:00\\n\\nDelivery Days: 2.94\\nEstimated Delivery Days: 9.27\\nDelivery Difference Days: -6.33\\nDelivery Status: early\\nDelivery Bucket: slightly_early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: watches_gifts\\nSeller States: SP\\n\\nTotal Product Price: 699.99\\nTotal Freight Value: 13.09\\nTotal Item Value: 713.08\\nPayment Types: credit_card\\nTotal Payment Value: 713.08\\nMaximum Payment Installments: 2\\n\\nReview Score: 4\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_901fa9040bdb5022b65e359c25dcf76a\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "Considering the logistics and financial metrics, how do the delivery delays and average payment values for orders in the state of MA differ from the general benchmarks of the furniture_decor category?",
+    "expected_answer": "Customers in the state of MA face a significantly higher late delivery rate of 17.43% and an average wait of 21.57 days, which is more than double the late rate (7.12%) and significantly longer than the average delivery time (13.07 days) for the furniture_decor category. Despite these logistical delays, the average payment value in MA is $204.18, which is approximately 41% higher than the $144.57 average payment observed for furniture_decor products.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: furniture_decor\\n\\nTotal Orders: 6,449\\nTotal Items Sold: 8,334\\nTotal Product Revenue: 729762.49\\nTotal Freight Value: 172749.30\\nAverage Product Price: 87.56\\nAverage Freight Value: 20.73\\nAverage Payment Value: 144.57\\n\\nAverage Review Score: 4.01\\nPositive Review Count: 4,767\\nNegative Review Count: 1,067\\n\\nLate Delivery Count: 449\\nEarly or On-Time Delivery Count: 5,858\\nLate Delivery Rate: 7.12%\\nAverage Delivery Days: 13.07\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the furniture_decor product category.\", \"Document Type: Customer-State Summary\\nCustomer State: MA\\n\\nTotal Orders: 747\\nUnique Customers: 726\\nTotal Payment Value: 152523.02\\nAverage Payment Value: 204.18\\n\\nAverage Review Score: 3.76\\nPositive Review Count: 506\\nNegative Review Count: 162\\n\\nLate Delivery Count: 125\\nLate Delivery Rate: 17.43%\\nAverage Delivery Days: 21.57\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MA.\"]",
+    "expected_source_ids": "[\"category_furniture_decor\", \"state_MA\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "category+state"
+  },
+  {
+    "question": "What was the total payment value for orders in the state of TO?",
+    "expected_answer": "61485.33",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: TO\\n\\nTotal Orders: 280\\nUnique Customers: 273\\nTotal Payment Value: 61485.33\\nAverage Payment Value: 219.59\\n\\nAverage Review Score: 4.10\\nPositive Review Count: 218\\nNegative Review Count: 38\\n\\nLate Delivery Count: 27\\nLate Delivery Rate: 9.85%\\nAverage Delivery Days: 17.66\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in TO.\"]",
+    "expected_source_ids": "[\"state_TO\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "What was the total freight value for order 6842899c332d7e8bac002e5de94ab24d?",
+    "expected_answer": "18.30",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: 6842899c332d7e8bac002e5de94ab24d\\nCustomer ID: b52235ca8b69964a51277bf9b1546eb4\\nCustomer City: florianopolis\\nCustomer State: SC\\n\\nOrder Status: delivered\\nPurchase Month: November 2017\\nPurchase Timestamp: 2017-11-17 19:53:11\\nApproved At: 2017-11-18 02:50:38\\nDelivered to Carrier Date: 2017-11-21 19:48:46\\nDelivered to Customer Date: 2017-12-04 16:27:01\\nEstimated Delivery Date: 2017-12-11 00:00:00\\n\\nDelivery Days: 16.86\\nEstimated Delivery Days: 23.17\\nDelivery Difference Days: -6.31\\nDelivery Status: early\\nDelivery Bucket: slightly_early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: sports_leisure\\nSeller States: SP\\n\\nTotal Product Price: 149.90\\nTotal Freight Value: 18.30\\nTotal Item Value: 168.20\\nPayment Types: boleto\\nTotal Payment Value: 168.20\\nMaximum Payment Installments: 1\\n\\nReview Score: 5\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_6842899c332d7e8bac002e5de94ab24d\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "How does the logistics performance of order 52932a42bc7180b8f5cea527f7e27a34 compare to the initial expectations, and what was the resulting customer sentiment?",
+    "expected_answer": "The order was delivered in approximately 10 days, which was more than 10 days earlier than the estimated delivery date of February 9th, 2018. This high level of logistics efficiency likely contributed to the customer's positive sentiment, as evidenced by the maximum review score of 5.",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: 52932a42bc7180b8f5cea527f7e27a34\\nCustomer ID: b5de40d2baddfd6a1e20226ed8b7db0d\\nCustomer City: ipumirim\\nCustomer State: SC\\n\\nOrder Status: delivered\\nPurchase Month: January 2018\\nPurchase Timestamp: 2018-01-19 13:10:46\\nApproved At: 2018-01-23 03:36:52\\nDelivered to Carrier Date: 2018-01-23 22:55:21\\nDelivered to Customer Date: 2018-01-29 19:05:32\\nEstimated Delivery Date: 2018-02-09 00:00:00\\n\\nDelivery Days: 10.25\\nEstimated Delivery Days: 20.45\\nDelivery Difference Days: -10.20\\nDelivery Status: early\\nDelivery Bucket: early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: toys\\nSeller States: SP\\n\\nTotal Product Price: 38.25\\nTotal Freight Value: 13.50\\nTotal Item Value: 51.75\\nPayment Types: boleto\\nTotal Payment Value: 51.75\\nMaximum Payment Installments: 1\\n\\nReview Score: 5\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_52932a42bc7180b8f5cea527f7e27a34\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "How do the delivery efficiency and customer satisfaction metrics for the state of GO compare to the general performance observed in June 2017?",
+    "expected_answer": "The state of GO shows lower delivery efficiency with a 6.54% late delivery rate and 15.61 average delivery days compared to the June 2017 averages of 3.03% and 12.01 days, resulting in a lower average review score of 4.04 in GO versus 4.15 in June 2017.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: GO\\n\\nTotal Orders: 2,020\\nUnique Customers: 1,952\\nTotal Payment Value: 350092.31\\nAverage Payment Value: 173.31\\n\\nAverage Review Score: 4.04\\nPositive Review Count: 1,521\\nNegative Review Count: 296\\n\\nLate Delivery Count: 128\\nLate Delivery Rate: 6.54%\\nAverage Delivery Days: 15.61\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in GO.\", \"Document Type: Month-Level Temporal Summary\\nPurchase Month: 2017-06\\nMonth Name: June 2017\\n\\nTotal Orders: 3,245\\nDelivered Orders: 3,135\\nCanceled Orders: 16\\n\\nLate Delivery Count: 95\\nEarly or On-Time Delivery Count: 3,040\\nLate Delivery Rate: 3.03%\\nAverage Delivery Days: 12.01\\n\\nTotal Payment Value: 511276.38\\nAverage Payment Value: 157.56\\nAverage Freight Value: 19.52\\n\\nAverage Review Score: 4.15\\nNegative Review Count: 410\\n\\nMost Popular Product Category: bed_bath_table\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.\"]",
+    "expected_source_ids": "[\"state_GO\", \"month_2017_06\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "state+month"
+  },
+  {
+    "question": "How does the relationship between delivery efficiency and customer satisfaction characterize the performance of the food category?",
+    "expected_answer": "The food category maintains a high average review score of 4.28, supported by a reliable logistics performance where 410 orders were delivered early or on time compared to only 31 late deliveries. This efficient delivery system, which averages 9.79 days, contributes to a positive customer experience, resulting in 372 positive reviews against only 51 negative ones.",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: food\\n\\nTotal Orders: 450\\nTotal Items Sold: 510\\nTotal Product Revenue: 29393.41\\nTotal Freight Value: 7271.03\\nAverage Product Price: 57.63\\nAverage Freight Value: 14.26\\nAverage Payment Value: 83.71\\n\\nAverage Review Score: 4.28\\nPositive Review Count: 372\\nNegative Review Count: 51\\n\\nLate Delivery Count: 31\\nEarly or On-Time Delivery Count: 410\\nLate Delivery Rate: 7.03%\\nAverage Delivery Days: 9.79\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the food product category.\"]",
+    "expected_source_ids": "[\"category_food\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "In which city is the customer who placed order 5e8c4235c5941812c1831d835ae020fd located?",
+    "expected_answer": "girua",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: 5e8c4235c5941812c1831d835ae020fd\\nCustomer ID: e787ddf38676914ffe9704e1766096ab\\nCustomer City: girua\\nCustomer State: RS\\n\\nOrder Status: delivered\\nPurchase Month: April 2018\\nPurchase Timestamp: 2018-04-07 20:39:43\\nApproved At: 2018-04-07 20:55:30\\nDelivered to Carrier Date: 2018-04-11 18:21:35\\nDelivered to Customer Date: 2018-04-23 15:42:04\\nEstimated Delivery Date: 2018-05-02 00:00:00\\n\\nDelivery Days: 15.79\\nEstimated Delivery Days: 24.14\\nDelivery Difference Days: -8.35\\nDelivery Status: early\\nDelivery Bucket: early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: computers_accessories\\nSeller States: PR\\n\\nTotal Product Price: 129.90\\nTotal Freight Value: 18.79\\nTotal Item Value: 148.69\\nPayment Types: credit_card\\nTotal Payment Value: 148.69\\nMaximum Payment Installments: 1\\n\\nReview Score: 5\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_5e8c4235c5941812c1831d835ae020fd\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "What is the average review score for the food_drink product category?",
+    "expected_answer": "4.38",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: food_drink\\n\\nTotal Orders: 227\\nTotal Items Sold: 278\\nTotal Product Revenue: 15179.48\\nTotal Freight Value: 4507.99\\nAverage Product Price: 54.60\\nAverage Freight Value: 16.22\\nAverage Payment Value: 88.25\\n\\nAverage Review Score: 4.38\\nPositive Review Count: 189\\nNegative Review Count: 13\\n\\nLate Delivery Count: 8\\nEarly or On-Time Delivery Count: 213\\nLate Delivery Rate: 3.62%\\nAverage Delivery Days: 10.82\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the food_drink product category.\"]",
+    "expected_source_ids": "[\"category_food_drink\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What is the total product revenue recorded for seller d36b07fd3c5088e477a72d1fccfe29d4?",
+    "expected_answer": "328.90",
+    "expected_context": "[\"Document Type: Seller-Level Summary\\nSeller ID: d36b07fd3c5088e477a72d1fccfe29d4\\nSeller City: itapetininga\\nSeller State: SP\\n\\nTotal Orders: 1\\nTotal Items Sold: 1\\nTotal Product Revenue: 328.90\\nTotal Freight Value: 10.96\\nAverage Freight Value: 10.96\\n\\nAverage Review Score: 5.00\\nPositive Review Count: 1\\nNegative Review Count: 0\\n\\nLate Delivery Count: 0\\nLate Delivery Rate: 0.00%\\nAverage Delivery Days: 13.24\\n\\nTop Product Category: garden_tools\\nTop Customer State: SP\\n\\nThis document summarises seller fulfilment, revenue, freight, delivery, and review performance.\"]",
+    "expected_source_ids": "[\"seller_d36b07fd3c5088e477a72d1fccfe29d4\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "seller"
+  },
+  {
+    "question": "What is the total number of orders recorded for the state of SP?",
+    "expected_answer": "41,746",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: SP\\n\\nTotal Orders: 41,746\\nUnique Customers: 40,302\\nTotal Payment Value: 5998226.96\\nAverage Payment Value: 143.69\\n\\nAverage Review Score: 4.17\\nPositive Review Count: 32,946\\nNegative Review Count: 5,242\\n\\nLate Delivery Count: 1,820\\nLate Delivery Rate: 4.49%\\nAverage Delivery Days: 8.76\\n\\nTop Product Category: bed_bath_table\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in SP.\"]",
+    "expected_source_ids": "[\"state_SP\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "How does the delivery performance in RO relate to the overall customer satisfaction levels reflected in the review metrics?",
+    "expected_answer": "While the average delivery time is nearly 20 days, the state maintains a strong average review score of 4.05, which is supported by a low late delivery rate of 2.88%. This suggests that reliability in meeting delivery estimates is a key factor in the high proportion of positive reviews compared to negative ones.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: RO\\n\\nTotal Orders: 253\\nUnique Customers: 240\\nTotal Payment Value: 60866.20\\nAverage Payment Value: 240.58\\n\\nAverage Review Score: 4.05\\nPositive Review Count: 186\\nNegative Review Count: 39\\n\\nLate Delivery Count: 7\\nLate Delivery Rate: 2.88%\\nAverage Delivery Days: 19.37\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in RO.\"]",
+    "expected_source_ids": "[\"state_RO\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "How does the logistics performance in AC influence the overall customer satisfaction metrics for that state?",
+    "expected_answer": "While the average delivery time is high at 21.04 days, the low late delivery rate of 3.75% contributes to a strong average review score of 4.05. This indicates that reliability in meeting deadlines is a significant factor in maintaining the 60 positive reviews despite the long transit periods.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: AC\\n\\nTotal Orders: 81\\nUnique Customers: 77\\nTotal Payment Value: 19680.62\\nAverage Payment Value: 242.97\\n\\nAverage Review Score: 4.05\\nPositive Review Count: 60\\nNegative Review Count: 13\\n\\nLate Delivery Count: 3\\nLate Delivery Rate: 3.75%\\nAverage Delivery Days: 21.04\\n\\nTop Product Category: sports_leisure\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in AC.\"]",
+    "expected_source_ids": "[\"state_AC\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "What strategic insight can be derived from the relationship between the delivery performance, product pricing, and customer satisfaction metrics for the small appliances category?",
+    "expected_answer": "The category maintains a high average review score of 4.29 and a dominant positive review count (63 vs 8) by balancing a premium average product price of 624.29 with efficient logistics, evidenced by a low 5.56% late delivery rate and an average delivery time of 9.93 days. This suggests that customers perceive high value in these products when the high price point is supported by reliable fulfillment and relatively low freight costs (36.16).",
+    "expected_context": "[\"Document Type: Product Category Summary\\nProduct Category: small_appliances_home_oven_and_coffee\\n\\nTotal Orders: 75\\nTotal Items Sold: 76\\nTotal Product Revenue: 47445.71\\nTotal Freight Value: 2747.86\\nAverage Product Price: 624.29\\nAverage Freight Value: 36.16\\nAverage Payment Value: 669.55\\n\\nAverage Review Score: 4.29\\nPositive Review Count: 63\\nNegative Review Count: 8\\n\\nLate Delivery Count: 4\\nEarly or On-Time Delivery Count: 68\\nLate Delivery Rate: 5.56%\\nAverage Delivery Days: 9.93\\n\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises sales, delivery, freight, and review performance for the small_appliances_home_oven_and_coffee product category.\"]",
+    "expected_source_ids": "[\"category_small_appliances_home_oven_and_coffee\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "category"
+  },
+  {
+    "question": "What was the total payment value recorded for September 2016?",
+    "expected_answer": "252.24",
+    "expected_context": "[\"Document Type: Month-Level Temporal Summary\\nPurchase Month: 2016-09\\nMonth Name: September 2016\\n\\nTotal Orders: 4\\nDelivered Orders: 1\\nCanceled Orders: 2\\n\\nLate Delivery Count: 1\\nEarly or On-Time Delivery Count: 0\\nLate Delivery Rate: 100.00%\\nAverage Delivery Days: 54.81\\n\\nTotal Payment Value: 252.24\\nAverage Payment Value: 84.08\\nAverage Freight Value: 14.56\\n\\nAverage Review Score: 1.00\\nNegative Review Count: 4\\n\\nMost Popular Product Category: unknown\\nTop Customer State: SP\\nTop Seller State: PR\\n\\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.\"]",
+    "expected_source_ids": "[\"month_2016_09\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "month"
+  },
+  {
+    "question": "What was the total payment value for this order?",
+    "expected_answer": "163.26",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: 76a999805013581d028d7f8f8202dfb0\\nCustomer ID: 876f9a6c202666e676262ce4e5225dd1\\nCustomer City: sao paulo\\nCustomer State: SP\\n\\nOrder Status: delivered\\nPurchase Month: March 2018\\nPurchase Timestamp: 2018-03-13 13:31:24\\nApproved At: 2018-03-13 13:48:30\\nDelivered to Carrier Date: 2018-03-13 23:18:45\\nDelivered to Customer Date: 2018-03-17 01:48:46\\nEstimated Delivery Date: 2018-03-23 00:00:00\\n\\nDelivery Days: 3.51\\nEstimated Delivery Days: 9.44\\nDelivery Difference Days: -5.93\\nDelivery Status: early\\nDelivery Bucket: slightly_early\\n\\nTotal Items: 3\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: housewares\\nSeller States: SP\\n\\nTotal Product Price: 125.97\\nTotal Freight Value: 37.29\\nTotal Item Value: 163.26\\nPayment Types: credit_card\\nTotal Payment Value: 163.26\\nMaximum Payment Installments: 1\\n\\nReview Score: 4\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_76a999805013581d028d7f8f8202dfb0\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "What is the product category for order e3fdb4acd9e17c8b90cb9632990ee786?",
+    "expected_answer": "bed_bath_table",
+    "expected_context": "[\"Document Type: Order-Level Summary\\nOrder ID: e3fdb4acd9e17c8b90cb9632990ee786\\nCustomer ID: f55e489fa5e3fa5cdab0588fb2cf9f0b\\nCustomer City: brasilia\\nCustomer State: DF\\n\\nOrder Status: delivered\\nPurchase Month: January 2018\\nPurchase Timestamp: 2018-01-02 07:50:34\\nApproved At: 2018-01-02 08:17:09\\nDelivered to Carrier Date: 2018-01-03 21:07:04\\nDelivered to Customer Date: 2018-01-08 14:47:54\\nEstimated Delivery Date: 2018-01-29 00:00:00\\n\\nDelivery Days: 6.29\\nEstimated Delivery Days: 26.67\\nDelivery Difference Days: -20.38\\nDelivery Status: early\\nDelivery Bucket: very_early\\n\\nTotal Items: 1\\nUnique Products: 1\\nUnique Sellers: 1\\nProduct Categories: bed_bath_table\\nSeller States: SP\\n\\nTotal Product Price: 422.00\\nTotal Freight Value: 55.55\\nTotal Item Value: 477.55\\nPayment Types: credit_card\\nTotal Payment Value: 477.55\\nMaximum Payment Installments: 10\\n\\nReview Score: 4\\nReview Bucket: positive\\nReview Comment Title: No comment title\\nReview Comment Message: No comment message\\n\\nThis document summarises one customer order including delivery, seller, product, payment, and review information.\"]",
+    "expected_source_ids": "[\"order_e3fdb4acd9e17c8b90cb9632990ee786\"]",
+    "question_type": "factual",
+    "difficulty": "easy",
+    "best_kb_layer": "order"
+  },
+  {
+    "question": "How does the logistical performance in MA appear to influence the overall customer satisfaction metrics?",
+    "expected_answer": "The logistical performance shows significant friction with a 17.43% late delivery rate and a long average wait of 21.57 days, which likely prevents the average review score from exceeding 3.76 despite the state having over three times as many positive reviews as negative ones.",
+    "expected_context": "[\"Document Type: Customer-State Summary\\nCustomer State: MA\\n\\nTotal Orders: 747\\nUnique Customers: 726\\nTotal Payment Value: 152523.02\\nAverage Payment Value: 204.18\\n\\nAverage Review Score: 3.76\\nPositive Review Count: 506\\nNegative Review Count: 162\\n\\nLate Delivery Count: 125\\nLate Delivery Rate: 17.43%\\nAverage Delivery Days: 21.57\\n\\nTop Product Category: health_beauty\\nTop Payment Type: credit_card\\n\\nThis document summarises order volume, payment value, delivery performance, and review behaviour for customers in MA.\"]",
+    "expected_source_ids": "[\"state_MA\"]",
+    "question_type": "analytical",
+    "difficulty": "medium",
+    "best_kb_layer": "state"
+  },
+  {
+    "question": "Comparing the performance of May 2018 against the general characteristics of late deliveries, how do the primary product categories and customer satisfaction levels differ between the monthly average and the late delivery segment?",
+    "expected_answer": "In May 2018, the e-commerce system performed well with an average review score of 4.19 and health_beauty as the top category, despite a 6.56% late delivery rate. In contrast, the late delivery segment overall is characterized by a significantly lower average review score of 2.27 and is most frequently associated with the bed_bath_table category, illustrating the severe impact of delays on customer satisfaction compared to the monthly baseline.",
+    "expected_context": "[\"Document Type: Month-Level Temporal Summary\\nPurchase Month: 2018-05\\nMonth Name: May 2018\\n\\nTotal Orders: 6,873\\nDelivered Orders: 6,749\\nCanceled Orders: 24\\n\\nLate Delivery Count: 443\\nEarly or On-Time Delivery Count: 6,306\\nLate Delivery Rate: 6.56%\\nAverage Delivery Days: 11.42\\n\\nTotal Payment Value: 1153982.15\\nAverage Payment Value: 167.90\\nAverage Freight Value: 19.34\\n\\nAverage Review Score: 4.19\\nNegative Review Count: 814\\n\\nMost Popular Product Category: health_beauty\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document summarises monthly e-commerce fulfilment, revenue, delivery, and review performance.\", \"Document Type: Delivery-Status Insight\\nDelivery Status: late\\n\\nTotal Orders in Group: 6,535\\nShare of Delivered Orders: 6.77%\\nAverage Delivery Days: 33.95\\nAverage Difference vs Estimated: 10.62 days late\\n\\nAverage Review Score: 2.27\\nAverage Payment Value: 176.14\\n\\nTop Product Category: bed_bath_table\\nTop Customer State: SP\\nTop Seller State: SP\\n\\nThis document provides aggregate insight into orders with delivery status 'late'.\"]",
+    "expected_source_ids": "[\"month_2018_05\", \"delivery_status_late\"]",
+    "question_type": "comparison",
+    "difficulty": "hard",
+    "best_kb_layer": "month+delivery_status"
+  }
+]
