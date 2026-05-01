@@ -1,3 +1,11 @@
+"""
+End-to-end pipeline for the HyDE RAG system.
+
+Orchestrates the three-step HyDE flow — hypothetical document generation,
+embedding-based retrieval, and grounded answer generation — into a single
+callable that returns the answer, retrieved documents, and the hypothetical
+document used for retrieval.
+"""
 from typing import Any
 
 from hyde_rag.implementation.config import TOP_K

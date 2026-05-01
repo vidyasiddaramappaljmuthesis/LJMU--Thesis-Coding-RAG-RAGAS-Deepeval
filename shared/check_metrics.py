@@ -1,3 +1,8 @@
+"""
+Diagnostic script — checks which RAGAS non-LLM metrics are importable in this environment.
+
+  python shared/check_metrics.py
+"""
 from ragas.metrics import NonLLMContextPrecision, NonLLMContextRecall
 print("NonLLM context metrics: OK")
 try:

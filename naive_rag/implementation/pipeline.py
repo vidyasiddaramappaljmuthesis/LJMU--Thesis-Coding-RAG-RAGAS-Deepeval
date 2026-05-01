@@ -1,3 +1,9 @@
+"""
+End-to-end pipeline for the Naive RAG system.
+
+Orchestrates retrieval and generation into a single callable that
+returns the answer together with the retrieved source documents.
+"""
 from typing import Any
 
 from naive_rag.implementation.config import TOP_K

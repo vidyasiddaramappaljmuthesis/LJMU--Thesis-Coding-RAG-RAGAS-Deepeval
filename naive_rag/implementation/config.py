@@ -1,3 +1,9 @@
+"""
+Configuration for the Naive RAG pipeline.
+
+Loads environment variables, resolves filesystem paths, and exposes
+constants consumed by ingestion, retrieval, and generation modules.
+"""
 import os
 from pathlib import Path
 

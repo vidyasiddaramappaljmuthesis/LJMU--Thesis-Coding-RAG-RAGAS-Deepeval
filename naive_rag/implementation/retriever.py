@@ -1,3 +1,9 @@
+"""
+Retrieval module for the Naive RAG pipeline.
+
+Queries ChromaDB with a raw query embedding and returns the top-k
+nearest knowledge-base documents by cosine similarity.
+"""
 from typing import Any
 
 from naive_rag.implementation.config import TOP_K

@@ -1,3 +1,10 @@
+"""
+Configuration for the HyDE RAG pipeline.
+
+Loads environment variables, resolves filesystem paths, and exposes
+constants for ingestion, retrieval, and the two-stage generation process
+(hypothetical document at temp=0.7, final answer at temp=0.1).
+"""
 import os
 from pathlib import Path
 

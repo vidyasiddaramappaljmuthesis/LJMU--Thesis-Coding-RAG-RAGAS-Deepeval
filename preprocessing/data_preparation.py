@@ -8,11 +8,11 @@ RAG pipelines and evaluation runners are separate scripts in rag/ and evaluation
 
 Usage
 -----
-    python data_preparation.py                 # full preprocessing pipeline
-    python data_preparation.py --steps enrich  # produce master CSVs only
-    python data_preparation.py --steps kb      # load enriched CSV, build KB JSON files
-    python data_preparation.py --steps golden  # load enriched CSV + KB, build golden Q&A
-    python data_preparation.py --steps all     # same as default
+    python -m preprocessing.data_preparation                 # full preprocessing pipeline
+    python -m preprocessing.data_preparation --steps enrich  # produce master CSVs only
+    python -m preprocessing.data_preparation --steps kb      # load enriched CSV, build KB JSON files
+    python -m preprocessing.data_preparation --steps golden  # load enriched CSV + KB, build golden Q&A
+    python -m preprocessing.data_preparation --steps all     # same as default
 
 Steps that load from disk (kb / golden) skip re-running the expensive join+enrich
 so iteration is fast when only the KB or golden dataset needs to be rebuilt.
@@ -76,9 +76,9 @@ def _load_enriched(data_processed: Path) -> "pd.DataFrame":
 
 def _run_enrich(data_processed: Path) -> "pd.DataFrame":
     """Steps 1-3: load raw CSVs, join, enrich, save both master CSVs."""
-    from preprocessing.step1_load_raw_data import load_all_datasets
-    from preprocessing.step2_join_datasets import create_master_dataset
-    from preprocessing.step3_enrich_master import enrich_master_dataset
+    from .step1_load_raw_data import load_all_datasets
+    from .step2_join_datasets import create_master_dataset
+    from .step3_enrich_master import enrich_master_dataset
 
     logger.info("[Step 1/3]  Loading raw CSV files")
     datasets = load_all_datasets()
@@ -106,7 +106,7 @@ def run_pipeline(steps: str = "all") -> None:
     logger.info(f"  Mode: --steps {steps}")
     logger.info("=" * 60)
 
-    from preprocessing.config import DATA_PROCESSED, DATA_KB, DATA_GOLDEN
+    from .config import DATA_PROCESSED, DATA_KB, DATA_GOLDEN
 
     for d in (DATA_PROCESSED, DATA_KB, DATA_GOLDEN):
         d.mkdir(parents=True, exist_ok=True)
@@ -123,7 +123,7 @@ def run_pipeline(steps: str = "all") -> None:
         return
 
     # ── Step 4: Knowledge Base ────────────────────────────────────────────────
-    from preprocessing.step4_build_knowledge_base import build_knowledge_base
+    from .step4_build_knowledge_base import build_knowledge_base
 
     logger.info("[Step 4]  Building knowledge-base documents (6 layers)")
     kb_docs = build_knowledge_base(enriched)
@@ -133,7 +133,7 @@ def run_pipeline(steps: str = "all") -> None:
         return
 
     # ── Step 5: Golden Dataset ────────────────────────────────────────────────
-    from preprocessing.step5_build_golden_dataset import generate_golden_dataset
+    from .step5_build_golden_dataset import generate_golden_dataset
 
     logger.info("[Step 5]  Generating golden evaluation dataset")
     golden_df = generate_golden_dataset(enriched, kb_docs)

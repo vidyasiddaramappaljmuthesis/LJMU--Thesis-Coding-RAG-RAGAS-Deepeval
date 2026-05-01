@@ -1,3 +1,9 @@
+"""
+Answer-generation module for the Hybrid RAG pipeline.
+
+Formats a RAG prompt from RRF-fused context documents and calls the
+Groq LLaMA 3.3 70B model to produce a grounded answer.
+"""
 from hybrid_rag.implementation.config import GROQ_API_KEYS, GROQ_MODEL
 from shared.groq_client import call_groq
 
@@ -9,6 +15,7 @@ _SYSTEM_PROMPT = (
 
 
 def generate(query: str, context_docs: list, temperature: float = 0.1) -> str:
+    """Build a RAG prompt from fused context documents and call the LLM."""
     context_block = "\n\n".join(
         f"[Document {i + 1}]\n{doc['text']}" for i, doc in enumerate(context_docs)
     )

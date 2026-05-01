@@ -1,3 +1,10 @@
+"""
+End-to-end pipeline for the Hybrid RAG system.
+
+Orchestrates BM25 keyword retrieval, semantic retrieval, RRF fusion,
+and LLM generation into a single callable, returning the answer together
+with the fused, keyword, and semantic document lists.
+"""
 from typing import Any
 
 from hybrid_rag.implementation.config import FINAL_TOP_K

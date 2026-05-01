@@ -1,11 +1,12 @@
 """
-Ingestion for Hybrid RAG.
+Ingestion for the Hybrid RAG pipeline.
 
 - ChromaDB  : shared with naive_rag (same collection, same embedding model).
               If already built by naive_rag, this step is skipped automatically.
 - BM25 index: built fresh and persisted to dataset/bm25_index/bm25_index.pkl.
 """
 import json
+import logging
 import pickle
 from typing import Optional
 
@@ -15,10 +16,15 @@ from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunct
 from rank_bm25 import BM25Okapi
 
 from hybrid_rag.implementation.config import (
-    KB_ALL_DOCS, CHROMA_DB_PATH, COLLECTION_NAME,
-    EMBEDDING_MODEL, BM25_INDEX_PATH,
+    KB_ALL_DOCS,
+    CHROMA_DB_PATH,
+    COLLECTION_NAME,
+    EMBEDDING_MODEL,
+    BM25_INDEX_PATH,
 )
 from hybrid_rag.implementation.utils import tokenize
+
+log = logging.getLogger(__name__)
 
 _client: Optional[chromadb.PersistentClient] = None
 _collection: Optional[chromadb.Collection] = None
@@ -44,6 +50,7 @@ def _load_docs() -> list:
 # ── ChromaDB ──────────────────────────────────────────────────────────────────
 
 def build_chroma(batch_size: int = 500, docs: Optional[list] = None) -> None:
+    """Embed all KB documents and persist them in ChromaDB (cosine space)."""
     global _collection
 
     if docs is None:
@@ -53,9 +60,9 @@ def build_chroma(batch_size: int = 500, docs: Optional[list] = None) -> None:
 
     try:
         client.delete_collection(COLLECTION_NAME)
-        print("  Dropped existing ChromaDB collection.")
+        log.info("Dropped existing ChromaDB collection.")
     except chromadb.errors.InvalidCollectionException:
-        pass  # collection didn't exist yet — nothing to drop
+        pass  # collection did not pre-exist; nothing to drop
 
     col = client.create_collection(
         name=COLLECTION_NAME,
@@ -64,7 +71,7 @@ def build_chroma(batch_size: int = 500, docs: Optional[list] = None) -> None:
     )
     _collection = col
 
-    print(f"  Embedding {len(docs)} docs into ChromaDB...")
+    log.info("Embedding %d docs into ChromaDB...", len(docs))
     for i in range(0, len(docs), batch_size):
         batch = docs[i : i + batch_size]
         col.add(
@@ -72,19 +79,24 @@ def build_chroma(batch_size: int = 500, docs: Optional[list] = None) -> None:
             documents=[d["text"] for d in batch],
             metadatas=[d["metadata"] for d in batch],
         )
-        print(f"    {min(i + batch_size, len(docs))}/{len(docs)}")
+        log.info("  %d/%d", min(i + batch_size, len(docs)), len(docs))
 
 
 def get_chroma_collection() -> chromadb.Collection:
+    """Return the cached ChromaDB collection, loading it from disk if needed."""
     global _collection
     if _collection is None:
-        _collection = _get_client().get_collection(name=COLLECTION_NAME, embedding_function=_ef())
+        _collection = _get_client().get_collection(
+            name=COLLECTION_NAME,
+            embedding_function=_ef(),
+        )
     return _collection
 
 
 # ── BM25 ──────────────────────────────────────────────────────────────────────
 
 def build_bm25(docs: Optional[list] = None) -> None:
+    """Tokenize all KB documents, fit a BM25Okapi index, and pickle it to disk."""
     global _bm25_cache
 
     if docs is None:
@@ -96,11 +108,12 @@ def build_bm25(docs: Optional[list] = None) -> None:
     BM25_INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(BM25_INDEX_PATH, "wb") as f:
         pickle.dump({"bm25": bm25, "docs": docs}, f)
-    _bm25_cache = (bm25, docs)  # populate cache immediately after build
-    print(f"  BM25 index saved — {len(docs)} documents.")
+    _bm25_cache = (bm25, docs)  # warm the cache immediately so next call skips disk I/O
+    log.info("BM25 index saved — %d documents.", len(docs))
 
 
 def get_bm25_index() -> tuple:
+    """Return (BM25Okapi, docs) from the in-memory cache or from disk."""
     global _bm25_cache
     if _bm25_cache is None:
         with open(BM25_INDEX_PATH, "rb") as f:
@@ -112,9 +125,10 @@ def get_bm25_index() -> tuple:
 # ── Combined ──────────────────────────────────────────────────────────────────
 
 def build_all(batch_size: int = 500) -> None:
-    docs = _load_docs()  # load once, pass to both builders
-    print("[Ingestion] Building ChromaDB (semantic index)...")
+    """Build both the ChromaDB and BM25 indexes in a single pass over the KB."""
+    docs = _load_docs()  # load once and pass to both builders to avoid double I/O
+    log.info("Building ChromaDB (semantic index)...")
     build_chroma(batch_size, docs=docs)
-    print("[Ingestion] Building BM25 (keyword index)...")
+    log.info("Building BM25 (keyword index)...")
     build_bm25(docs=docs)
-    print("[Ingestion] Complete.\n")
+    log.info("Ingestion complete.")

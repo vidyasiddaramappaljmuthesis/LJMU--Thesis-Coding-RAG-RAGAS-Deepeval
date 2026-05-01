@@ -1,11 +1,27 @@
+"""
+ChromaDB ingestion for the HyDE RAG pipeline.
+
+Embeds all 13,225 KB documents with all-MiniLM-L6-v2 and persists them
+in a cosine-distance ChromaDB collection shared with the Naive RAG pipeline.
+An EF singleton is maintained so the same model instance is reused for
+both indexing and hypothetical-document embedding at query time.
+"""
 import json
+import logging
 from typing import Optional
 
 import chromadb
 import chromadb.errors
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
-from hyde_rag.implementation.config import KB_ALL_DOCS, CHROMA_DB_PATH, COLLECTION_NAME, EMBEDDING_MODEL
+from hyde_rag.implementation.config import (
+    KB_ALL_DOCS,
+    CHROMA_DB_PATH,
+    COLLECTION_NAME,
+    EMBEDDING_MODEL,
+)
+
+log = logging.getLogger(__name__)
 
 _client: Optional[chromadb.PersistentClient] = None
 _collection: Optional[chromadb.Collection] = None
@@ -13,7 +29,7 @@ _ef_singleton: Optional[SentenceTransformerEmbeddingFunction] = None
 
 
 def _embedding_fn() -> SentenceTransformerEmbeddingFunction:
-    """Cached singleton — one model instance shared between ingestion and retriever."""
+    """Return a cached EF singleton — one model load shared across all calls."""
     global _ef_singleton
     if _ef_singleton is None:
         _ef_singleton = SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
@@ -38,9 +54,9 @@ def build_vector_store(batch_size: int = 500) -> chromadb.Collection:
 
     try:
         client.delete_collection(COLLECTION_NAME)
-        print(f"Dropped existing collection '{COLLECTION_NAME}'.")
+        log.info("Dropped existing collection '%s'.", COLLECTION_NAME)
     except chromadb.errors.InvalidCollectionException:
-        pass  # collection didn't exist yet — nothing to drop
+        pass  # collection did not pre-exist; nothing to drop
 
     col = client.create_collection(
         name=COLLECTION_NAME,
@@ -49,7 +65,7 @@ def build_vector_store(batch_size: int = 500) -> chromadb.Collection:
     )
     _collection = col
 
-    print(f"Ingesting {len(docs)} documents into ChromaDB...")
+    log.info("Ingesting %d documents into ChromaDB...", len(docs))
     for i in range(0, len(docs), batch_size):
         batch = docs[i : i + batch_size]
         col.add(
@@ -57,9 +73,9 @@ def build_vector_store(batch_size: int = 500) -> chromadb.Collection:
             documents=[d["text"] for d in batch],
             metadatas=[d["metadata"] for d in batch],
         )
-        print(f"  Indexed {min(i + batch_size, len(docs))}/{len(docs)}")
+        log.info("  Indexed %d/%d", min(i + batch_size, len(docs)), len(docs))
 
-    print("Ingestion complete.")
+    log.info("Ingestion complete.")
     return col
 
 

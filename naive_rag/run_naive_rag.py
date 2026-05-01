@@ -1,15 +1,15 @@
 """
-HyDE RAG — single entry point.
+Naive RAG — single entry point.
 
-  python run_hyde_rag.py          # auto-setup + interactive Q&A
-  python run_hyde_rag.py --ingest # force re-index only (no Q&A)
+  python -m naive_rag.run_naive_rag          # auto-setup + interactive Q&A
+  python -m naive_rag.run_naive_rag --ingest # force re-index only (no Q&A)
 """
 import sys
 import chromadb
 
-from hyde_rag.implementation.config import CHROMA_DB_PATH, COLLECTION_NAME
-from hyde_rag.implementation.ingestion import build_vector_store
-from hyde_rag.implementation.pipeline import run_hyde_rag
+from .implementation.config import CHROMA_DB_PATH, COLLECTION_NAME
+from .implementation.ingestion import build_vector_store
+from .implementation.pipeline import run_rag
 
 
 def _vector_store_exists() -> bool:
@@ -21,7 +21,7 @@ def _vector_store_exists() -> bool:
         return False
 
 
-def _ensure_vector_store() -> None:
+def _ensure_vector_store():
     if _vector_store_exists():
         print("[Setup] Vector store already exists — skipping ingestion.")
     else:
@@ -30,10 +30,9 @@ def _ensure_vector_store() -> None:
         print("[Setup] Done.\n")
 
 
-def _interactive() -> None:
+def _interactive():
     print("=" * 60)
-    print("  E-Commerce HyDE RAG  |  LLaMA 3.3 70B via Groq")
-    print("  HyDE      : Hypothetical Document Embeddings")
+    print("  E-Commerce Naive RAG  |  LLaMA 3.3 70B via Groq")
     print("  Embedding : sentence-transformers/all-MiniLM-L6-v2")
     print("  Vector DB : ChromaDB (cosine)")
     print("  Type 'exit' to quit.")
@@ -54,11 +53,8 @@ def _interactive() -> None:
             break
 
         print()
-        result = run_hyde_rag(query)
+        result = run_rag(query)
 
-        print("Hypothetical document (used for retrieval):")
-        print(result["hypothetical_doc"])
-        print()
         print(f"Answer:\n{result['answer']}")
         print()
         print("Retrieved documents:")

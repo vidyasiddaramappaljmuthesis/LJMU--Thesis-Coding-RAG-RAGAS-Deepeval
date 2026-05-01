@@ -1,15 +1,15 @@
 """
 Hybrid RAG — single entry point.
 
-  python run_hybrid_rag.py          # auto-setup + interactive Q&A
-  python run_hybrid_rag.py --ingest # force re-index both stores
+  python -m hybrid_rag.run_hybrid_rag          # auto-setup + interactive Q&A
+  python -m hybrid_rag.run_hybrid_rag --ingest # force re-index both stores
 """
 import sys
 import chromadb
 
-from hybrid_rag.implementation.config import CHROMA_DB_PATH, COLLECTION_NAME, BM25_INDEX_PATH
-from hybrid_rag.implementation.ingestion import build_all, build_chroma, build_bm25
-from hybrid_rag.implementation.pipeline import run_hybrid_rag
+from .implementation.config import CHROMA_DB_PATH, COLLECTION_NAME, BM25_INDEX_PATH
+from .implementation.ingestion import build_all, build_chroma, build_bm25
+from .implementation.pipeline import run_hybrid_rag
 
 
 def _chroma_exists() -> bool:
