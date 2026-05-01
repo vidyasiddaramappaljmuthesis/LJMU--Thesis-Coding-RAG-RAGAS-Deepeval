@@ -17,9 +17,16 @@ sentence-transformers>=3.0.0
 groq>=0.11.0
 rank-bm25>=0.3.1
 
-# LangChain (optional / evaluation helpers)
+# LangChain (evaluation helpers + RAG evaluation)
+# NOTE: pin langchain-core <0.3.70 to avoid a transitive torch import
+#       that fails when torch is not installed or has broken DLLs.
 langchain>=0.3.0
 langchain-google-genai>=2.0.0
+langchain-groq>=0.2.0
+langchain-core>=0.3.0,<0.3.70
+
+# Excel export
+openpyxl>=3.1.0
 
 # Documentation
 reportlab>=4.0.0

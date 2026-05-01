@@ -34,7 +34,7 @@ def build_vector_store(batch_size: int = 500) -> chromadb.Collection:
     try:
         client.delete_collection(COLLECTION_NAME)
         print(f"Dropped existing collection '{COLLECTION_NAME}'.")
-    except chromadb.errors.InvalidCollectionException:
+    except Exception:
         pass  # collection didn't exist yet — nothing to drop
 
     col = client.create_collection(

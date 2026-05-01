@@ -51,5 +51,8 @@ secrets.json
 .DS_Store
 Thumbs.db
 
+# Vector store (auto-generated, large)
+chroma_db/
 
-
+# Claude Code internals
+.claude/
