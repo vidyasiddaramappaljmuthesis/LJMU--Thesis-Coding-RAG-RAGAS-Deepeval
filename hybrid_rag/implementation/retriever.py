@@ -12,9 +12,9 @@ Flow:
 """
 from typing import Any
 
-from hybrid_rag.config import SEMANTIC_TOP_K, KEYWORD_TOP_K, FINAL_TOP_K, RRF_K
-from hybrid_rag.ingestion import get_chroma_collection, get_bm25_index
-from hybrid_rag.utils import tokenize
+from hybrid_rag.implementation.config import SEMANTIC_TOP_K, KEYWORD_TOP_K, FINAL_TOP_K, RRF_K
+from hybrid_rag.implementation.ingestion import get_chroma_collection, get_bm25_index
+from hybrid_rag.implementation.utils import tokenize
 
 
 # ── Individual retrievers ─────────────────────────────────────────────────────

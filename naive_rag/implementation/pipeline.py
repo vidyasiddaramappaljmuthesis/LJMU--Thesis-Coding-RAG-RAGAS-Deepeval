@@ -1,8 +1,8 @@
 from typing import Any
 
-from naive_rag.config import TOP_K
-from naive_rag.retriever import retrieve
-from naive_rag.generator import generate
+from naive_rag.implementation.config import TOP_K
+from naive_rag.implementation.retriever import retrieve
+from naive_rag.implementation.generator import generate
 
 
 def run_rag(query: str, top_k: int = TOP_K) -> dict[str, Any]:

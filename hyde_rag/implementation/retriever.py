@@ -12,9 +12,9 @@ handles encoding the hypothetical doc, so only one model instance is ever loaded
 """
 from typing import Any
 
-from hyde_rag.config import TOP_K
-from hyde_rag.ingestion import get_collection
-from hyde_rag.generator import generate_hypothetical_doc
+from hyde_rag.implementation.config import TOP_K
+from hyde_rag.implementation.ingestion import get_collection
+from hyde_rag.implementation.generator import generate_hypothetical_doc
 
 
 def retrieve(query: str, top_k: int = TOP_K) -> dict:

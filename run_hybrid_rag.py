@@ -7,9 +7,9 @@ Hybrid RAG — single entry point.
 import sys
 import chromadb
 
-from hybrid_rag.config import CHROMA_DB_PATH, COLLECTION_NAME, BM25_INDEX_PATH
-from hybrid_rag.ingestion import build_all, build_chroma, build_bm25
-from hybrid_rag.pipeline import run_hybrid_rag
+from hybrid_rag.implementation.config import CHROMA_DB_PATH, COLLECTION_NAME, BM25_INDEX_PATH
+from hybrid_rag.implementation.ingestion import build_all, build_chroma, build_bm25
+from hybrid_rag.implementation.pipeline import run_hybrid_rag
 
 
 def _chroma_exists() -> bool:

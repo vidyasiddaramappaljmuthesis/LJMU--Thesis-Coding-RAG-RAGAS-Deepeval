@@ -5,7 +5,7 @@ Groq LLaMA 3.3 70B generator with two roles:
   generate                   — Final answer step: answer from real retrieved
                                context (low temperature, capped at 512 tokens).
 """
-from hyde_rag.config import GROQ_API_KEYS, GROQ_MODEL, HYDE_TEMPERATURE, ANSWER_TEMPERATURE
+from hyde_rag.implementation.config import GROQ_API_KEYS, GROQ_MODEL, HYDE_TEMPERATURE, ANSWER_TEMPERATURE
 from shared.groq_client import call_groq
 
 _HYDE_SYSTEM_PROMPT = (

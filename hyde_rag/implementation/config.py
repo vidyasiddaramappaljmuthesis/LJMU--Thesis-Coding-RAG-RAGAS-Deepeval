@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent
 
 KB_ALL_DOCS    = BASE_DIR / "dataset" / "knowledge_base" / "kb_all_documents.json"
 CHROMA_DB_PATH = BASE_DIR / "chroma_db"
