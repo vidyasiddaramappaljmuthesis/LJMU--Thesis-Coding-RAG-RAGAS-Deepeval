@@ -1,3 +1,10 @@
+"""
+Configuration for the Hybrid RAG pipeline.
+
+Loads environment variables, resolves filesystem paths, and exposes
+constants for both the ChromaDB semantic index and the BM25 keyword
+index, including fusion parameters for Reciprocal Rank Fusion.
+"""
 import os
 from pathlib import Path
 

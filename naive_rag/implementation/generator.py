@@ -1,3 +1,9 @@
+"""
+Answer-generation module for the Naive RAG pipeline.
+
+Formats a RAG prompt from retrieved context documents and calls the
+Groq LLaMA 3.3 70B model to produce a grounded answer.
+"""
 from naive_rag.implementation.config import GROQ_API_KEYS, GROQ_MODEL
 from shared.groq_client import call_groq
 

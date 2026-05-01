@@ -5,6 +5,7 @@ One shared _current_key_idx means all pipelines draw from the same rotation,
 so key 0 is not triple-hit when evaluations run across naive, hybrid, and HyDE.
 Starting index is randomized once per process to spread load further.
 """
+import logging
 import random
 from typing import Optional
 
@@ -17,6 +18,8 @@ _ROTATABLE = (
     groq.InternalServerError,
     groq.APITimeoutError,
 )
+
+log = logging.getLogger(__name__)
 
 _current_key_idx: int = 0
 _initialized: bool = False
@@ -54,9 +57,10 @@ def call_groq(
             response = client.chat.completions.create(**kwargs)
             return response.choices[0].message.content
         except _ROTATABLE as exc:
-            print(
-                f"  [Groq] Key [{_current_key_idx}] "
-                f"exhausted ({type(exc).__name__}). Rotating..."
+            log.warning(
+                "Key index %d exhausted (%s). Rotating to next key.",
+                _current_key_idx,
+                type(exc).__name__,
             )
             _current_key_idx = (_current_key_idx + 1) % len(api_keys)
 
