@@ -5,19 +5,14 @@ import chromadb
 import chromadb.errors
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
-from hyde_rag.config import KB_ALL_DOCS, CHROMA_DB_PATH, COLLECTION_NAME, EMBEDDING_MODEL
+from naive_rag.implementation.config import KB_ALL_DOCS, CHROMA_DB_PATH, COLLECTION_NAME, EMBEDDING_MODEL
 
 _client: Optional[chromadb.PersistentClient] = None
 _collection: Optional[chromadb.Collection] = None
-_ef_singleton: Optional[SentenceTransformerEmbeddingFunction] = None
 
 
 def _embedding_fn() -> SentenceTransformerEmbeddingFunction:
-    """Cached singleton — one model instance shared between ingestion and retriever."""
-    global _ef_singleton
-    if _ef_singleton is None:
-        _ef_singleton = SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
-    return _ef_singleton
+    return SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
 
 
 def _get_client() -> chromadb.PersistentClient:
@@ -39,7 +34,7 @@ def build_vector_store(batch_size: int = 500) -> chromadb.Collection:
     try:
         client.delete_collection(COLLECTION_NAME)
         print(f"Dropped existing collection '{COLLECTION_NAME}'.")
-    except chromadb.errors.InvalidCollectionException:
+    except Exception:
         pass  # collection didn't exist yet — nothing to drop
 
     col = client.create_collection(
@@ -47,7 +42,7 @@ def build_vector_store(batch_size: int = 500) -> chromadb.Collection:
         embedding_function=_embedding_fn(),
         metadata={"hnsw:space": "cosine"},
     )
-    _collection = col
+    _collection = col  # update cache with freshly created collection
 
     print(f"Ingesting {len(docs)} documents into ChromaDB...")
     for i in range(0, len(docs), batch_size):

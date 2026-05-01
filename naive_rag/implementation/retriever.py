@@ -1,7 +1,7 @@
 from typing import Any
 
-from naive_rag.config import TOP_K
-from naive_rag.ingestion import get_collection
+from naive_rag.implementation.config import TOP_K
+from naive_rag.implementation.ingestion import get_collection
 
 
 def retrieve(query: str, top_k: int = TOP_K) -> list[dict[str, Any]]:

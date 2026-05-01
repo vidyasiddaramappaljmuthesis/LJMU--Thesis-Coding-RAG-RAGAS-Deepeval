@@ -1,4 +1,4 @@
-from hybrid_rag.config import GROQ_API_KEYS, GROQ_MODEL
+from hybrid_rag.implementation.config import GROQ_API_KEYS, GROQ_MODEL
 from shared.groq_client import call_groq
 
 _SYSTEM_PROMPT = (

@@ -1,8 +1,8 @@
 from typing import Any
 
-from hybrid_rag.config import FINAL_TOP_K
-from hybrid_rag.retriever import retrieve
-from hybrid_rag.generator import generate
+from hybrid_rag.implementation.config import FINAL_TOP_K
+from hybrid_rag.implementation.retriever import retrieve
+from hybrid_rag.implementation.generator import generate
 
 
 def run_hybrid_rag(query: str, final_top_k: int = FINAL_TOP_K) -> dict[str, Any]:

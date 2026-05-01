@@ -949,7 +949,7 @@ def build_pdf2(output_path: str):
 # ══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
+    base = os.path.dirname(os.path.abspath(__file__))
     os.makedirs(base, exist_ok=True)
 
     pdf1 = os.path.join(base, "Implementation_of_Naive_RAG.pdf")

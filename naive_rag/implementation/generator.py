@@ -1,4 +1,4 @@
-from naive_rag.config import GROQ_API_KEYS, GROQ_MODEL
+from naive_rag.implementation.config import GROQ_API_KEYS, GROQ_MODEL
 from shared.groq_client import call_groq
 
 _SYSTEM_PROMPT = (

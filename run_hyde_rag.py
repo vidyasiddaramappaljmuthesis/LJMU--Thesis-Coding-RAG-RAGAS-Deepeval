@@ -7,9 +7,9 @@ HyDE RAG — single entry point.
 import sys
 import chromadb
 
-from hyde_rag.config import CHROMA_DB_PATH, COLLECTION_NAME
-from hyde_rag.ingestion import build_vector_store
-from hyde_rag.pipeline import run_hyde_rag
+from hyde_rag.implementation.config import CHROMA_DB_PATH, COLLECTION_NAME
+from hyde_rag.implementation.ingestion import build_vector_store
+from hyde_rag.implementation.pipeline import run_hyde_rag
 
 
 def _vector_store_exists() -> bool:

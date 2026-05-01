@@ -1,8 +1,8 @@
 from typing import Any
 
-from hyde_rag.config import TOP_K
-from hyde_rag.retriever import retrieve
-from hyde_rag.generator import generate
+from hyde_rag.implementation.config import TOP_K
+from hyde_rag.implementation.retriever import retrieve
+from hyde_rag.implementation.generator import generate
 
 
 def run_hyde_rag(query: str, top_k: int = TOP_K) -> dict[str, Any]:

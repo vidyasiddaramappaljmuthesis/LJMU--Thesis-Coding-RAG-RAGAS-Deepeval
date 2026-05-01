@@ -7,9 +7,9 @@ Naive RAG — single entry point.
 import sys
 import chromadb
 
-from naive_rag.config import CHROMA_DB_PATH, COLLECTION_NAME
-from naive_rag.ingestion import build_vector_store
-from naive_rag.pipeline import run_rag
+from naive_rag.implementation.config import CHROMA_DB_PATH, COLLECTION_NAME
+from naive_rag.implementation.ingestion import build_vector_store
+from naive_rag.implementation.pipeline import run_rag
 
 
 def _vector_store_exists() -> bool:

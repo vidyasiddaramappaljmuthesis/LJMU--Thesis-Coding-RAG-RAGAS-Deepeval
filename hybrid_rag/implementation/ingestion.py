@@ -14,11 +14,11 @@ import chromadb.errors
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 from rank_bm25 import BM25Okapi
 
-from hybrid_rag.config import (
+from hybrid_rag.implementation.config import (
     KB_ALL_DOCS, CHROMA_DB_PATH, COLLECTION_NAME,
     EMBEDDING_MODEL, BM25_INDEX_PATH,
 )
-from hybrid_rag.utils import tokenize
+from hybrid_rag.implementation.utils import tokenize
 
 _client: Optional[chromadb.PersistentClient] = None
 _collection: Optional[chromadb.Collection] = None

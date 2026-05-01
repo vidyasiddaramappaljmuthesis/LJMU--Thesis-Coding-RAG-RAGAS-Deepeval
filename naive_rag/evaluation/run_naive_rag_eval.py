@@ -32,9 +32,9 @@ Excel output (5 sheets):
   5. Summary           -- mean / min / max / std for all metrics
 
 Usage:
-    conda run --no-capture-output -n rag_eval python evaluation/run_naive_rag_eval.py
-    conda run --no-capture-output -n rag_eval python evaluation/run_naive_rag_eval.py --limit 5
-    conda run --no-capture-output -n rag_eval python evaluation/run_naive_rag_eval.py --limit 10 --batch-size 2
+    conda run --no-capture-output -n rag_eval python naive_rag/evaluation/run_naive_rag_eval.py
+    conda run --no-capture-output -n rag_eval python naive_rag/evaluation/run_naive_rag_eval.py --limit 5
+    conda run --no-capture-output -n rag_eval python naive_rag/evaluation/run_naive_rag_eval.py --limit 10 --batch-size 2
 """
 
 import sys, json, re, argparse, logging, textwrap, threading, random, time
@@ -46,15 +46,15 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity as _cosine_sim
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from dotenv import load_dotenv
 load_dotenv(PROJECT_ROOT / ".env")
 
-from naive_rag.ingestion import build_vector_store, get_collection
-from naive_rag.retriever import retrieve
-from naive_rag.config import GROQ_API_KEYS, GROQ_MODEL
+from naive_rag.implementation.ingestion import build_vector_store, get_collection
+from naive_rag.implementation.retriever import retrieve
+from naive_rag.implementation.config import GROQ_API_KEYS, GROQ_MODEL
 
 GOLDEN_PATH = PROJECT_ROOT / "dataset" / "golden" / "golden_dataset.csv"
 RAG_NAME    = "Naive-RAG"
@@ -63,7 +63,7 @@ RAG_NAME    = "Naive-RAG"
 def _default_output() -> Path:
     from datetime import datetime
     ts = datetime.now().strftime("%d-%m-%Y_%I-%M%p")   # e.g. 01-05-2026_12-30PM
-    return PROJECT_ROOT / "evaluation" / "results" / f"{RAG_NAME}_{ts}.xlsx"
+    return PROJECT_ROOT / "naive_rag" / "results" / f"{RAG_NAME}_{ts}.xlsx"
 
 
 logging.basicConfig(level=logging.INFO,
