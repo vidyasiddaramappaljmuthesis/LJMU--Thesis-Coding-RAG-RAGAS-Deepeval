@@ -31,9 +31,11 @@ TESTS_DIR    = PROJECT_ROOT / "tests"
 COMPLETED    = TESTS_DIR / "completed"
 
 RAG_SUITES: dict[str, dict] = {
-    "naive":  {"label": "Naive RAG",  "folder": str(TESTS_DIR / "naive_rag"),  "color": "1565C0"},
-    "hyde":   {"label": "HyDE RAG",   "folder": str(TESTS_DIR / "hyde_rag"),   "color": "4A148C"},
-    "hybrid": {"label": "Hybrid RAG", "folder": str(TESTS_DIR / "hybrid_rag"), "color": "1B5E20"},
+    "naive":      {"label": "Naive RAG",       "folder": str(TESTS_DIR / "naive_rag"),      "color": "1565C0"},
+    "hyde":       {"label": "HyDE RAG",        "folder": str(TESTS_DIR / "hyde_rag"),       "color": "4A148C"},
+    "hybrid":     {"label": "Hybrid RAG",      "folder": str(TESTS_DIR / "hybrid_rag"),     "color": "1B5E20"},
+    "reranking":  {"label": "Reranking RAG",   "folder": str(TESTS_DIR / "reranking_rag"),  "color": "BF360C"},
+    "multiquery": {"label": "Multi-Query RAG", "folder": str(TESTS_DIR / "multiquery_rag"), "color": "E65100"},
 }
 
 
@@ -302,7 +304,7 @@ def main(selected: list[str]) -> None:
     # Also write a copy into each individual RAG completed folder when running all
     if len(suites_to_run) > 1:
         for key in suite_results:
-            single_dir = COMPLETED / key
+            single_dir = COMPLETED / f"{key}_rag"
             single_dir.mkdir(parents=True, exist_ok=True)
             _save_excel({key: suite_results[key]}, RAG_SUITES, single_dir, total_elapsed)
 

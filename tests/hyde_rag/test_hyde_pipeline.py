@@ -81,4 +81,4 @@ def test_run_hyde_rag_passes_query_to_retrieve():
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
         run_hyde_rag("specific question")
-    mock_ret.assert_called_once_with("specific question")
+    mock_ret.assert_called_once_with("specific question", top_k=5)

@@ -9,21 +9,12 @@ from unittest.mock import MagicMock, patch, mock_open
 # ── build_bm25 ────────────────────────────────────────────────────────────────
 
 def test_build_bm25_creates_pickle(sample_docs, tmp_path):
+    """build_bm25(docs=...) must write a .pkl file at BM25_INDEX_PATH."""
     pkl_path = tmp_path / "bm25_index.pkl"
-    with patch("hybrid_rag.implementation.ingestion.BM25_INDEX_PATH", pkl_path), \
-         patch("builtins.open", side_effect=lambda p, mode, **kw: open(p, mode, **kw) if str(p) == str(pkl_path) else mock_open(read_data=json.dumps(sample_docs))()) if False else patch("builtins.open", mock_open(read_data=json.dumps(sample_docs))):
-        # Use tmp_path directly
-        import hybrid_rag.implementation.ingestion as ing
-        ing._bm25_cache = None
-        with patch("hybrid_rag.implementation.ingestion.BM25_INDEX_PATH", pkl_path):
-            # Patch open for reading KB but write to actual tmp file
-            import rank_bm25
-            from hybrid_rag.implementation.utils import tokenize
-            corpus = [tokenize(d["text"]) for d in sample_docs]
-            bm25 = rank_bm25.BM25Okapi(corpus)
-            pkl_path.parent.mkdir(parents=True, exist_ok=True)
-            with open(pkl_path, "wb") as f:
-                pickle.dump({"bm25": bm25, "docs": sample_docs}, f)
+    import hybrid_rag.implementation.ingestion as ing
+    ing._bm25_cache = None
+    with patch("hybrid_rag.implementation.ingestion.BM25_INDEX_PATH", pkl_path):
+        ing.build_bm25(docs=sample_docs)
     assert pkl_path.exists()
 
 

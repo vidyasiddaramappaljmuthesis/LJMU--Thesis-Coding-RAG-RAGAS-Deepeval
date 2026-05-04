@@ -61,7 +61,7 @@ def build_chroma(batch_size: int = 500, docs: Optional[list] = None) -> None:
     try:
         client.delete_collection(COLLECTION_NAME)
         log.info("Dropped existing ChromaDB collection.")
-    except chromadb.errors.InvalidCollectionException:
+    except Exception:
         pass  # collection did not pre-exist; nothing to drop
 
     col = client.create_collection(
