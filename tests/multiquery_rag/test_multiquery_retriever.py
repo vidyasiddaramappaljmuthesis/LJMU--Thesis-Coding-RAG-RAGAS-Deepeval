@@ -1,4 +1,11 @@
-"""Unit tests for multiquery_rag.implementation.retriever."""
+"""Unit tests for multiquery_rag.implementation.retriever.
+
+Covers both retrieval functions:
+- ``retrieve_for_query``: ChromaDB lookup for a single query — list shape,
+  required doc keys, float distances, and top_n forwarding.
+- ``retrieve_multi``: batch lookup for all expanded query variants — dict shape,
+  query-keyed values, one ChromaDB call per query, and empty-input edge case.
+"""
 import os
 from unittest.mock import patch
 
@@ -8,6 +15,7 @@ os.environ.setdefault("GROQ_API_KEYS", "test-key-1,test-key-2")
 
 
 def test_retrieve_for_query_returns_list(mock_chroma_collection):
+    """retrieve_for_query must return a list."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -16,6 +24,7 @@ def test_retrieve_for_query_returns_list(mock_chroma_collection):
 
 
 def test_retrieve_for_query_returns_top_n_docs(mock_chroma_collection):
+    """retrieve_for_query must return exactly top_n documents when available."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -24,6 +33,7 @@ def test_retrieve_for_query_returns_top_n_docs(mock_chroma_collection):
 
 
 def test_retrieve_for_query_each_doc_has_id(mock_chroma_collection):
+    """Every document must contain the 'id' key."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -32,6 +42,7 @@ def test_retrieve_for_query_each_doc_has_id(mock_chroma_collection):
 
 
 def test_retrieve_for_query_each_doc_has_text(mock_chroma_collection):
+    """Every document must contain the 'text' key."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -40,6 +51,7 @@ def test_retrieve_for_query_each_doc_has_text(mock_chroma_collection):
 
 
 def test_retrieve_for_query_each_doc_has_metadata(mock_chroma_collection):
+    """Every document must contain the 'metadata' key."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -48,6 +60,7 @@ def test_retrieve_for_query_each_doc_has_metadata(mock_chroma_collection):
 
 
 def test_retrieve_for_query_each_doc_has_distance(mock_chroma_collection):
+    """Every document must contain the 'distance' key."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -56,6 +69,7 @@ def test_retrieve_for_query_each_doc_has_distance(mock_chroma_collection):
 
 
 def test_retrieve_for_query_distance_is_float(mock_chroma_collection):
+    """The 'distance' value must be a Python float."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_for_query
@@ -64,6 +78,7 @@ def test_retrieve_for_query_distance_is_float(mock_chroma_collection):
 
 
 def test_retrieve_multi_returns_dict(mock_chroma_collection):
+    """retrieve_multi must return a dict (query → doc list mapping)."""
     queries = ["query 1", "query 2", "query 3"]
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
@@ -73,6 +88,7 @@ def test_retrieve_multi_returns_dict(mock_chroma_collection):
 
 
 def test_retrieve_multi_keys_are_queries(mock_chroma_collection):
+    """retrieve_multi dict keys must match the input query strings exactly."""
     queries = ["query 1", "query 2", "query 3"]
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
@@ -82,6 +98,7 @@ def test_retrieve_multi_keys_are_queries(mock_chroma_collection):
 
 
 def test_retrieve_multi_each_value_is_list(mock_chroma_collection):
+    """Every value in the retrieve_multi result must be a list of documents."""
     queries = ["query 1", "query 2"]
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
@@ -91,6 +108,7 @@ def test_retrieve_multi_each_value_is_list(mock_chroma_collection):
 
 
 def test_retrieve_multi_calls_collection_once_per_query(mock_chroma_collection):
+    """retrieve_multi must make one ChromaDB query call per input query."""
     queries = ["query A", "query B", "query C"]
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
@@ -100,6 +118,7 @@ def test_retrieve_multi_calls_collection_once_per_query(mock_chroma_collection):
 
 
 def test_retrieve_multi_empty_queries_returns_empty_dict(mock_chroma_collection):
+    """retrieve_multi with an empty query list must return an empty dict."""
     with patch("multiquery_rag.implementation.retriever.get_collection",
                return_value=mock_chroma_collection):
         from multiquery_rag.implementation.retriever import retrieve_multi

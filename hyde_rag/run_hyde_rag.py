@@ -1,18 +1,38 @@
 """
 HyDE RAG — single entry point.
 
-  python -m hyde_rag.run_hyde_rag          # auto-setup + interactive Q&A
-  python -m hyde_rag.run_hyde_rag --ingest # force re-index only (no Q&A)
+Usage::
+
+    python -m hyde_rag.run_hyde_rag          # auto-setup + interactive Q&A
+    python -m hyde_rag.run_hyde_rag --ingest # force re-index only (no Q&A)
+
+On first run the ChromaDB vector store is built from the KB JSON file
+(one-time, ~2 min).  Subsequent runs reuse the persisted index.
 """
+import logging
 import sys
+
 import chromadb
 
 from .implementation.config import CHROMA_DB_PATH, COLLECTION_NAME
 from .implementation.ingestion import build_vector_store
 from .implementation.pipeline import run_hyde_rag
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s  %(levelname)-8s  %(name)s  %(message)s",
+    datefmt="%H:%M:%S",
+)
+log = logging.getLogger(__name__)
+
 
 def _vector_store_exists() -> bool:
+    """Return ``True`` if the ChromaDB collection exists and is populated.
+
+    Returns:
+        ``True`` when the collection contains at least one document;
+        ``False`` on any error or if the collection is empty.
+    """
     try:
         client = chromadb.PersistentClient(path=str(CHROMA_DB_PATH))
         col = client.get_collection(COLLECTION_NAME)
@@ -22,15 +42,27 @@ def _vector_store_exists() -> bool:
 
 
 def _ensure_vector_store() -> None:
+    """Build the ChromaDB vector store if it is not already populated.
+
+    No-op when the store exists; triggers ``build_vector_store``
+    (one-time, ~2 min) otherwise and logs setup progress.
+    """
     if _vector_store_exists():
-        print("[Setup] Vector store already exists — skipping ingestion.")
+        log.info("[Setup] Vector store already exists — skipping ingestion.")
     else:
-        print("[Setup] Vector store not found. Building now (this runs once)...")
+        log.info("[Setup] Vector store not found. Building now (this runs once)...")
         build_vector_store()
-        print("[Setup] Done.\n")
+        log.info("[Setup] Done.")
 
 
 def _interactive() -> None:
+    """Run an interactive question-answering loop using the HyDE RAG pipeline.
+
+    Reads queries from stdin, runs the full HyDE pipeline (hypothetical-doc
+    generation → embedding retrieval → grounded answer generation), and prints
+    the hypothetical document, answer, and retrieved document metadata.
+    Type ``exit`` to quit.
+    """
     print("=" * 60)
     print("  E-Commerce HyDE RAG  |  LLaMA 3.3 70B via Groq")
     print("  HyDE      : Hypothetical Document Embeddings")
@@ -73,9 +105,9 @@ def _interactive() -> None:
 
 if __name__ == "__main__":
     if "--ingest" in sys.argv:
-        print("[Setup] Force re-indexing...")
+        log.info("[Setup] Force re-indexing...")
         build_vector_store()
-        print("[Setup] Done.")
+        log.info("[Setup] Done.")
     else:
         _ensure_vector_store()
         _interactive()

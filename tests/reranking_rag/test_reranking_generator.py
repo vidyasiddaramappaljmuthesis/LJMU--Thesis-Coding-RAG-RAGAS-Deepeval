@@ -1,10 +1,17 @@
-"""Unit tests for reranking_rag.implementation.generator."""
+"""Unit tests for reranking_rag.implementation.generator.
+
+Verifies that ``generate`` calls Groq exactly once with the correct model,
+temperature, max_tokens, a prompt that embeds both the query and all
+cross-encoder-reranked context documents, and a system message.
+All Groq calls are stubbed via unittest.mock.
+"""
 from unittest.mock import patch
 
 _MOCK_ANSWER = "The average delivery time is 8 days."
 
 
 def test_generate_returns_string(retrieved_docs):
+    """generate must return a plain string."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER):
         from reranking_rag.implementation.generator import generate
@@ -13,6 +20,7 @@ def test_generate_returns_string(retrieved_docs):
 
 
 def test_generate_returns_groq_response(retrieved_docs):
+    """generate must return exactly the string returned by call_groq."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER):
         from reranking_rag.implementation.generator import generate
@@ -21,6 +29,7 @@ def test_generate_returns_groq_response(retrieved_docs):
 
 
 def test_generate_calls_call_groq_once(retrieved_docs):
+    """generate must invoke call_groq exactly once per call."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate
@@ -29,6 +38,7 @@ def test_generate_calls_call_groq_once(retrieved_docs):
 
 
 def test_generate_uses_correct_model(retrieved_docs):
+    """generate must pass GROQ_MODEL as the model argument to call_groq."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate
@@ -39,6 +49,7 @@ def test_generate_uses_correct_model(retrieved_docs):
 
 
 def test_generate_uses_low_temperature(retrieved_docs):
+    """generate must pass temperature=0.1 to call_groq for deterministic output."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate
@@ -48,6 +59,7 @@ def test_generate_uses_low_temperature(retrieved_docs):
 
 
 def test_generate_includes_query_in_messages(retrieved_docs):
+    """The user message sent to Groq must contain the original query string."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate
@@ -58,6 +70,7 @@ def test_generate_includes_query_in_messages(retrieved_docs):
 
 
 def test_generate_includes_context_docs_in_messages(retrieved_docs):
+    """The user message must embed the text of every reranked document."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate
@@ -69,6 +82,7 @@ def test_generate_includes_context_docs_in_messages(retrieved_docs):
 
 
 def test_generate_has_system_message(retrieved_docs):
+    """The message list sent to Groq must include a 'system' role message."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate
@@ -79,6 +93,7 @@ def test_generate_has_system_message(retrieved_docs):
 
 
 def test_generate_max_tokens_512(retrieved_docs):
+    """generate must cap the response at 512 tokens via the max_tokens kwarg."""
     with patch("reranking_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from reranking_rag.implementation.generator import generate

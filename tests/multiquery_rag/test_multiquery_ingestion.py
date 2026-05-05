@@ -1,4 +1,10 @@
-"""Unit tests for multiquery_rag.implementation.ingestion."""
+"""Unit tests for multiquery_rag.implementation.ingestion.
+
+Covers ``get_collection`` (returns a non-None collection, uses the correct
+collection name, and returns the same cached object on repeated calls) and
+``build_vector_store`` (upserts documents and returns the collection object).
+All ChromaDB and file I/O calls are replaced with mocks.
+"""
 import os
 from unittest.mock import patch, MagicMock
 
@@ -8,6 +14,7 @@ os.environ.setdefault("GROQ_API_KEYS", "test-key-1,test-key-2")
 
 
 def test_get_collection_returns_collection(mock_chroma_collection):
+    """get_collection must return a non-None ChromaDB collection."""
     with patch("multiquery_rag.implementation.ingestion._get_client") as mock_client, \
          patch("multiquery_rag.implementation.ingestion._collection", None):
         mock_client.return_value.get_collection.return_value = mock_chroma_collection
@@ -19,6 +26,7 @@ def test_get_collection_returns_collection(mock_chroma_collection):
 
 
 def test_get_collection_uses_correct_name(mock_chroma_collection):
+    """get_collection must fetch the collection using COLLECTION_NAME."""
     with patch("multiquery_rag.implementation.ingestion._get_client") as mock_client:
         mock_client.return_value.get_collection.return_value = mock_chroma_collection
         from multiquery_rag.implementation.ingestion import get_collection, COLLECTION_NAME
@@ -31,6 +39,7 @@ def test_get_collection_uses_correct_name(mock_chroma_collection):
 
 
 def test_build_vector_store_adds_documents(sample_docs):
+    """build_vector_store must call col.add() at least once to upsert documents."""
     fake_col = MagicMock()
     with patch("multiquery_rag.implementation.ingestion._get_client") as mock_client, \
          patch("builtins.open", MagicMock()), \
@@ -44,6 +53,7 @@ def test_build_vector_store_adds_documents(sample_docs):
 
 
 def test_build_vector_store_returns_collection(sample_docs):
+    """build_vector_store must return the ChromaDB collection object."""
     fake_col = MagicMock()
     with patch("multiquery_rag.implementation.ingestion._get_client") as mock_client, \
          patch("builtins.open", MagicMock()), \
@@ -57,6 +67,7 @@ def test_build_vector_store_returns_collection(sample_docs):
 
 
 def test_get_collection_singleton_returns_same_object(mock_chroma_collection):
+    """Calling get_collection() twice must return the exact same cached object."""
     import multiquery_rag.implementation.ingestion as ing
     ing._collection = mock_chroma_collection
     from multiquery_rag.implementation.ingestion import get_collection

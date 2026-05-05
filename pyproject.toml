@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ecommerce-rag-benchmark"
+version = "1.0.0"
+description = "Benchmarking five RAG strategies on the Olist Brazilian e-commerce dataset with RAGAS and DeepEval evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Akshat Mehta" }
+]
+keywords = [
+    "RAG",
+    "retrieval-augmented-generation",
+    "RAGAS",
+    "DeepEval",
+    "e-commerce",
+    "NLP",
+    "LLM",
+    "information-retrieval",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Indexing",
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "python-dotenv>=1.0.0",
+    "google-genai>=1.0.0",
+    "ragas>=0.2.0",
+    "deepeval>=1.0.0",
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+    "groq>=0.11.0",
+    "rank-bm25>=0.3.1",
+    "langchain>=0.3.0",
+    "langchain-google-genai>=2.0.0",
+    "langchain-groq>=0.2.0",
+    "langchain-core>=0.3.0,<0.3.70",
+    "openpyxl>=3.1.0",
+    "reportlab>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+prepare-data = "preprocessing.data_preparation:run_pipeline"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "preprocessing*",
+    "naive_rag*",
+    "hyde_rag*",
+    "multiquery_rag*",
+    "reranking_rag*",
+    "hybrid_rag*",
+    "shared*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.setuptools]
+py-modules = ["data_preparation"]

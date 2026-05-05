@@ -1,4 +1,11 @@
-"""Unit tests for reranking_rag.implementation.pipeline (end-to-end with mocks)."""
+"""Unit tests for reranking_rag.implementation.pipeline (end-to-end with mocks).
+
+Verifies that ``run_reranking_rag`` wires all three stages correctly:
+1. retrieve_initial is called with the query and top_n=20.
+2. rerank receives the full initial candidate list.
+3. generate receives the reranked list (not the initial list).
+Result dict must contain query, answer, retrieved_docs (reranked), and initial_docs.
+"""
 from unittest.mock import patch, MagicMock
 import numpy as np
 
@@ -23,14 +30,17 @@ _RERANKED_DOCS = [
 
 
 def _mock_retrieve(query, top_n=20):
+    """Stub retrieve_initial returning the fixed 20-doc initial candidate list."""
     return _INITIAL_DOCS
 
 
 def _mock_rerank(query, docs, top_k=5):
+    """Stub rerank returning the fixed 5-doc reranked list."""
     return _RERANKED_DOCS
 
 
 def test_run_reranking_rag_returns_dict():
+    """run_reranking_rag must return a dict."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -40,6 +50,7 @@ def test_run_reranking_rag_returns_dict():
 
 
 def test_run_reranking_rag_has_query_key():
+    """Result dict must contain the 'query' key."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -49,6 +60,7 @@ def test_run_reranking_rag_has_query_key():
 
 
 def test_run_reranking_rag_has_answer_key():
+    """Result dict must contain the 'answer' key."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -58,6 +70,7 @@ def test_run_reranking_rag_has_answer_key():
 
 
 def test_run_reranking_rag_has_retrieved_docs_key():
+    """Result dict must contain the 'retrieved_docs' key (the reranked list)."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -67,6 +80,7 @@ def test_run_reranking_rag_has_retrieved_docs_key():
 
 
 def test_run_reranking_rag_has_initial_docs_key():
+    """Result dict must contain the 'initial_docs' key (Stage 1 candidate set)."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -76,6 +90,7 @@ def test_run_reranking_rag_has_initial_docs_key():
 
 
 def test_run_reranking_rag_query_matches_input():
+    """result['query'] must be the exact string passed to run_reranking_rag."""
     q = "What is average delivery time?"
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
@@ -86,6 +101,7 @@ def test_run_reranking_rag_query_matches_input():
 
 
 def test_run_reranking_rag_answer_from_generator():
+    """result['answer'] must equal the value returned by the generate stub."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -95,7 +111,7 @@ def test_run_reranking_rag_answer_from_generator():
 
 
 def test_run_reranking_rag_retrieved_docs_are_reranked():
-    """retrieved_docs must be the reranked list, not the initial list."""
+    """retrieved_docs must be the reranked list, not the initial Stage 1 list."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -115,7 +131,7 @@ def test_run_reranking_rag_initial_docs_are_full_candidate_set():
 
 
 def test_run_reranking_rag_initial_larger_than_retrieved():
-    """initial_docs should have more candidates than retrieved_docs."""
+    """initial_docs must contain more candidates than the final retrieved_docs."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate", return_value=_MOCK_ANSWER):
@@ -125,6 +141,7 @@ def test_run_reranking_rag_initial_larger_than_retrieved():
 
 
 def test_run_reranking_rag_passes_query_to_retrieve():
+    """run_reranking_rag must forward the query to retrieve_initial with top_n=20."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial",
                side_effect=_mock_retrieve) as mock_ret, \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
@@ -135,6 +152,7 @@ def test_run_reranking_rag_passes_query_to_retrieve():
 
 
 def test_run_reranking_rag_passes_initial_docs_to_reranker():
+    """rerank must receive the full initial candidate list as its second argument."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial",
                side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank",
@@ -147,6 +165,7 @@ def test_run_reranking_rag_passes_initial_docs_to_reranker():
 
 
 def test_run_reranking_rag_passes_reranked_docs_to_generator():
+    """generate must receive the reranked list (not the initial list) as context."""
     with patch("reranking_rag.implementation.pipeline.retrieve_initial", side_effect=_mock_retrieve), \
          patch("reranking_rag.implementation.pipeline.rerank", side_effect=_mock_rerank), \
          patch("reranking_rag.implementation.pipeline.generate",

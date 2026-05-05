@@ -1,4 +1,9 @@
-"""Unit tests for hybrid_rag.implementation.ingestion."""
+"""Unit tests for hybrid_rag.implementation.ingestion.
+
+Covers ``build_bm25`` (pickle creation and structure), ``get_bm25_index``
+(tuple shape, BM25Okapi type, and cache-on-second-call behaviour), and
+``build_chroma`` (collection creation with cosine-distance metadata).
+"""
 import json
 import pickle
 import tempfile
@@ -9,7 +14,7 @@ from unittest.mock import MagicMock, patch, mock_open
 # ── build_bm25 ────────────────────────────────────────────────────────────────
 
 def test_build_bm25_creates_pickle(sample_docs, tmp_path):
-    """build_bm25(docs=...) must write a .pkl file at BM25_INDEX_PATH."""
+    """build_bm25 must write a BM25 pickle file at BM25_INDEX_PATH."""
     pkl_path = tmp_path / "bm25_index.pkl"
     import hybrid_rag.implementation.ingestion as ing
     ing._bm25_cache = None
@@ -19,6 +24,7 @@ def test_build_bm25_creates_pickle(sample_docs, tmp_path):
 
 
 def test_build_bm25_stores_correct_structure(sample_docs, tmp_path):
+    """The pickle file must deserialise to a dict with 'bm25' and 'docs' keys."""
     pkl_path = tmp_path / "bm25_index.pkl"
     import rank_bm25
     from hybrid_rag.implementation.utils import tokenize
@@ -36,6 +42,7 @@ def test_build_bm25_stores_correct_structure(sample_docs, tmp_path):
 
 
 def test_get_bm25_index_returns_tuple(sample_docs, tmp_path):
+    """get_bm25_index must return a 2-tuple."""
     pkl_path = tmp_path / "bm25_index.pkl"
     import rank_bm25
     from hybrid_rag.implementation.utils import tokenize
@@ -54,6 +61,7 @@ def test_get_bm25_index_returns_tuple(sample_docs, tmp_path):
 
 
 def test_get_bm25_index_returns_bm25_and_docs(sample_docs, tmp_path):
+    """get_bm25_index must return (BM25Okapi instance, docs list)."""
     pkl_path = tmp_path / "bm25_index.pkl"
     import rank_bm25
     from hybrid_rag.implementation.utils import tokenize
@@ -72,6 +80,7 @@ def test_get_bm25_index_returns_bm25_and_docs(sample_docs, tmp_path):
 
 
 def test_get_bm25_index_caches_after_first_call(sample_docs, tmp_path):
+    """Calling get_bm25_index() twice must return the same objects (cache hit)."""
     pkl_path = tmp_path / "bm25_index.pkl"
     import rank_bm25
     from hybrid_rag.implementation.utils import tokenize
@@ -87,7 +96,6 @@ def test_get_bm25_index_caches_after_first_call(sample_docs, tmp_path):
         result1 = ing.get_bm25_index()
         result2 = ing.get_bm25_index()
 
-    # Same objects returned both times (cache hit)
     assert result1[0] is result2[0]
     assert result1[1] is result2[1]
 
@@ -95,6 +103,7 @@ def test_get_bm25_index_caches_after_first_call(sample_docs, tmp_path):
 # ── build_chroma ──────────────────────────────────────────────────────────────
 
 def test_build_chroma_creates_collection(sample_docs):
+    """build_chroma must call create_collection on the ChromaDB client."""
     mock_col = MagicMock()
     mock_client = MagicMock()
     mock_client.create_collection.return_value = mock_col
@@ -110,6 +119,7 @@ def test_build_chroma_creates_collection(sample_docs):
 
 
 def test_build_chroma_uses_cosine_space(sample_docs):
+    """build_chroma must configure the ChromaDB index with cosine distance."""
     mock_col = MagicMock()
     mock_client = MagicMock()
     mock_client.create_collection.return_value = mock_col

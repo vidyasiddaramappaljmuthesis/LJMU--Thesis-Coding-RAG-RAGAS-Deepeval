@@ -1,4 +1,9 @@
-"""Unit tests for naive_rag.implementation.generator."""
+"""Unit tests for naive_rag.implementation.generator.
+
+Verifies that ``generate`` calls Groq with the correct model, temperature,
+max_tokens, and a prompt that embeds both the user query and all retrieved
+context documents. All Groq calls are stubbed with unittest.mock.
+"""
 from unittest.mock import patch, call
 
 
@@ -6,6 +11,7 @@ _MOCK_ANSWER = "The average delivery time is 8 days."
 
 
 def test_generate_returns_string(retrieved_docs):
+    """generate must return a plain string (the LLM answer)."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER):
         from naive_rag.implementation.generator import generate
         result = generate("What is the delivery time?", retrieved_docs)
@@ -13,6 +19,7 @@ def test_generate_returns_string(retrieved_docs):
 
 
 def test_generate_returns_groq_response(retrieved_docs):
+    """generate must return exactly the string returned by call_groq."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER):
         from naive_rag.implementation.generator import generate
         result = generate("What is the delivery time?", retrieved_docs)
@@ -20,6 +27,7 @@ def test_generate_returns_groq_response(retrieved_docs):
 
 
 def test_generate_calls_call_groq_once(retrieved_docs):
+    """generate must invoke call_groq exactly once per call."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         generate("question?", retrieved_docs)
@@ -27,6 +35,7 @@ def test_generate_calls_call_groq_once(retrieved_docs):
 
 
 def test_generate_uses_correct_model(retrieved_docs):
+    """generate must pass GROQ_MODEL as the model argument to call_groq."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         from naive_rag.implementation.config import GROQ_MODEL
@@ -36,6 +45,7 @@ def test_generate_uses_correct_model(retrieved_docs):
 
 
 def test_generate_uses_low_temperature(retrieved_docs):
+    """generate must pass temperature=0.1 to call_groq for deterministic output."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         generate("question?", retrieved_docs, temperature=0.1)
@@ -44,6 +54,7 @@ def test_generate_uses_low_temperature(retrieved_docs):
 
 
 def test_generate_includes_query_in_messages(retrieved_docs):
+    """The user message sent to Groq must contain the original query string."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         generate("What is the best product?", retrieved_docs)
@@ -53,6 +64,7 @@ def test_generate_includes_query_in_messages(retrieved_docs):
 
 
 def test_generate_includes_context_docs_in_messages(retrieved_docs):
+    """The user message must embed the text of every retrieved document."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         generate("question?", retrieved_docs)
@@ -63,6 +75,7 @@ def test_generate_includes_context_docs_in_messages(retrieved_docs):
 
 
 def test_generate_has_system_message(retrieved_docs):
+    """The message list sent to Groq must include a 'system' role message."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         generate("question?", retrieved_docs)
@@ -72,6 +85,7 @@ def test_generate_has_system_message(retrieved_docs):
 
 
 def test_generate_max_tokens_512(retrieved_docs):
+    """generate must cap the response at 512 tokens via the max_tokens kwarg."""
     with patch("naive_rag.implementation.generator.call_groq", return_value=_MOCK_ANSWER) as mock_groq:
         from naive_rag.implementation.generator import generate
         generate("question?", retrieved_docs)

@@ -30,10 +30,12 @@ _collection: Optional[chromadb.Collection] = None
 
 
 def _embedding_fn() -> SentenceTransformerEmbeddingFunction:
+    """Return a new SentenceTransformer embedding function for EMBEDDING_MODEL."""
     return SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
 
 
 def _get_client() -> chromadb.PersistentClient:
+    """Return the module-level PersistentClient, creating it on first call."""
     global _client
     if _client is None:
         _client = chromadb.PersistentClient(path=str(CHROMA_DB_PATH))

@@ -1,7 +1,11 @@
 """
 Unit tests for preprocessing/step5_build_golden_dataset.py (5-key rotation).
 
-All tests that would call Gemini replace _call_gemini with a deterministic stub.
+Covers configuration constants, API-key reading, document grouping/sampling,
+job-list construction, the ``_Job`` dataclass properties, and the full
+end-to-end golden-dataset generation flow.  All tests that would call the
+Gemini API replace ``_call_gemini`` with a deterministic stub so no real
+API keys are required.
 """
 import sys
 import json
@@ -24,9 +28,10 @@ from preprocessing.step5_build_golden_dataset import (
 )
 
 
-# ── helpers ───────────────────────────────────────────────────────────────────
+# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _make_kb_doc(doc_type: str, idx: int) -> dict:
+    """Build a synthetic KB document dict for the given *doc_type* and index."""
     layer = _DOC_TYPE_TO_LAYER.get(doc_type, "unknown")
     return {
         "id":   f"{layer}_{idx}",
@@ -42,20 +47,24 @@ def _make_kb_doc(doc_type: str, idx: int) -> dict:
 
 
 def _make_all_layer_docs(n: int = 5) -> list:
+    """Return *n* synthetic KB documents for every known layer type."""
     return [_make_kb_doc(dt, i) for dt in _DOC_TYPE_TO_LAYER for i in range(n)]
 
 
 def _stub_gemini_ok(_client, _prompt: str, _key_idx: int):
+    """Deterministic Gemini stub that always returns a valid question dict."""
     return {"question": "How many orders?", "expected_answer": "100"}
 
 
 def _stub_gemini_empty(_client, _prompt: str, _key_idx: int):
+    """Deterministic Gemini stub that simulates an empty/failed response."""
     return None
 
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
 def test_golden_columns_complete():
+    """GOLDEN_COLUMNS must contain exactly the eight canonical field names."""
     assert GOLDEN_COLUMNS == [
         "question_id", "question", "expected_answer",
         "expected_context", "expected_source_ids",
@@ -64,10 +73,12 @@ def test_golden_columns_complete():
 
 
 def test_queries_per_key_times_num_keys():
+    """Total planned queries (QUERIES_PER_KEY × NUM_KEYS) must equal 100."""
     assert QUERIES_PER_KEY * NUM_KEYS == 100
 
 
 def test_layer_targets_sum_to_100():
+    """Sum of all per-layer, per-difficulty targets must equal 100."""
     total = sum(
         v for targets in step5_mod._LAYER_TARGETS.values()
         for v in targets.values()
@@ -78,6 +89,7 @@ def test_layer_targets_sum_to_100():
 # ── _read_api_keys ────────────────────────────────────────────────────────────
 
 def test_read_api_keys_reads_env_vars(monkeypatch):
+    """_read_api_keys must return all five keys when env vars are set."""
     for i in range(1, 6):
         monkeypatch.setenv(f"GOOGLE_API_KEY_{i}", f"fake-key-{i}")
     keys = step5_mod._read_api_keys()
@@ -85,6 +97,7 @@ def test_read_api_keys_reads_env_vars(monkeypatch):
 
 
 def test_read_api_keys_empty_when_none_set(monkeypatch):
+    """_read_api_keys must return an empty list when no env vars are set."""
     for i in range(1, 6):
         monkeypatch.delenv(f"GOOGLE_API_KEY_{i}", raising=False)
     keys = step5_mod._read_api_keys()
@@ -94,11 +107,13 @@ def test_read_api_keys_empty_when_none_set(monkeypatch):
 # ── _group_and_sample ─────────────────────────────────────────────────────────
 
 def test_group_and_sample_covers_all_layers():
+    """_group_and_sample must produce a key for every known layer type."""
     grouped = _group_and_sample(_make_all_layer_docs(5))
     assert set(grouped.keys()) == set(_DOC_TYPE_TO_LAYER.values())
 
 
 def test_group_and_sample_respects_max_docs(monkeypatch):
+    """_group_and_sample must not exceed _LAYER_MAX_DOCS documents per layer."""
     monkeypatch.setattr(step5_mod, "_LAYER_MAX_DOCS", {k: 2 for k in _DOC_TYPE_TO_LAYER.values()})
     grouped = _group_and_sample(_make_all_layer_docs(10))
     for layer, docs in grouped.items():
@@ -108,18 +123,21 @@ def test_group_and_sample_respects_max_docs(monkeypatch):
 # ── _build_job_list ───────────────────────────────────────────────────────────
 
 def test_build_job_list_returns_100_jobs():
+    """_build_job_list must produce exactly 100 _Job objects."""
     docs = _group_and_sample(_make_all_layer_docs(15))
     jobs = _build_job_list(docs)
     assert len(jobs) == 100
 
 
 def test_build_job_list_all_have_docs():
+    """Every job must have a primary document assigned."""
     docs = _group_and_sample(_make_all_layer_docs(15))
     for job in _build_job_list(docs):
         assert job.doc is not None
 
 
 def test_build_job_list_cross_layer_has_two_docs():
+    """Cross-layer jobs must have both doc and doc2 plus layer name attributes."""
     docs = _group_and_sample(_make_all_layer_docs(15))
     cross_jobs = [j for j in _build_job_list(docs) if j.layer == "cross_layer"]
     for job in cross_jobs:
@@ -131,12 +149,14 @@ def test_build_job_list_cross_layer_has_two_docs():
 # ── _Job dataclass ────────────────────────────────────────────────────────────
 
 def test_job_best_kb_layer_single():
+    """For single-layer jobs, best_kb_layer must equal the layer name."""
     doc = _make_kb_doc("category_level", 0)
     job = _Job(layer="category", difficulty="easy", doc=doc)
     assert job.best_kb_layer == "category"
 
 
 def test_job_best_kb_layer_cross():
+    """For cross-layer jobs, best_kb_layer must be 'layer1+layer2'."""
     d1 = _make_kb_doc("category_level", 0)
     d2 = _make_kb_doc("customer_state_level", 0)
     job = _Job(layer="cross_layer", difficulty="hard", doc=d1, doc2=d2,
@@ -145,6 +165,7 @@ def test_job_best_kb_layer_cross():
 
 
 def test_job_question_type_mapping():
+    """question_type must map easy→factual, medium→analytical, hard→comparison."""
     d = _make_kb_doc("order_level", 0)
     assert _Job(layer="order", difficulty="easy",   doc=d).question_type == "factual"
     assert _Job(layer="order", difficulty="medium", doc=d).question_type == "analytical"
@@ -155,7 +176,7 @@ def test_job_question_type_mapping():
 
 @pytest.fixture
 def tiny_run(monkeypatch, tmp_path):
-    """Patch to use 2 keys × 2 queries each for fast testing."""
+    """Patch to use 2 keys × 2 queries each for fast, API-free testing."""
     monkeypatch.setattr(step5_mod, "QUERIES_PER_KEY", 2)
     monkeypatch.setattr(step5_mod, "NUM_KEYS",        2)
     monkeypatch.setattr(step5_mod, "_LAYER_TARGETS", {
@@ -172,16 +193,19 @@ def tiny_run(monkeypatch, tmp_path):
 
 
 def test_generate_returns_dataframe(monkeypatch, tiny_run):
+    """generate_golden_dataset must return a pandas DataFrame."""
     result = step5_mod.generate_golden_dataset(pd.DataFrame(), _make_all_layer_docs(5))
     assert isinstance(result, pd.DataFrame)
 
 
 def test_generate_has_correct_columns(monkeypatch, tiny_run):
+    """Output columns must match GOLDEN_COLUMNS exactly."""
     result = step5_mod.generate_golden_dataset(pd.DataFrame(), _make_all_layer_docs(5))
     assert list(result.columns) == GOLDEN_COLUMNS
 
 
 def test_generate_question_ids_sequential(monkeypatch, tiny_run):
+    """question_id must start at q001 and be unique across all rows."""
     result = step5_mod.generate_golden_dataset(pd.DataFrame(), _make_all_layer_docs(5))
     if len(result) > 0:
         assert result["question_id"].iloc[0] == "q001"
@@ -189,6 +213,7 @@ def test_generate_question_ids_sequential(monkeypatch, tiny_run):
 
 
 def test_generate_expected_context_valid_json(monkeypatch, tiny_run):
+    """expected_context must be a JSON-serialised non-empty list."""
     result = step5_mod.generate_golden_dataset(pd.DataFrame(), _make_all_layer_docs(5))
     for ctx in result["expected_context"]:
         parsed = json.loads(ctx)
@@ -197,11 +222,13 @@ def test_generate_expected_context_valid_json(monkeypatch, tiny_run):
 
 
 def test_generate_difficulty_values_valid(monkeypatch, tiny_run):
+    """All difficulty values must be one of 'easy', 'medium', or 'hard'."""
     result = step5_mod.generate_golden_dataset(pd.DataFrame(), _make_all_layer_docs(5))
     assert set(result["difficulty"].unique()).issubset({"easy", "medium", "hard"})
 
 
 def test_generate_no_api_keys_returns_empty(monkeypatch, tmp_path):
+    """When no API keys are available, an empty DataFrame with GOLDEN_COLUMNS is returned."""
     for i in range(1, 6):
         monkeypatch.delenv(f"GOOGLE_API_KEY_{i}", raising=False)
     result = step5_mod.generate_golden_dataset(pd.DataFrame(), [])
@@ -222,7 +249,7 @@ def test_checkpoint_loaded_on_second_run(monkeypatch, tmp_path):
     monkeypatch.setattr(step5_mod.genai, "Client", lambda api_key: object())
     monkeypatch.setenv("GOOGLE_API_KEY_1", "fake")
 
-    # Pre-write a checkpoint for key 1
+    # Pre-write a checkpoint so the real API is never called on the second run.
     ckpt_rows = [
         {
             "question": "Pre-saved question?", "expected_answer": "Pre-saved answer",
@@ -234,9 +261,10 @@ def test_checkpoint_loaded_on_second_run(monkeypatch, tmp_path):
         json.dumps(ckpt_rows), encoding="utf-8"
     )
 
-    # _call_gemini should never be called
     call_count = {"n": 0}
+
     def counting_stub(*a, **kw):
+        """Increment counter so we can assert _call_gemini was never reached."""
         call_count["n"] += 1
         return {"question": "q", "expected_answer": "a"}
 

@@ -1,4 +1,12 @@
-"""Unit tests for hyde_rag.implementation.generator."""
+"""Unit tests for hyde_rag.implementation.generator.
+
+Covers both generation functions:
+- ``generate_hypothetical_doc``: creates a plausible answer document at high
+  temperature (HYDE_TEMPERATURE) with a 256-token cap.
+- ``generate``: produces the final grounded answer at low temperature
+  (ANSWER_TEMPERATURE) with a 512-token cap.
+All Groq calls are stubbed with unittest.mock.
+"""
 from unittest.mock import patch
 
 _HYPO_DOC = "In Q4 2017, electronics orders in SP took 8.3 days to deliver."
@@ -8,6 +16,7 @@ _FINAL_ANSWER = "The average delivery time for electronics in SP is 8.3 days."
 # ── generate_hypothetical_doc ─────────────────────────────────────────────────
 
 def test_generate_hypothetical_doc_returns_string():
+    """generate_hypothetical_doc must return a plain string."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_HYPO_DOC):
         from hyde_rag.implementation.generator import generate_hypothetical_doc
         result = generate_hypothetical_doc("What is delivery time in SP?")
@@ -15,6 +24,7 @@ def test_generate_hypothetical_doc_returns_string():
 
 
 def test_generate_hypothetical_doc_uses_hyde_temperature():
+    """generate_hypothetical_doc must pass HYDE_TEMPERATURE to call_groq."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_HYPO_DOC) as mock_groq:
         from hyde_rag.implementation.generator import generate_hypothetical_doc
         from hyde_rag.implementation.config import HYDE_TEMPERATURE
@@ -24,6 +34,7 @@ def test_generate_hypothetical_doc_uses_hyde_temperature():
 
 
 def test_generate_hypothetical_doc_max_tokens_256():
+    """generate_hypothetical_doc must cap the hypothetical document at 256 tokens."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_HYPO_DOC) as mock_groq:
         from hyde_rag.implementation.generator import generate_hypothetical_doc
         generate_hypothetical_doc("question?")
@@ -31,6 +42,7 @@ def test_generate_hypothetical_doc_max_tokens_256():
 
 
 def test_generate_hypothetical_doc_contains_question_in_prompt():
+    """The user prompt sent to Groq must embed the original question."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_HYPO_DOC) as mock_groq:
         from hyde_rag.implementation.generator import generate_hypothetical_doc
         generate_hypothetical_doc("What is the top product category?")
@@ -40,6 +52,7 @@ def test_generate_hypothetical_doc_contains_question_in_prompt():
 
 
 def test_generate_hypothetical_doc_returns_groq_response():
+    """generate_hypothetical_doc must return exactly the string from call_groq."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_HYPO_DOC):
         from hyde_rag.implementation.generator import generate_hypothetical_doc
         result = generate_hypothetical_doc("any question")
@@ -49,6 +62,7 @@ def test_generate_hypothetical_doc_returns_groq_response():
 # ── generate (final answer) ───────────────────────────────────────────────────
 
 def test_generate_answer_returns_string(retrieved_docs):
+    """generate must return a plain string (the final LLM answer)."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_FINAL_ANSWER):
         from hyde_rag.implementation.generator import generate
         result = generate("What is delivery time?", retrieved_docs)
@@ -56,6 +70,7 @@ def test_generate_answer_returns_string(retrieved_docs):
 
 
 def test_generate_answer_uses_answer_temperature(retrieved_docs):
+    """generate must pass ANSWER_TEMPERATURE to call_groq for low-variance output."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_FINAL_ANSWER) as mock_groq:
         from hyde_rag.implementation.generator import generate
         from hyde_rag.implementation.config import ANSWER_TEMPERATURE
@@ -65,6 +80,7 @@ def test_generate_answer_uses_answer_temperature(retrieved_docs):
 
 
 def test_generate_answer_max_tokens_512(retrieved_docs):
+    """generate must cap the final answer at 512 tokens."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_FINAL_ANSWER) as mock_groq:
         from hyde_rag.implementation.generator import generate
         generate("question?", retrieved_docs)
@@ -72,6 +88,7 @@ def test_generate_answer_max_tokens_512(retrieved_docs):
 
 
 def test_generate_answer_includes_context_docs(retrieved_docs):
+    """The user message must embed the text of every retrieved document."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_FINAL_ANSWER) as mock_groq:
         from hyde_rag.implementation.generator import generate
         generate("question?", retrieved_docs)
@@ -82,6 +99,7 @@ def test_generate_answer_includes_context_docs(retrieved_docs):
 
 
 def test_generate_answer_includes_query(retrieved_docs):
+    """The user message must contain the original query string."""
     with patch("hyde_rag.implementation.generator.call_groq", return_value=_FINAL_ANSWER) as mock_groq:
         from hyde_rag.implementation.generator import generate
         generate("What is the top seller city?", retrieved_docs)

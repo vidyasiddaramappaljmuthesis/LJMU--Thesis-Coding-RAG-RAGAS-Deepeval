@@ -1,4 +1,14 @@
-"""Unit tests for multiquery_rag.implementation.pipeline (end-to-end with mocks)."""
+"""Unit tests for multiquery_rag.implementation.pipeline (end-to-end with mocks).
+
+Verifies that ``run_multiquery_rag`` wires all four stages correctly:
+1. expand_query is called with the original query to produce variant queries.
+2. retrieve_multi fetches per-variant candidate documents from ChromaDB.
+3. rrf_fuse merges all candidate lists into a ranked fused result.
+4. generate receives the fused docs and produces the final answer.
+
+All four pipeline components are replaced with lightweight stubs so no
+real LLM or vector-store calls are made.
+"""
 import os
 from unittest.mock import patch, MagicMock
 
@@ -25,18 +35,22 @@ _FUSED_DOCS = [
 
 
 def _mock_expand(query, n=4):
+    """Stub expand_query returning the fixed four-variant list."""
     return _EXPANDED_Q
 
 
 def _mock_retrieve_multi(queries, top_n=10):
+    """Stub retrieve_multi returning ten fixed docs for each variant query."""
     return {q: _PER_VARIANT_DOCS for q in queries}
 
 
 def _mock_fuse(ranked_lists, top_n=5):
+    """Stub rrf_fuse returning the fixed five-doc fused result."""
     return _FUSED_DOCS
 
 
 def test_run_multiquery_rag_returns_dict():
+    """run_multiquery_rag must return a dict (not a list, string, or other type)."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -47,6 +61,7 @@ def test_run_multiquery_rag_returns_dict():
 
 
 def test_run_multiquery_rag_has_query_key():
+    """Result dict must contain the 'query' key."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -57,6 +72,7 @@ def test_run_multiquery_rag_has_query_key():
 
 
 def test_run_multiquery_rag_has_answer_key():
+    """Result dict must contain the 'answer' key."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -67,6 +83,7 @@ def test_run_multiquery_rag_has_answer_key():
 
 
 def test_run_multiquery_rag_has_expanded_queries_key():
+    """Result dict must contain the 'expanded_queries' key."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -77,6 +94,7 @@ def test_run_multiquery_rag_has_expanded_queries_key():
 
 
 def test_run_multiquery_rag_has_query_results_key():
+    """Result dict must contain the 'query_results' key (per-variant retrieval map)."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -87,6 +105,7 @@ def test_run_multiquery_rag_has_query_results_key():
 
 
 def test_run_multiquery_rag_has_retrieved_docs_key():
+    """Result dict must contain the 'retrieved_docs' key (RRF-fused final list)."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -97,6 +116,7 @@ def test_run_multiquery_rag_has_retrieved_docs_key():
 
 
 def test_run_multiquery_rag_query_matches_input():
+    """result['query'] must equal the original query string passed to the pipeline."""
     q = "What is the average delivery time?"
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
@@ -108,6 +128,7 @@ def test_run_multiquery_rag_query_matches_input():
 
 
 def test_run_multiquery_rag_answer_from_generator():
+    """result['answer'] must equal the string returned by the generate stub."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -118,6 +139,7 @@ def test_run_multiquery_rag_answer_from_generator():
 
 
 def test_run_multiquery_rag_retrieved_docs_are_fused():
+    """result['retrieved_docs'] must equal the list returned by the rrf_fuse stub."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -128,6 +150,7 @@ def test_run_multiquery_rag_retrieved_docs_are_fused():
 
 
 def test_run_multiquery_rag_expanded_queries_is_list():
+    """result['expanded_queries'] must be a list of query variant strings."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -138,6 +161,7 @@ def test_run_multiquery_rag_expanded_queries_is_list():
 
 
 def test_run_multiquery_rag_passes_query_to_expander():
+    """run_multiquery_rag must call expand_query once with the original query string."""
     with patch("multiquery_rag.implementation.pipeline.expand_query",
                side_effect=_mock_expand) as mock_exp, \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
@@ -150,6 +174,7 @@ def test_run_multiquery_rag_passes_query_to_expander():
 
 
 def test_run_multiquery_rag_passes_expanded_queries_to_retriever():
+    """run_multiquery_rag must forward the expanded query list to retrieve_multi."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi",
                side_effect=_mock_retrieve_multi) as mock_ret, \
@@ -163,6 +188,7 @@ def test_run_multiquery_rag_passes_expanded_queries_to_retriever():
 
 
 def test_run_multiquery_rag_passes_fused_docs_to_generator():
+    """generate must receive the RRF-fused list (not the raw per-variant docs) as context."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -175,6 +201,7 @@ def test_run_multiquery_rag_passes_fused_docs_to_generator():
 
 
 def test_run_multiquery_rag_query_results_keys_are_expanded_queries():
+    """result['query_results'] keys must exactly match the expanded query strings."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \
@@ -185,6 +212,7 @@ def test_run_multiquery_rag_query_results_keys_are_expanded_queries():
 
 
 def test_run_multiquery_rag_retrieved_docs_at_most_final_top_k():
+    """result['retrieved_docs'] length must not exceed FINAL_TOP_K from config."""
     with patch("multiquery_rag.implementation.pipeline.expand_query", side_effect=_mock_expand), \
          patch("multiquery_rag.implementation.pipeline.retrieve_multi", side_effect=_mock_retrieve_multi), \
          patch("multiquery_rag.implementation.pipeline.rrf_fuse", side_effect=_mock_fuse), \

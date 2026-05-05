@@ -1,4 +1,10 @@
-"""Unit tests for reranking_rag.implementation.reranker."""
+"""Unit tests for reranking_rag.implementation.reranker.
+
+Verifies that ``rerank`` (Stage 2 of two-stage retrieval) scores all candidate
+documents with the cross-encoder, sorts them descending by score, truncates to
+top_k, adds a 'rerank_score' float field, and preserves all original doc fields.
+The cross-encoder is replaced with a mock to avoid loading the real model.
+"""
 from unittest.mock import patch, MagicMock
 import numpy as np
 
@@ -11,6 +17,7 @@ def _mock_cross_encoder(scores):
 
 
 def test_rerank_returns_list(initial_docs):
+    """rerank must return a list."""
     mock_model = _mock_cross_encoder([float(i) for i in range(len(initial_docs))])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -20,6 +27,7 @@ def test_rerank_returns_list(initial_docs):
 
 
 def test_rerank_returns_top_k_docs(initial_docs):
+    """rerank must return exactly top_k documents."""
     mock_model = _mock_cross_encoder([float(i) for i in range(len(initial_docs))])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -29,6 +37,7 @@ def test_rerank_returns_top_k_docs(initial_docs):
 
 
 def test_rerank_each_doc_has_rerank_score(initial_docs):
+    """Every document in the output must carry a 'rerank_score' field."""
     mock_model = _mock_cross_encoder([float(i) for i in range(len(initial_docs))])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -39,6 +48,7 @@ def test_rerank_each_doc_has_rerank_score(initial_docs):
 
 
 def test_rerank_rerank_score_is_float(initial_docs):
+    """The 'rerank_score' field must be a Python float."""
     mock_model = _mock_cross_encoder([float(i) for i in range(len(initial_docs))])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -49,6 +59,7 @@ def test_rerank_rerank_score_is_float(initial_docs):
 
 
 def test_rerank_sorted_descending(initial_docs):
+    """rerank must sort results from highest to lowest cross-encoder score."""
     scores     = [float(i) for i in range(len(initial_docs))]
     mock_model = _mock_cross_encoder(scores)
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
@@ -62,7 +73,7 @@ def test_rerank_sorted_descending(initial_docs):
 def test_rerank_highest_scored_doc_is_first(initial_docs):
     """The doc with the highest cross-encoder score must appear first."""
     scores     = list(range(len(initial_docs)))
-    scores[7]  = 999.0   # give doc_007 a very high score
+    scores[7]  = 999.0
     mock_model = _mock_cross_encoder(scores)
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -72,7 +83,7 @@ def test_rerank_highest_scored_doc_is_first(initial_docs):
 
 
 def test_rerank_preserves_original_doc_fields(initial_docs):
-    """All original fields (id, text, metadata, distance) survive reranking."""
+    """All original fields (id, text, metadata, distance) must survive reranking."""
     mock_model = _mock_cross_encoder([float(i) for i in range(len(initial_docs))])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -101,6 +112,7 @@ def test_rerank_calls_predict_with_pairs(initial_docs):
 
 
 def test_rerank_empty_docs_returns_empty():
+    """rerank on an empty candidate list must return an empty list."""
     mock_model = _mock_cross_encoder([])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",
                return_value=mock_model):
@@ -110,7 +122,7 @@ def test_rerank_empty_docs_returns_empty():
 
 
 def test_rerank_top_k_capped_by_input_size(initial_docs):
-    """Requesting more docs than available should return all available docs."""
+    """Requesting more docs than available must return all available docs (no padding)."""
     small_docs = initial_docs[:3]
     mock_model = _mock_cross_encoder([1.0, 2.0, 3.0])
     with patch("reranking_rag.implementation.reranker._get_cross_encoder",

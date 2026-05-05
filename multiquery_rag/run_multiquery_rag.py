@@ -19,6 +19,7 @@ from .implementation.pipeline import run_multiquery_rag
 
 
 def _vector_store_exists() -> bool:
+    """Return True if the ChromaDB collection exists and contains at least one document."""
     try:
         client = chromadb.PersistentClient(path=str(CHROMA_DB_PATH))
         col = client.get_collection(COLLECTION_NAME)
@@ -28,6 +29,7 @@ def _vector_store_exists() -> bool:
 
 
 def _ensure_vector_store():
+    """Build the vector store on first run; skip if the collection already exists."""
     if _vector_store_exists():
         print("[Setup] Vector store already exists — skipping ingestion.")
     else:
@@ -37,6 +39,7 @@ def _ensure_vector_store():
 
 
 def _interactive():
+    """Run the interactive REPL, printing expanded queries and fused docs for each answer."""
     print("=" * 65)
     print("  E-Commerce Multi-Query RAG  |  LLaMA 3.3 70B via Groq")
     print("  Embedding    : sentence-transformers/all-MiniLM-L6-v2")

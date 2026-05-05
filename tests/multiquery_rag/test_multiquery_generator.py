@@ -1,4 +1,10 @@
-"""Unit tests for multiquery_rag.implementation.generator."""
+"""Unit tests for multiquery_rag.implementation.generator.
+
+Verifies that ``generate`` calls Groq exactly once with the correct model,
+temperature, and a prompt that embeds the user query and all RRF-fused context
+documents. Also checks the 512-token cap, system-message presence, and that
+an empty document list still triggers a Groq call. All Groq calls are stubbed.
+"""
 import os
 from unittest.mock import patch
 
@@ -10,6 +16,7 @@ _MOCK_ANSWER = "The average delivery time is 12 days."
 
 
 def test_generate_returns_string(fused_docs):
+    """generate must return a string."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER):
         from multiquery_rag.implementation.generator import generate
@@ -18,6 +25,7 @@ def test_generate_returns_string(fused_docs):
 
 
 def test_generate_returns_groq_response(fused_docs):
+    """generate must return the exact string returned by call_groq."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER):
         from multiquery_rag.implementation.generator import generate
@@ -26,6 +34,7 @@ def test_generate_returns_groq_response(fused_docs):
 
 
 def test_generate_calls_call_groq_once(fused_docs):
+    """generate must invoke call_groq exactly once per call."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -34,6 +43,7 @@ def test_generate_calls_call_groq_once(fused_docs):
 
 
 def test_generate_uses_correct_model(fused_docs):
+    """generate must pass GROQ_MODEL as the model argument to call_groq."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -44,6 +54,7 @@ def test_generate_uses_correct_model(fused_docs):
 
 
 def test_generate_uses_low_temperature(fused_docs):
+    """generate must forward the temperature argument to call_groq."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -53,6 +64,7 @@ def test_generate_uses_low_temperature(fused_docs):
 
 
 def test_generate_includes_query_in_messages(fused_docs):
+    """The user message sent to Groq must embed the original query string."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -63,6 +75,7 @@ def test_generate_includes_query_in_messages(fused_docs):
 
 
 def test_generate_includes_context_docs_in_messages(fused_docs):
+    """The user message must embed the text of every RRF-fused document."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -74,6 +87,7 @@ def test_generate_includes_context_docs_in_messages(fused_docs):
 
 
 def test_generate_has_system_message(fused_docs):
+    """The message list sent to Groq must include a 'system' role message."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -84,6 +98,7 @@ def test_generate_has_system_message(fused_docs):
 
 
 def test_generate_max_tokens_512(fused_docs):
+    """generate must cap the response at 512 tokens via the max_tokens kwarg."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate
@@ -93,6 +108,7 @@ def test_generate_max_tokens_512(fused_docs):
 
 
 def test_generate_empty_docs_still_calls_groq():
+    """generate must still call Groq even when the fused document list is empty."""
     with patch("multiquery_rag.implementation.generator.call_groq",
                return_value=_MOCK_ANSWER) as mock_groq:
         from multiquery_rag.implementation.generator import generate

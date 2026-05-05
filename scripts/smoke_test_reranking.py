@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Quick end-to-end smoke-test for the Reranking RAG pipeline.
-Runs 4 representative e-commerce queries and prints the full result.
+End-to-end smoke test for the Reranking RAG pipeline.
+
+Runs 4 representative e-commerce queries and prints the full result including
+the initial retrieval candidates, reranked top-k, and generated answer.
+This is a manual validation script, not a pytest test.
 
 Usage:
-    python test_reranking_e2e.py
+    python scripts/smoke_test_reranking.py
 """
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"   # avoid OpenMP double-init on Windows
@@ -18,7 +21,7 @@ from pathlib import Path
 # Force UTF-8 stdout so Windows cp1252 never crashes on accented chars in docs
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from dotenv import load_dotenv
@@ -55,11 +58,10 @@ def main():
     print(_sep("="))
     print()
 
-    # ── Step 0: ensure vector store ────────────────────────────────────────────
     print("[Setup] Checking ChromaDB vector store ...")
     try:
         from reranking_rag.implementation.ingestion import get_collection
-        col   = get_collection()
+        col = get_collection()
         count = col.count()
         if count == 0:
             print("[Setup] Collection is empty -- building index now (~2 min) ...")
@@ -76,7 +78,6 @@ def main():
         build_vector_store()
         print("[Setup] Index built in %.1fs" % (time.time() - t0))
 
-    # ── Step 1: import pipeline (cross-encoder loads on first rerank call) ─────
     print("[Setup] Loading pipeline ...")
     from reranking_rag.implementation.pipeline import run_reranking_rag
     print("[Setup] Ready.\n")
@@ -90,34 +91,31 @@ def main():
 
         t_start = time.time()
         try:
-            result  = run_reranking_rag(query)
+            result = run_reranking_rag(query)
             elapsed = time.time() - t_start
 
-            # ── Stage 1a: initial retrieval ───────────────────────────────────
             initial = result["initial_docs"]
             print("|  +- Stage 1a : ChromaDB initial retrieval  (%d candidates)" % len(initial))
             for i, d in enumerate(initial[:3], 1):
-                dist     = d.get("distance", 0)
+                dist = d.get("distance", 0)
                 doc_type = d.get("metadata", {}).get("document_type", "?")
-                snip     = d["text"].replace("\n", " ")[:68]
+                snip = d["text"].replace("\n", " ")[:68]
                 print("|  |  [%d] dist=%.4f  type=%-12s  %s ..." % (i, dist, doc_type, snip))
             if len(initial) > 3:
                 print("|  |  ... and %d more candidates" % (len(initial) - 3))
             print("|  |")
 
-            # ── Stage 1b: reranked top-k ──────────────────────────────────────
             reranked = result["retrieved_docs"]
             print("|  +- Stage 1b : Cross-encoder reranked  top-%d" % len(reranked))
             for i, d in enumerate(reranked, 1):
-                rscore   = d.get("rerank_score", 0)
-                dist     = d.get("distance", 0)
+                rscore = d.get("rerank_score", 0)
+                dist = d.get("distance", 0)
                 doc_type = d.get("metadata", {}).get("document_type", "?")
-                snip     = d["text"].replace("\n", " ")[:60]
+                snip = d["text"].replace("\n", " ")[:60]
                 print("|  |  [%d] rerank=%+.4f  dist=%.4f  type=%-12s  %s ..." % (
                     i, rscore, dist, doc_type, snip))
             print("|  |")
 
-            # ── Generated answer ──────────────────────────────────────────────
             print("|  +- Answer  (%.1fs total)" % elapsed)
             for line in textwrap.wrap(result["answer"], width=W - 7):
                 print("|     " + line)

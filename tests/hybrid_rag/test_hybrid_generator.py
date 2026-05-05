@@ -1,10 +1,16 @@
-"""Unit tests for hybrid_rag.implementation.generator."""
+"""Unit tests for hybrid_rag.implementation.generator.
+
+Verifies that ``generate`` calls Groq once with the correct model, temperature,
+max_tokens, a numbered-document context block, system message, and the original
+query. All Groq calls are stubbed via unittest.mock.
+"""
 from unittest.mock import patch
 
 _ANSWER = "The most popular product category is Health & Beauty with 12% of orders."
 
 
 def test_generate_returns_string(fused_docs):
+    """generate must return a plain string."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER):
         from hybrid_rag.implementation.generator import generate
         result = generate("What is the top category?", fused_docs)
@@ -12,6 +18,7 @@ def test_generate_returns_string(fused_docs):
 
 
 def test_generate_returns_groq_response(fused_docs):
+    """generate must return exactly the value returned by call_groq."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER):
         from hybrid_rag.implementation.generator import generate
         result = generate("question?", fused_docs)
@@ -19,6 +26,7 @@ def test_generate_returns_groq_response(fused_docs):
 
 
 def test_generate_calls_call_groq_once(fused_docs):
+    """generate must invoke call_groq exactly once per call."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("question?", fused_docs)
@@ -26,6 +34,7 @@ def test_generate_calls_call_groq_once(fused_docs):
 
 
 def test_generate_uses_correct_model(fused_docs):
+    """generate must pass GROQ_MODEL as the model argument to call_groq."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         from hybrid_rag.implementation.config import GROQ_MODEL
@@ -35,6 +44,7 @@ def test_generate_uses_correct_model(fused_docs):
 
 
 def test_generate_uses_low_temperature(fused_docs):
+    """generate must pass temperature=0.1 to call_groq for deterministic output."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("question?", fused_docs, temperature=0.1)
@@ -43,6 +53,7 @@ def test_generate_uses_low_temperature(fused_docs):
 
 
 def test_generate_includes_context_docs_in_messages(fused_docs):
+    """The user message must embed the text of every fused document."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("question?", fused_docs)
@@ -53,6 +64,7 @@ def test_generate_includes_context_docs_in_messages(fused_docs):
 
 
 def test_generate_numbers_documents_in_context(fused_docs):
+    """Context documents must be numbered '[Document 1]', '[Document 2]', etc."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("question?", fused_docs)
@@ -63,6 +75,7 @@ def test_generate_numbers_documents_in_context(fused_docs):
 
 
 def test_generate_includes_query_in_messages(fused_docs):
+    """The user message must contain the original query string."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("What is the best seller region?", fused_docs)
@@ -72,6 +85,7 @@ def test_generate_includes_query_in_messages(fused_docs):
 
 
 def test_generate_has_system_message(fused_docs):
+    """The message list sent to Groq must include a 'system' role message."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("question?", fused_docs)
@@ -80,6 +94,7 @@ def test_generate_has_system_message(fused_docs):
 
 
 def test_generate_max_tokens_512(fused_docs):
+    """generate must cap the response at 512 tokens."""
     with patch("hybrid_rag.implementation.generator.call_groq", return_value=_ANSWER) as mock_groq:
         from hybrid_rag.implementation.generator import generate
         generate("question?", fused_docs)

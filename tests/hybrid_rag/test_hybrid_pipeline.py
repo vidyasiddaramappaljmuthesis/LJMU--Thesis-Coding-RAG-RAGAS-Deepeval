@@ -1,4 +1,9 @@
-"""Unit tests for hybrid_rag.implementation.pipeline (end-to-end with mocks)."""
+"""Unit tests for hybrid_rag.implementation.pipeline (end-to-end with mocks).
+
+Verifies that ``run_hybrid_rag`` returns all five expected keys (query, answer,
+retrieved_docs, keyword_docs, semantic_docs), routes values correctly from
+retrieve and generate stubs, and passes the query through unchanged.
+"""
 from unittest.mock import patch
 
 _ANSWER = "The most popular product category is Health & Beauty."
@@ -9,6 +14,7 @@ _RETRIEVE_RESULT = {"fused": _FUSED, "keyword": _KEYWORD, "semantic": _SEMANTIC}
 
 
 def test_run_hybrid_rag_returns_dict():
+    """run_hybrid_rag must return a dict."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -17,6 +23,7 @@ def test_run_hybrid_rag_returns_dict():
 
 
 def test_run_hybrid_rag_has_query_key():
+    """Result dict must contain the 'query' key."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -25,6 +32,7 @@ def test_run_hybrid_rag_has_query_key():
 
 
 def test_run_hybrid_rag_has_answer_key():
+    """Result dict must contain the 'answer' key."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -33,6 +41,7 @@ def test_run_hybrid_rag_has_answer_key():
 
 
 def test_run_hybrid_rag_has_retrieved_docs_key():
+    """Result dict must contain the 'retrieved_docs' key (the RRF-fused list)."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -41,6 +50,7 @@ def test_run_hybrid_rag_has_retrieved_docs_key():
 
 
 def test_run_hybrid_rag_has_keyword_docs_key():
+    """Result dict must contain the 'keyword_docs' key (BM25 candidates)."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -49,6 +59,7 @@ def test_run_hybrid_rag_has_keyword_docs_key():
 
 
 def test_run_hybrid_rag_has_semantic_docs_key():
+    """Result dict must contain the 'semantic_docs' key (ChromaDB candidates)."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -57,6 +68,7 @@ def test_run_hybrid_rag_has_semantic_docs_key():
 
 
 def test_run_hybrid_rag_query_in_result():
+    """result['query'] must be the exact string passed to run_hybrid_rag."""
     q = "What is the top category?"
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
@@ -66,6 +78,7 @@ def test_run_hybrid_rag_query_in_result():
 
 
 def test_run_hybrid_rag_answer_from_generator():
+    """result['answer'] must equal the value returned by the generate stub."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -74,6 +87,7 @@ def test_run_hybrid_rag_answer_from_generator():
 
 
 def test_run_hybrid_rag_retrieved_docs_are_fused():
+    """result['retrieved_docs'] must equal the 'fused' list from the retrieve stub."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -82,6 +96,7 @@ def test_run_hybrid_rag_retrieved_docs_are_fused():
 
 
 def test_run_hybrid_rag_keyword_docs_separate():
+    """result['keyword_docs'] must equal the 'keyword' list from the retrieve stub."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag
@@ -90,6 +105,7 @@ def test_run_hybrid_rag_keyword_docs_separate():
 
 
 def test_run_hybrid_rag_passes_query_to_retrieve():
+    """run_hybrid_rag must forward the query to retrieve with final_top_k=5."""
     with patch("hybrid_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT) as mock_ret, \
          patch("hybrid_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hybrid_rag.implementation.pipeline import run_hybrid_rag

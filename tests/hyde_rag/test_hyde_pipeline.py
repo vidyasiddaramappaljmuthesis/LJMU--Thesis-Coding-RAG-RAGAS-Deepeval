@@ -1,4 +1,9 @@
-"""Unit tests for hyde_rag.implementation.pipeline (end-to-end with mocks)."""
+"""Unit tests for hyde_rag.implementation.pipeline (end-to-end with mocks).
+
+Verifies that ``run_hyde_rag`` wires retrieve and generate correctly, returns
+all four expected keys (query, answer, retrieved_docs, hypothetical_doc), and
+passes arguments through without mutation.
+"""
 from unittest.mock import patch
 
 _HYPO_DOC = "Electronics in SP averaged 8.3 days delivery."
@@ -12,6 +17,7 @@ _RETRIEVE_RESULT = {"retrieved_docs": _DOCS, "hypothetical_doc": _HYPO_DOC}
 
 
 def test_run_hyde_rag_returns_dict():
+    """run_hyde_rag must return a dict."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -20,6 +26,7 @@ def test_run_hyde_rag_returns_dict():
 
 
 def test_run_hyde_rag_has_query_key():
+    """Result dict must contain the 'query' key."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -28,6 +35,7 @@ def test_run_hyde_rag_has_query_key():
 
 
 def test_run_hyde_rag_has_answer_key():
+    """Result dict must contain the 'answer' key."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -36,6 +44,7 @@ def test_run_hyde_rag_has_answer_key():
 
 
 def test_run_hyde_rag_has_retrieved_docs_key():
+    """Result dict must contain the 'retrieved_docs' key."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -44,6 +53,7 @@ def test_run_hyde_rag_has_retrieved_docs_key():
 
 
 def test_run_hyde_rag_has_hypothetical_doc_key():
+    """Result dict must contain the 'hypothetical_doc' key unique to HyDE."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -52,6 +62,7 @@ def test_run_hyde_rag_has_hypothetical_doc_key():
 
 
 def test_run_hyde_rag_query_in_result():
+    """result['query'] must be the exact string passed to run_hyde_rag."""
     q = "What is the average delivery time?"
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
@@ -61,6 +72,7 @@ def test_run_hyde_rag_query_in_result():
 
 
 def test_run_hyde_rag_answer_from_generator():
+    """result['answer'] must equal the value returned by the generate stub."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -69,6 +81,7 @@ def test_run_hyde_rag_answer_from_generator():
 
 
 def test_run_hyde_rag_hypothetical_doc_from_retriever():
+    """result['hypothetical_doc'] must equal the value from the retrieve stub."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT), \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag
@@ -77,6 +90,7 @@ def test_run_hyde_rag_hypothetical_doc_from_retriever():
 
 
 def test_run_hyde_rag_passes_query_to_retrieve():
+    """run_hyde_rag must forward the query to retrieve with top_k=5."""
     with patch("hyde_rag.implementation.pipeline.retrieve", return_value=_RETRIEVE_RESULT) as mock_ret, \
          patch("hyde_rag.implementation.pipeline.generate", return_value=_ANSWER):
         from hyde_rag.implementation.pipeline import run_hyde_rag

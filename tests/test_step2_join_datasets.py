@@ -1,4 +1,9 @@
-"""Unit tests for preprocessing/step2_join_datasets.py."""
+"""Unit tests for preprocessing/step2_join_datasets.py.
+
+Covers payment aggregation, review de-duplication (keep latest), and the
+full left-join chain that produces the master order-item-level DataFrame.
+All tests use the in-memory fixtures from conftest.py — no CSV files needed.
+"""
 import sys
 from pathlib import Path
 
@@ -17,18 +22,21 @@ from preprocessing.step2_join_datasets import (
 # ── aggregate_payments ────────────────────────────────────────────────────────
 
 def test_aggregate_payments_one_row_per_order(payments_raw):
+    """Result must have exactly one row per order_id."""
     result = aggregate_payments(payments_raw)
     assert len(result) == 2
     assert result["order_id"].nunique() == 2
 
 
 def test_aggregate_payments_sums_values(payments_raw):
+    """total_payment_value must be the sum of all payment_value rows per order."""
     result = aggregate_payments(payments_raw)
     ord1 = result.loc[result["order_id"] == "ord1", "total_payment_value"].iloc[0]
     assert ord1 == pytest.approx(100.0)  # 80 + 20
 
 
 def test_aggregate_payments_pipe_joins_sorted_types(payments_raw):
+    """Multiple payment types must be '|'-joined in alphabetical order."""
     result = aggregate_payments(payments_raw)
     ord1_types = result.loc[result["order_id"] == "ord1", "payment_types"].iloc[0]
     # sorted unique: credit_card < voucher alphabetically
@@ -36,18 +44,21 @@ def test_aggregate_payments_pipe_joins_sorted_types(payments_raw):
 
 
 def test_aggregate_payments_single_type(payments_raw):
+    """An order with one payment type must have that type as-is (no pipe)."""
     result = aggregate_payments(payments_raw)
     ord2_types = result.loc[result["order_id"] == "ord2", "payment_types"].iloc[0]
     assert ord2_types == "boleto"
 
 
 def test_aggregate_payments_max_installments(payments_raw):
+    """max_installments must be the maximum across all payment rows for the order."""
     result = aggregate_payments(payments_raw)
     ord1_inst = result.loc[result["order_id"] == "ord1", "max_installments"].iloc[0]
     assert ord1_inst == 3
 
 
 def test_aggregate_payments_methods_count(payments_raw):
+    """payment_methods_count must reflect the number of distinct payment types."""
     result = aggregate_payments(payments_raw)
     ord1_count = result.loc[result["order_id"] == "ord1", "payment_methods_count"].iloc[0]
     ord2_count = result.loc[result["order_id"] == "ord2", "payment_methods_count"].iloc[0]
@@ -58,12 +69,14 @@ def test_aggregate_payments_methods_count(payments_raw):
 # ── aggregate_reviews ─────────────────────────────────────────────────────────
 
 def test_aggregate_reviews_one_row_per_order(reviews_raw):
+    """Result must have exactly one row per order_id after de-duplication."""
     result = aggregate_reviews(reviews_raw)
     assert len(result) == 2
     assert result["order_id"].nunique() == 2
 
 
 def test_aggregate_reviews_keeps_latest(reviews_raw):
+    """For an order with multiple reviews, the latest answer timestamp wins."""
     result = aggregate_reviews(reviews_raw)
     ord1 = result.loc[result["order_id"] == "ord1"]
     # r2 (score=5, answered 2017-11-11) is later than r1 (score=3, answered 2017-11-02)
@@ -72,6 +85,7 @@ def test_aggregate_reviews_keeps_latest(reviews_raw):
 
 
 def test_aggregate_reviews_single_review_unchanged(reviews_raw):
+    """An order with a single review must be returned unmodified."""
     result = aggregate_reviews(reviews_raw)
     ord2 = result.loc[result["order_id"] == "ord2"]
     assert ord2["review_score"].iloc[0] == 4
@@ -81,36 +95,41 @@ def test_aggregate_reviews_single_review_unchanged(reviews_raw):
 # ── create_master_dataset ─────────────────────────────────────────────────────
 
 def test_create_master_row_count(minimal_datasets):
+    """Row count equals total items: ord1 has 2 items, ord2 has 1 → 3 rows."""
     master = create_master_dataset(minimal_datasets)
-    # ord1 has 2 items → 2 rows; ord2 has 1 item → 1 row
     assert len(master) == 3
 
 
 def test_create_master_has_order_columns(minimal_datasets):
+    """Master must include core order-level columns from the orders table."""
     master = create_master_dataset(minimal_datasets)
     for col in ["order_id", "order_status", "order_purchase_timestamp"]:
         assert col in master.columns
 
 
 def test_create_master_has_payment_columns(minimal_datasets):
+    """Master must include aggregated payment columns joined from payments."""
     master = create_master_dataset(minimal_datasets)
     for col in ["total_payment_value", "payment_types", "max_installments"]:
         assert col in master.columns
 
 
 def test_create_master_has_review_columns(minimal_datasets):
+    """Master must include review columns joined from the de-duplicated reviews."""
     master = create_master_dataset(minimal_datasets)
     for col in ["review_score", "review_id"]:
         assert col in master.columns
 
 
 def test_create_master_has_customer_columns(minimal_datasets):
+    """Master must include customer demographic columns from the customers table."""
     master = create_master_dataset(minimal_datasets)
     for col in ["customer_state", "customer_city", "customer_unique_id"]:
         assert col in master.columns
 
 
 def test_create_master_has_product_columns(minimal_datasets):
+    """Master must include product columns, including the English category name."""
     master = create_master_dataset(minimal_datasets)
     for col in ["product_id", "product_category_name", "product_category_name_english"]:
         assert col in master.columns
